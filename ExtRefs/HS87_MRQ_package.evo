@@ -1,0 +1,1435 @@
+enVision:"bl8:R15.7.2:S4.5";
+AdapterBoard hs87_86mrq {
+	Pin { Name = DCARD_VMON_HVVI; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = CXHVVI88; TesterCh[2] = CXHVVI19; TesterCh[3] = CXHVVI86; TesterCh[4] = CXHVVI83; }
+	}
+	Pin { Name = DNUT_SCL; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS111; TesterCh[2] = HS114; TesterCh[3] = HS228; TesterCh[4] = HS254; }
+	}
+	Pin { Name = DNUT_SDA; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS110; TesterCh[2] = HS115; TesterCh[3] = HS229; TesterCh[4] = HS253; }
+	}
+	Pin { Name = DNUT_X1; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS109; TesterCh[2] = HS113; TesterCh[3] = HS230; TesterCh[4] = HS252; }
+	}
+	Pin { Name = DUT_CMU_CAP; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 7; TesterCh[2] = 49; TesterCh[3] = 172; TesterCh[4] = 154; }
+	}
+	Pin { Name = DUT_DDCSCL; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 38; TesterCh[2] = 30; TesterCh[3] = 162; TesterCh[4] = 178; }
+	}
+	Pin { Name = DUT_DDCSDA; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 37; TesterCh[2] = 24; TesterCh[3] = 167; TesterCh[4] = 179; }
+	}
+	Pin { Name = DUT_ERRB_LFLTB_INTOUTB; Comment = ""; XCoord = (0,0); Shape = 0; PinType = OutputPins; 
+		Connection[0] { TesterCh[1] = 11; TesterCh[2] = 54; TesterCh[3] = 166; TesterCh[4] = 148; }
+	}
+	Pin { Name = DUT_GPIO00; Comment = "DUT_GPIO00_RGMDIO"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 43; TesterCh[2] = 17; TesterCh[3] = 141; TesterCh[4] = 153; }
+	}
+	Pin { Name = DUT_GPIO01; Comment = "DUT_GPIO01_RGRXCTL"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 39; TesterCh[2] = 20; TesterCh[3] = 142; TesterCh[4] = 185; }
+	}
+	Pin { Name = DUT_GPIO02_MS; Comment = "DUT_GPIO02_RGRD0_MS_MS"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 47; TesterCh[2] = 52; TesterCh[3] = 165; TesterCh[4] = 182; }
+	}
+	Pin { Name = DUT_GPIO03_RCLKOUT_RCLKEN; Comment = "DUT_GPIO03_RGRD2_RCLKOUT_RCLKEN"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 42; TesterCh[2] = 29; TesterCh[3] = 134; TesterCh[4] = 177; }
+	}
+	Pin { Name = DUT_GPIO04; Comment = "DUT_GPIO04_RGTD0"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 15; TesterCh[2] = 26; TesterCh[3] = 131; TesterCh[4] = 191; }
+	}
+	Pin { Name = DUT_GPIO05_BNE_SS1; Comment = "DUT_GPIO05_RGREFCLK_BNE_SS1"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 8; TesterCh[2] = 31; TesterCh[3] = 132; TesterCh[4] = 186; }
+	}
+	Pin { Name = DUT_GPIO06_RO_SS2; Comment = "DUT_GPIO06_RGRXC_RO_SS2"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 33; TesterCh[2] = 21; TesterCh[3] = 136; TesterCh[4] = 183; }
+	}
+	Pin { Name = DUT_GPIO07_MISO; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 36; TesterCh[2] = 23; TesterCh[3] = 128; TesterCh[4] = 176; }
+	}
+	Pin { Name = DUT_GPIO08_MOSI; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 46; TesterCh[2] = 28; TesterCh[3] = 129; TesterCh[4] = 188; }
+	}
+	Pin { Name = DUT_GPIO09_SCLK; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS108; TesterCh[2] = HS112; TesterCh[3] = HS231; TesterCh[4] = HS255; }
+	}
+	Pin { Name = DUT_WS_GPIO10; Comment = "DUT_WS_GPIO10_RGTXC"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 40; TesterCh[2] = 27; TesterCh[3] = 130; TesterCh[4] = 180; }
+	}
+	Pin { Name = DUT_SCK_GPIO11; Comment = "DUT_SCK_GPIO11_RGMDC"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 45; TesterCh[2] = 62; TesterCh[3] = 135; TesterCh[4] = 181; }
+	}
+	Pin { Name = DUT_SD_GPIO12; Comment = "DUT_SD_GPIO12_RGTD2"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 3; TesterCh[2] = 22; TesterCh[3] = 138; TesterCh[4] = 190; }
+	}
+	Pin { Name = DUT_SDOR_GPIO13_ADD0; Comment = "DUT_SDOR_GPIO13_RGTD1_ADD0"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 10; TesterCh[2] = 16; TesterCh[3] = 173; TesterCh[4] = 184; }
+	}
+	Pin { Name = DUT_SCKOR_GPIO14_ADD1; Comment = "DUT_SCKOR_GPIO14_RGRD3_ADD1"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 35; TesterCh[2] = 61; TesterCh[3] = 171; TesterCh[4] = 152; }
+	}
+	Pin { Name = DUT_WSOR_GPIO15_ADD2; Comment = "DUT_WSOR_GPIO15_RGRD1_ADD2"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 41; TesterCh[2] = 53; TesterCh[3] = 161; TesterCh[4] = 155; }
+	}
+	Pin { Name = DUT_GPIO16_CXTP; Comment = "DUT_GPIO16_RGTXCTL_CXTP"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 32; TesterCh[2] = 59; TesterCh[3] = 163; TesterCh[4] = 157; }
+	}
+	Pin { Name = DUT_GPIO17_I2CSEL; Comment = "DUT_GPIO17_RGTD3_I2CSEL"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 34; TesterCh[2] = 56; TesterCh[3] = 169; TesterCh[4] = 144; }
+	}
+	Pin { Name = DUT_GPIO14_ABUS0_DCTM; Comment = "OK to duplicate w. GPIO15_ABUS1?"; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = DCTM_89_MH; TesterCh[2] = DCTM_90_MH; TesterCh[3] = DCTM_91_MH; TesterCh[4] = DCTM_92_MH; }
+	}
+	Pin { Name = DUT_GPIO15_ABUS1_DCTM; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = DCTM_89_ML; TesterCh[2] = DCTM_90_ML; TesterCh[3] = DCTM_91_ML; TesterCh[4] = DCTM_92_ML; }
+	}
+	Pin { Name = DUT_GPIO16_ABUS2_DCTM; Comment = "OK to duplicate w. GPIO17_ABUS3?"; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = DCTM_89_MH; TesterCh[2] = DCTM_90_MH; TesterCh[3] = DCTM_91_MH; TesterCh[4] = DCTM_92_MH; }
+	}
+	Pin { Name = DUT_GPIO17_ABUS3_DCTM; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = DCTM_89_ML; TesterCh[2] = DCTM_90_ML; TesterCh[3] = DCTM_91_ML; TesterCh[4] = DCTM_92_ML; }
+	}
+	Pin { Name = DUT_HPD; Comment = ""; XCoord = (0,0); Shape = 0; PinType = OutputPins; 
+		Connection[0] { TesterCh[1] = 44; TesterCh[2] = 63; TesterCh[3] = 160; TesterCh[4] = 187; }
+	}
+	Pin { Name = DUT_HSPD; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = 14; TesterCh[2] = 55; TesterCh[3] = 143; TesterCh[4] = 147; }
+	}
+	Pin { Name = DUT_LMN01A_HVVI; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = CXHVVI18; TesterCh[2] = CXHVVI17; TesterCh[3] = CXHVVI82; TesterCh[4] = CXHVVI87; }
+	}
+	Pin { Name = DUT_LMN01B_HVVI; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = CXHVVI21; TesterCh[2] = CXHVVI81; TesterCh[3] = CXHVVI84; TesterCh[4] = CXHVVI85; }
+	}
+	Pin { Name = DUT_LMN0A; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS68; TesterCh[2] = HS92; TesterCh[3] = HS80; TesterCh[4] = HS78; }
+	}
+	Pin { Name = DUT_LMN0B; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS70; TesterCh[2] = HS94; TesterCh[3] = HS86; TesterCh[4] = HS77; }
+	}
+	Pin { Name = DUT_LMN1A; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS69; TesterCh[2] = HS93; TesterCh[3] = HS81; TesterCh[4] = HS76; }
+	}
+	Pin { Name = DUT_LMN1B; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS71; TesterCh[2] = HS95; TesterCh[3] = HS87; TesterCh[4] = HS79; }
+	}
+	Pin { Name = DUT_LOCK; Comment = ""; XCoord = (0,0); Shape = 0; PinType = OutputPins; 
+		Connection[0] { TesterCh[1] = 1; TesterCh[2] = 50; TesterCh[3] = 174; TesterCh[4] = 159; }
+	}
+	Pin { Name = DUT_NC_GMSL2B; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = 13; TesterCh[2] = 60; TesterCh[3] = 137; TesterCh[4] = 151; }
+	}
+	Pin { Name = DUT_NC_TRUE; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = 2; TesterCh[2] = 18; TesterCh[3] = 140; TesterCh[4] = 145; }
+	}
+	Pin { Name = DUT_PWDNB; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = 9; TesterCh[2] = 25; TesterCh[3] = 133; TesterCh[4] = 146; }
+	}
+	Pin { Name = DUT_RX0_N; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS103; TesterCh[2] = HS127; TesterCh[3] = HS227; TesterCh[4] = HS241; }
+	}
+	Pin { Name = DUT_RX0_P; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS102; TesterCh[2] = HS126; TesterCh[3] = HS226; TesterCh[4] = HS240; }
+	}
+	Pin { Name = DUT_RX0N_RX1N_GPIO14_ABUS0_VI16; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = VI167; TesterCh[2] = VI1613; TesterCh[3] = VI16B135; TesterCh[4] = VI16B143; }
+	}
+	Pin { Name = DUT_RX0P_RX1P_GPIO15_ABUS1_VI16; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = VI164; TesterCh[2] = VI1612; TesterCh[3] = VI16B144; TesterCh[4] = VI16B137; }
+	}
+	Pin { Name = DUT_RX1_N; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS105; TesterCh[2] = HS125; TesterCh[3] = HS225; TesterCh[4] = HS243; }
+	}
+	Pin { Name = DUT_RX1_P; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS104; TesterCh[2] = HS124; TesterCh[3] = HS224; TesterCh[4] = HS242; }
+	}
+	Pin { Name = DUT_RX2_N; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS107; TesterCh[2] = HS117; TesterCh[3] = HS239; TesterCh[4] = HS245; }
+	}
+	Pin { Name = DUT_RX2_P; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS106; TesterCh[2] = HS116; TesterCh[3] = HS238; TesterCh[4] = HS244; }
+	}
+	Pin { Name = DUT_RX2N_RXCN_GPIO16_ABUS2_VI16; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = VI161; TesterCh[2] = VI1610; TesterCh[3] = VI16B132; TesterCh[4] = VI16B139; }
+	}
+	Pin { Name = DUT_RX2P_RXCP_GPIO17_ABUS3_VI16; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = VI165; TesterCh[2] = VI163; TesterCh[3] = VI16B141; TesterCh[4] = VI16B138; }
+	}
+	Pin { Name = DUT_RXC_N; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS101; TesterCh[2] = HS119; TesterCh[3] = HS237; TesterCh[4] = HS247; }
+	}
+	Pin { Name = DUT_RXC_P; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS100; TesterCh[2] = HS118; TesterCh[3] = HS236; TesterCh[4] = HS246; }
+	}
+	Pin { Name = DUT_SCL_TX; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 5; TesterCh[2] = 51; TesterCh[3] = 164; TesterCh[4] = 150; }
+	}
+	Pin { Name = DUT_SDA_RX; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 0; TesterCh[2] = 48; TesterCh[3] = 175; TesterCh[4] = 149; }
+	}
+	Pin { Name = DUT_SIOA_N; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS97; TesterCh[2] = HS121; TesterCh[3] = HS233; TesterCh[4] = HS249; }
+	}
+	Pin { Name = DUT_SIOA_N_VI16; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = VI166; TesterCh[2] = VI1615; TesterCh[3] = VI16B142; TesterCh[4] = VI16B130; }
+	}
+	Pin { Name = DUT_SIOA_P; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS96; TesterCh[2] = HS120; TesterCh[3] = HS232; TesterCh[4] = HS248; }
+	}
+	Pin { Name = DUT_SIOA_P_VI16; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = VI1611; TesterCh[2] = VI1614; TesterCh[3] = VI16B134; TesterCh[4] = VI16B129; }
+	}
+	Pin { Name = DUT_SIOB_N; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS99; TesterCh[2] = HS122; TesterCh[3] = HS235; TesterCh[4] = HS251; }
+	}
+	Pin { Name = DUT_SIOB_N_VI16; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = VI169; TesterCh[2] = VI168; TesterCh[3] = VI16B131; TesterCh[4] = VI16B133; }
+	}
+	Pin { Name = DUT_SIOB_P; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS98; TesterCh[2] = HS123; TesterCh[3] = HS234; TesterCh[4] = HS250; }
+	}
+	Pin { Name = DUT_SIOB_P_VI16; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = VI162; TesterCh[2] = VI1616; TesterCh[3] = VI16B136; TesterCh[4] = VI16B140; }
+	}
+	Pin { Name = DUT_SUPPLY3P3V; Comment = ""; XCoord = (0,0); Shape = 0; PinType = ResourcePins; 
+		Connection[0] { TesterCh[1] = OVI7; TesterCh[2] = OVI3; TesterCh[3] = OVI67; TesterCh[4] = OVI70; }
+	}
+	Pin { Name = DUT_VDD18; Comment = ""; XCoord = (0,0); Shape = 0; PinType = PowerPins; 
+		Connection[0] { TesterCh[1] = HCOVI9; TesterCh[2] = HCOVI14; TesterCh[3] = HCOVI77; TesterCh[4] = HCOVI78; }
+	}
+	Pin { Name = DUT_VDDIO25; Comment = ""; XCoord = (0,0); Shape = 0; PinType = PowerPins; 
+		Connection[0] { TesterCh[1] = HCOVI13; TesterCh[2] = HCOVI15; TesterCh[3] = HCOVI73; TesterCh[4] = HCOVI76; }
+	}
+	Pin { Name = DUT_VDD33; Comment = ""; XCoord = (0,0); Shape = 0; PinType = PowerPins; 
+		Connection[0] { TesterCh[1] = HCOVI10; TesterCh[2] = HCOVI12; TesterCh[3] = HCOVI80; TesterCh[4] = HCOVI79; }
+	}
+	Pin { Name = DUT_VDDA; Comment = ""; XCoord = (0,0); Shape = 0; PinType = PowerPins; 
+		Connection[0] { TesterCh[1] = OVI8; TesterCh[2] = OVI4; TesterCh[3] = OVI66; TesterCh[4] = OVI71; }
+	}
+	Pin { Name = DUT_VDDD; Comment = "Ganged with QFVI 6, 8, 38, 40, respectively."; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = QFVI5; TesterCh[2] = QFVI7; TesterCh[3] = QFVI37; TesterCh[4] = QFVI39; }
+	}
+	Pin { Name = DUT_VDDIO; Comment = ""; XCoord = (0,0); Shape = 0; PinType = PowerPins; 
+		Connection[0] { TesterCh[1] = OVI6; TesterCh[2] = OVI2; TesterCh[3] = OVI69; TesterCh[4] = OVI72; }
+	}
+	Pin { Name = DUT_X1; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = 6; TesterCh[2] = 57; TesterCh[3] = 168; TesterCh[4] = 189; }
+	}
+	Pin { Name = DUT_X2; Comment = ""; XCoord = (0,0); Shape = 0; PinType = OutputPins; 
+		Connection[0] { TesterCh[1] = 12; TesterCh[2] = 19; TesterCh[3] = 139; TesterCh[4] = 156; }
+	}
+	Pin { Name = DUT_XRES; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 4; TesterCh[2] = 58; TesterCh[3] = 170; TesterCh[4] = 158; }
+	}
+	Pin { Name = FPGA_CSB; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS67; TesterCh[2] = HS91; TesterCh[3] = HS85; TesterCh[4] = HS75; }
+	}
+	Pin { Name = FPGA_SCLK; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS64; TesterCh[2] = HS88; TesterCh[3] = HS82; TesterCh[4] = HS72; }
+	}
+	Pin { Name = FPGA_SDIN; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS66; TesterCh[2] = HS90; TesterCh[3] = HS84; TesterCh[4] = HS74; }
+	}
+	Pin { Name = FPGA_SDOUT; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS65; TesterCh[2] = HS89; TesterCh[3] = HS83; TesterCh[4] = HS73; }
+	}
+	Pin { Name = LT_POWER; Comment = ""; XCoord = (0,0); Shape = 0; PinType = PowerPins; 
+		Connection[0] { TesterCh[1] = HCOVI11; TesterCh[2] = HCOVI16; TesterCh[3] = HCOVI74; TesterCh[4] = HCOVI75; }
+	}
+	Pin { Name = LT_RGMII_DUT; Comment = ""; XCoord = (0,0); Shape = 0; PinType = PowerPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVI68; TesterCh[2] = OVI68; TesterCh[3] = OVI68; TesterCh[4] = OVI68; }
+	}
+	Pin { Name = LT_RGMII_FPGA; Comment = ""; XCoord = (0,0); Shape = 0; PinType = PowerPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVI5; TesterCh[2] = OVI5; TesterCh[3] = OVI5; TesterCh[4] = OVI5; }
+	}
+	Pin { Name = K10_K11_HDMI__FXHS_DC; Comment = "HDMI__FXHS_DC_K10_K11"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT16; TesterCh[2] = FXCBIT16; TesterCh[3] = FXCBIT16; TesterCh[4] = FXCBIT16; }
+	}
+	Pin { Name = K12_K21_LMN01AB__OPEN_45KOHM; Comment = "LMN01AB__OPEN_45KOHM_K12_K21"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT28; TesterCh[2] = FXCBIT28; TesterCh[3] = FXCBIT28; TesterCh[4] = FXCBIT28; }
+	}
+	Pin { Name = K13_K14_RX0_RX1__DCARD_ATE; Comment = "RX0_RX1__DCARD_ATE_K13_K14"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT1; TesterCh[2] = FXCBIT1; TesterCh[3] = FXCBIT1; TesterCh[4] = FXCBIT1; }
+	}
+	Pin { Name = K15_K33_RX0RX2_RX1RXC__DC; Comment = "RX0RX2_RX1RXC__DC_K15_K33"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT4; TesterCh[2] = FXCBIT4; TesterCh[3] = FXCBIT4; TesterCh[4] = FXCBIT4; }
+	}
+	Pin { Name = K16_SIOAN__DCARD_ATE; Comment = "SIOAN__DCARD_ATE_K16"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT9; TesterCh[2] = HCOVICBIT9; TesterCh[3] = HCOVICBIT9; TesterCh[4] = HCOVICBIT9; }
+	}
+	Pin { Name = K17_K47_GMSL__FXHS_DC; Comment = "GMSL__FXHS_DC_K17_K47"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT3; TesterCh[2] = FXCBIT3; TesterCh[3] = FXCBIT3; TesterCh[4] = FXCBIT3; }
+	}
+	Pin { Name = K18_K48_GMSL__ATTEN_DC; Comment = "GMSL__ATTEN_DC_K18_K48"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT9; TesterCh[2] = FXCBIT9; TesterCh[3] = FXCBIT9; TesterCh[4] = FXCBIT9; }
+	}
+	Pin { Name = K19_K20_HDMI__FXHS_DC; Comment = "HDMI__FXHS_DC_K19_K20"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT24; TesterCh[2] = FXCBIT24; TesterCh[3] = FXCBIT24; TesterCh[4] = FXCBIT24; }
+	}
+	Pin { Name = K2_RESISTOR_XRES_SPST; Comment = "RESISTOR_XRES_SPST_K2"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT10; TesterCh[2] = FXCBIT10; TesterCh[3] = FXCBIT10; TesterCh[4] = FXCBIT10; }
+	}
+	Pin { Name = K23_K54_GMSL__OPEN_DIFFTERM; Comment = "GMSL__OPEN_DIFFTERM_K23_K54"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT12; TesterCh[2] = FXCBIT12; TesterCh[3] = FXCBIT12; TesterCh[4] = FXCBIT12; }
+	}
+	Pin { Name = K24_K55_GMSL__OPEN_1OHM; Comment = "GMSL__OPEN_1OHM_K24_K55"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT8; TesterCh[2] = FXCBIT8; TesterCh[3] = FXCBIT8; TesterCh[4] = FXCBIT8; }
+	}
+	Pin { Name = K25_K57_GMSL_DIFFTEST__VI16; Comment = "GMSL_DIFFTEST__VI16_K25_K57"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT6; TesterCh[2] = FXCBIT6; TesterCh[3] = FXCBIT6; TesterCh[4] = FXCBIT6; }
+	}
+	Pin { Name = K26_K49_GMSL_ATTEN__FXHS; Comment = "GMSL_ATTEN__FXHS_K26_K49"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT22; TesterCh[2] = FXCBIT22; TesterCh[3] = FXCBIT22; TesterCh[4] = FXCBIT22; }
+	}
+	Pin { Name = K28_SIOAP__DC_TERM; Comment = "SIOAP__DC_TERM_K28"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT10; TesterCh[2] = HCOVICBIT10; TesterCh[3] = HCOVICBIT10; TesterCh[4] = HCOVICBIT10; }
+	}
+	Pin { Name = K29_SIOAP__DCARD_ATE; Comment = "SIOAP__DCARD_ATE_K29"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT11; TesterCh[2] = HCOVICBIT11; TesterCh[3] = HCOVICBIT11; TesterCh[4] = HCOVICBIT11; }
+	}
+	Pin { Name = K3_DP__XRES_CMUCAP_OR_DCARD; Comment = "DP__XRES_CMUCAP_OR_DCARD_K3"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT3; TesterCh[2] = OVICBIT3; TesterCh[3] = OVICBIT3; TesterCh[4] = OVICBIT3; }
+	}
+	Pin { Name = K30_SIOAN__DC_TERM; Comment = "SIOAN__DC_TERM_K30"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT12; TesterCh[2] = HCOVICBIT12; TesterCh[3] = HCOVICBIT12; TesterCh[4] = HCOVICBIT12; }
+	}
+	Pin { Name = K31_K32_RX2_RXC__DCARD_ATE; Comment = "RX2_RXC__DCARD_ATE_K31_K32"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT11; TesterCh[2] = FXCBIT11; TesterCh[3] = FXCBIT11; TesterCh[4] = FXCBIT11; }
+	}
+	Pin { Name = K4_K58_GPIO_14_GPIO15_GPIO16_GPIO17__DP_LT; Comment = "GPIO_14_GPIO15_GPIO16_GPIO17__DP_LT_K4_K58"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT2; TesterCh[2] = OVICBIT2; TesterCh[3] = OVICBIT2; TesterCh[4] = OVICBIT2; }
+	}
+	Pin { Name = K43_SIOBN__DCARD_ATE; Comment = "SIOBN__DCARD_ATE_K43"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT13; TesterCh[2] = HCOVICBIT13; TesterCh[3] = HCOVICBIT13; TesterCh[4] = HCOVICBIT13; }
+	}
+	Pin { Name = K44_SIOBP__DCARD_ATE; Comment = "SIOBP__DCARD_ATE_K44"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT14; TesterCh[2] = HCOVICBIT14; TesterCh[3] = HCOVICBIT14; TesterCh[4] = HCOVICBIT14; }
+	}
+	Pin { Name = K45_SIOBN__DC_TERM; Comment = "SIOBN__DC_TERM_K45"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT15; TesterCh[2] = HCOVICBIT15; TesterCh[3] = HCOVICBIT15; TesterCh[4] = HCOVICBIT15; }
+	}
+	Pin { Name = K46_SIOBP__DC_TERM; Comment = "SIOBP__DC_TERM_K46"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT16; TesterCh[2] = HCOVICBIT16; TesterCh[3] = HCOVICBIT16; TesterCh[4] = HCOVICBIT16; }
+	}
+	Pin { Name = K5_DDCSCL_DDCSDA__DP_LT; Comment = "DDCSCL_DDCSDA__DP_LT_K5"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT32; TesterCh[2] = FXCBIT32; TesterCh[3] = FXCBIT32; TesterCh[4] = FXCBIT32; }
+	}
+	Pin { Name = K50_GPIO06_GPIO07__DP_LT; Comment = "GPIO06_GPIO07__DP_LT_K50"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT29; TesterCh[2] = FXCBIT29; TesterCh[3] = FXCBIT29; TesterCh[4] = FXCBIT29; }
+	}
+	Pin { Name = K52_GPIO04_GPIO05__DP_LT; Comment = "GPIO04_GPIO05__DP_LT_K52"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT27; TesterCh[2] = FXCBIT27; TesterCh[3] = FXCBIT27; TesterCh[4] = FXCBIT27; }
+	}
+	Pin { Name = K59_GPIO08_GPIO09__DP_LT; Comment = "GPIO08_GPIO09__DP_LT_K59"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT67; TesterCh[2] = OVICBIT67; TesterCh[3] = OVICBIT67; TesterCh[4] = OVICBIT67; }
+	}
+	Pin { Name = K6_K51_GPIO14_GPIO15_GPIO16_GPIO17__DP_VI; Comment = "GPIO14_GPIO15_GPIO16_GPIO17__DP_VI_K6_K51"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT72; TesterCh[2] = OVICBIT72; TesterCh[3] = OVICBIT72; TesterCh[4] = OVICBIT72; }
+	}
+	Pin { Name = K60_GPIO00_GPIO01__DP_LT; Comment = "GPIO00_GPIO01__DP_LT_K60"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT6; TesterCh[2] = OVICBIT6; TesterCh[3] = OVICBIT6; TesterCh[4] = OVICBIT6; }
+	}
+	Pin { Name = K61_GPIO10_GPIO11__DP_LT; Comment = "GPIO10_GPIO11__DP_LT_K61"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT66; TesterCh[2] = OVICBIT66; TesterCh[3] = OVICBIT66; TesterCh[4] = OVICBIT66; }
+	}
+	Pin { Name = K62_GPIO12_GPIO13__DP_LT; Comment = "GPIO12_GPIO13__DP_LT_K62"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT68; TesterCh[2] = OVICBIT68; TesterCh[3] = OVICBIT68; TesterCh[4] = OVICBIT68; }
+	}
+	Pin { Name = K63_HPD__DP_LT; Comment = "HPD__DP_LT_K63"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT25; TesterCh[2] = FXCBIT25; TesterCh[3] = FXCBIT25; TesterCh[4] = FXCBIT25; }
+	}
+	Pin { Name = K64_GPIO02_GPIO03__DP_LT; Comment = "GPIO02_GPIO03__DP_LT_K64"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT17; TesterCh[2] = FXCBIT17; TesterCh[3] = FXCBIT17; TesterCh[4] = FXCBIT17; }
+	}
+	Pin { Name = K65_K66_HDMI_ABUS__VI16; Comment = "HDMI_ABUS__VI16_K65_K66"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT18; TesterCh[2] = FXCBIT18; TesterCh[3] = FXCBIT18; TesterCh[4] = FXCBIT18; }
+	}
+	Pin { Name = K7_LOCK_ERRB__DP_LT; Comment = "LOCK_ERRB__DP_LT_K7"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT5; TesterCh[2] = OVICBIT5; TesterCh[3] = OVICBIT5; TesterCh[4] = OVICBIT5; }
+	}
+	Pin { Name = K72_X1_X2__OSC_XTAL; Comment = "X1_X2__OSC_XTAL_K72"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT69; TesterCh[2] = OVICBIT69; TesterCh[3] = OVICBIT69; TesterCh[4] = OVICBIT69; }
+	}
+	Pin { Name = K73_ABUS2_ABUS3__VI_DCTM; Comment = "ABUS2_ABUS3__VI_DCTM_K73"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT70; TesterCh[2] = OVICBIT70; TesterCh[3] = OVICBIT70; TesterCh[4] = OVICBIT70; }
+	}
+	Pin { Name = K74_X1__DP_OSC; Comment = "X1__DP_OSC_K74"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT71; TesterCh[2] = OVICBIT71; TesterCh[3] = OVICBIT71; TesterCh[4] = OVICBIT71; }
+	}
+	Pin { Name = K75_ABUS0_ABUS1__VI_DCTM; Comment = "ABUS0_ABUS1__VI_DCTM_K75"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT65; TesterCh[2] = OVICBIT65; TesterCh[3] = OVICBIT65; TesterCh[4] = OVICBIT65; }
+	}
+	Pin { Name = K76_K77_LT_DP__RGMII_GRP_W; Comment = "LT_DP__RGMII_GRP_W_K76_K77"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT13; TesterCh[2] = FXCBIT13; TesterCh[3] = FXCBIT13; TesterCh[4] = FXCBIT13; }
+	}
+	Pin { Name = K78_K79_LT_DP__RGMII_GRP_X; Comment = "LT_DP__RGMII_GRP_X_K78_K79"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT7; TesterCh[2] = FXCBIT7; TesterCh[3] = FXCBIT7; TesterCh[4] = FXCBIT7; }
+	}
+	Pin { Name = K8_SDARX_SCLTX__DP_DCARD; Comment = "SDARX_SCLTX__DP_DCARD_K8"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT4; TesterCh[2] = OVICBIT4; TesterCh[3] = OVICBIT4; TesterCh[4] = OVICBIT4; }
+	}
+	Pin { Name = K80_K81_LT_DP__RGMII_GRP_Y; Comment = "LT_DP__RGMII_GRP_Y_K80_K81"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT30; TesterCh[2] = FXCBIT30; TesterCh[3] = FXCBIT30; TesterCh[4] = FXCBIT30; }
+	}
+	Pin { Name = K82_K83_LT_DP__RGMII_GRP_Z; Comment = "LT_DP__RGMII_GRP_Z_K82_K83"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT19; TesterCh[2] = FXCBIT19; TesterCh[3] = FXCBIT19; TesterCh[4] = FXCBIT19; }
+	}
+	Pin { Name = K84_MDIO__OPEN_1KPU; Comment = "MDIO__OPEN_1KPU_K84"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT31; TesterCh[2] = FXCBIT31; TesterCh[3] = FXCBIT31; TesterCh[4] = FXCBIT31; }
+	}
+	Pin { Name = K9_K85_SDA_SCL_DDCSDA_DDCSCL__OPEN_1KPU; Comment = "SDA_SCL_DDCSDA_DDCSCL__OPEN_1KPU_K9_K85"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT1; TesterCh[2] = OVICBIT1; TesterCh[3] = OVICBIT1; TesterCh[4] = OVICBIT1; }
+	}
+	Pin { Name = K86_GPIO00__LTGPIO_LTI2C; Comment = "GPIO00__LTGPIO_LTI2C_K86"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT20; TesterCh[2] = FXCBIT20; TesterCh[3] = FXCBIT20; TesterCh[4] = FXCBIT20; }
+	}
+	Pin { Name = K87_GPIO01__LTGPIO_LTI2C; Comment = "GPIO01__LTGPIO_LTI2C_K87"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT20; TesterCh[2] = FXCBIT20; TesterCh[3] = FXCBIT20; TesterCh[4] = FXCBIT20; }
+	}
+	Pin { Name = K89_GPIO02__LTGPIO_LTI2C; Comment = "GPIO02__LTGPIO_LTI2C_K88"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT21; TesterCh[2] = FXCBIT21; TesterCh[3] = FXCBIT21; TesterCh[4] = FXCBIT21; }
+	}
+	Pin { Name = K88_GPIO04__LTGPIO_LTI2C; Comment = "GPIO04__LTGPIO_LTI2C_K89"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT21; TesterCh[2] = FXCBIT21; TesterCh[3] = FXCBIT21; TesterCh[4] = FXCBIT21; }
+	}
+	Pin { Name = DCARD_K1_SIOBN_TERM__DNUT; Comment = "DCARD_SIOBN_TERM__DNUT_K1"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT8; TesterCh[2] = OVICBIT8; TesterCh[3] = OVICBIT8; TesterCh[4] = OVICBIT8; }
+	}
+	Pin { Name = DCARD_K13_SIOBN__DNUT1_DNUT2; Comment = "DCARD_SIOBN__DNUT1_DNUT2_K13"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT73; TesterCh[2] = HCOVICBIT73; TesterCh[3] = HCOVICBIT73; TesterCh[4] = HCOVICBIT73; }
+	}
+	Pin { Name = DCARD_K14_SIOBP__DNUT1_DNUT2; Comment = "DCARD_SIOBP__DNUT1_DNUT2_K14"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT78; TesterCh[2] = HCOVICBIT78; TesterCh[3] = HCOVICBIT78; TesterCh[4] = HCOVICBIT78; }
+	}
+	Pin { Name = DCARD_K15_DNUT2_SDA_SCL__FPGA_DP; Comment = "DCARD_DNUT2_SDA_SCL__FPGA_DP_K15"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT75; TesterCh[2] = HCOVICBIT75; TesterCh[3] = HCOVICBIT75; TesterCh[4] = HCOVICBIT75; }
+	}
+	Pin { Name = DCARD_K16_DNUT2_X1_X2__OSC_XTAL; Comment = "DCARD_DNUT2_X1_X2__OSC_XTAL_K16"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT79; TesterCh[2] = HCOVICBIT79; TesterCh[3] = HCOVICBIT79; TesterCh[4] = HCOVICBIT79; }
+	}
+	Pin { Name = DCARD_K2_SIOBP_TERM__DNUT; Comment = "DCARD_SIOBP_TERM__DNUT_K2"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT80; TesterCh[2] = HCOVICBIT80; TesterCh[3] = HCOVICBIT80; TesterCh[4] = HCOVICBIT80; }
+	}
+	Pin { Name = DCARD_K3_SIOAP_TERM__DNUT; Comment = "DCARD_SIOAP_TERM__DNUT_K3"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT5; TesterCh[2] = FXCBIT5; TesterCh[3] = FXCBIT5; TesterCh[4] = FXCBIT5; }
+	}
+	Pin { Name = DCARD_K4_SIOAN_TERM__DNUT; Comment = "DCARD_SIOAN_TERM__DNUT_K4"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT2; TesterCh[2] = FXCBIT2; TesterCh[3] = FXCBIT2; TesterCh[4] = FXCBIT2; }
+	}
+	Pin { Name = DCARD_K5_DNUT1_SDA_SCL__FPGA_DP; Comment = "DCARD_DNUT1_SDA_SCL__FPGA_DP_K5"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT76; TesterCh[2] = HCOVICBIT76; TesterCh[3] = HCOVICBIT76; TesterCh[4] = HCOVICBIT76; }
+	}
+	Pin { Name = DCARD_K6_DNUT1_X1_X2__OSC_XTAL; Comment = "DCARD_DNUT1_X1_X2__OSC_XTAL_K6"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT74; TesterCh[2] = HCOVICBIT74; TesterCh[3] = HCOVICBIT74; TesterCh[4] = HCOVICBIT74; }
+	}
+	Pin { Name = DCARD_K7_SIOAP__DNUT1_DNUT2; Comment = "DCARD_SIOAP__DNUT1_DNUT2_K7"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT15; TesterCh[2] = FXCBIT15; TesterCh[3] = FXCBIT15; TesterCh[4] = FXCBIT15; }
+	}
+	Pin { Name = DCARD_K8_SIOAN__DNUT1_DNUT2; Comment = "DCARD_SIOAN__DNUT1_DNUT2_K8"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT14; TesterCh[2] = FXCBIT14; TesterCh[3] = FXCBIT14; TesterCh[4] = FXCBIT14; }
+	}
+	Pin { Name = GMSL_SHORT_PHASE_SWITCH; Comment = "GMSL_SHORT_PHASE_SWITCH"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT26; TesterCh[2] = FXCBIT26; TesterCh[3] = FXCBIT26; TesterCh[4] = FXCBIT26; }
+	}
+	Pin { Name = dut_rg_mdc; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_mdio; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_rd0; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_rd1; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_rd2; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_rd3; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_rx_ctl; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_rxc; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_td0; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_td1; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_td2; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_td3; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_txc; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_txctl; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_refclk; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = FPGA_GPIO_P15; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = DUT_VDDD_LOWSIDE; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = K69_DUMMY_SIOAP__LOSSY_DC; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = K67_DUMMY_SIOAN__LOSSY_DC; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = K70_DUMMY_SIOBP__LOSSY_DC; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = K68_DUMMY_SIOBN__LOSSY_DC; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	MaxSite = 4;
+}
+AdapterBoard hs87_86mrqC {
+	Pin { Name = DCARD_VMON_HVVI; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = CXHVVI88; TesterCh[2] = CXHVVI19; TesterCh[3] = CXHVVI86; TesterCh[4] = CXHVVI83; }
+	}
+	Pin { Name = DNUT_SCL; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS111; TesterCh[2] = HS114; TesterCh[3] = HS228; TesterCh[4] = HS254; }
+	}
+	Pin { Name = DNUT_SDA; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS110; TesterCh[2] = HS115; TesterCh[3] = HS229; TesterCh[4] = HS253; }
+	}
+	Pin { Name = DNUT_X1; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS109; TesterCh[2] = HS113; TesterCh[3] = HS230; TesterCh[4] = HS252; }
+	}
+	Pin { Name = DUT_CMU_CAP; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 7; TesterCh[2] = 49; TesterCh[3] = 172; TesterCh[4] = 154; }
+	}
+	Pin { Name = DUT_DDCSCL; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 38; TesterCh[2] = 30; TesterCh[3] = 162; TesterCh[4] = 178; }
+	}
+	Pin { Name = DUT_DDCSDA; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 37; TesterCh[2] = 24; TesterCh[3] = 167; TesterCh[4] = 179; }
+	}
+	Pin { Name = DUT_ERRB_LFLTB_INTOUTB; Comment = ""; XCoord = (0,0); Shape = 0; PinType = OutputPins; 
+		Connection[0] { TesterCh[1] = 11; TesterCh[2] = 54; TesterCh[3] = 166; TesterCh[4] = 148; }
+	}
+	Pin { Name = DUT_GPIO00; Comment = "DUT_GPIO00_RGMDIO"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 43; TesterCh[2] = 17; TesterCh[3] = 141; TesterCh[4] = 153; }
+	}
+	Pin { Name = DUT_GPIO01; Comment = "DUT_GPIO01_RGRXCTL"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 39; TesterCh[2] = 20; TesterCh[3] = 142; TesterCh[4] = 185; }
+	}
+	Pin { Name = DUT_GPIO02_MS; Comment = "DUT_GPIO02_RGRD0_MS_MS"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 47; TesterCh[2] = 52; TesterCh[3] = 165; TesterCh[4] = 182; }
+	}
+	Pin { Name = DUT_GPIO03_RCLKOUT_RCLKEN; Comment = "DUT_GPIO03_RGRD2_RCLKOUT_RCLKEN"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 42; TesterCh[2] = 29; TesterCh[3] = 134; TesterCh[4] = 177; }
+	}
+	Pin { Name = DUT_GPIO04; Comment = "DUT_GPIO04_RGTD0"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 15; TesterCh[2] = 26; TesterCh[3] = 131; TesterCh[4] = 191; }
+	}
+	Pin { Name = DUT_GPIO05_BNE_SS1; Comment = "DUT_GPIO05_RGREFCLK_BNE_SS1"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 8; TesterCh[2] = 31; TesterCh[3] = 132; TesterCh[4] = 186; }
+	}
+	Pin { Name = DUT_GPIO06_RO_SS2; Comment = "DUT_GPIO06_RGRXC_RO_SS2"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 33; TesterCh[2] = 21; TesterCh[3] = 136; TesterCh[4] = 183; }
+	}
+	Pin { Name = DUT_GPIO07_MISO; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 36; TesterCh[2] = 23; TesterCh[3] = 128; TesterCh[4] = 176; }
+	}
+	Pin { Name = DUT_GPIO08_MOSI; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 46; TesterCh[2] = 28; TesterCh[3] = 129; TesterCh[4] = 188; }
+	}
+	Pin { Name = DUT_GPIO09_SCLK; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS108; TesterCh[2] = HS112; TesterCh[3] = HS231; TesterCh[4] = HS255; }
+	}
+	Pin { Name = DUT_WS_GPIO10; Comment = "DUT_WS_GPIO10_RGTXC"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 40; TesterCh[2] = 27; TesterCh[3] = 130; TesterCh[4] = 180; }
+	}
+	Pin { Name = DUT_SCK_GPIO11; Comment = "DUT_SCK_GPIO11_RGMDC"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 45; TesterCh[2] = 62; TesterCh[3] = 135; TesterCh[4] = 181; }
+	}
+	Pin { Name = DUT_SD_GPIO12; Comment = "DUT_SD_GPIO12_RGTD2"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 3; TesterCh[2] = 22; TesterCh[3] = 138; TesterCh[4] = 190; }
+	}
+	Pin { Name = DUT_SDOR_GPIO13_ADD0; Comment = "DUT_SDOR_GPIO13_RGTD1_ADD0"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 10; TesterCh[2] = 16; TesterCh[3] = 173; TesterCh[4] = 184; }
+	}
+	Pin { Name = DUT_SCKOR_GPIO14_ADD1; Comment = "DUT_SCKOR_GPIO14_RGRD3_ADD1"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 35; TesterCh[2] = 61; TesterCh[3] = 171; TesterCh[4] = 152; }
+	}
+	Pin { Name = DUT_WSOR_GPIO15_ADD2; Comment = "DUT_WSOR_GPIO15_RGRD1_ADD2"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 41; TesterCh[2] = 53; TesterCh[3] = 161; TesterCh[4] = 155; }
+	}
+	Pin { Name = DUT_GPIO16_CXTP; Comment = "DUT_GPIO16_RGTXCTL_CXTP"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 32; TesterCh[2] = 59; TesterCh[3] = 163; TesterCh[4] = 157; }
+	}
+	Pin { Name = DUT_GPIO17_I2CSEL; Comment = "DUT_GPIO17_RGTD3_I2CSEL"; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 34; TesterCh[2] = 56; TesterCh[3] = 169; TesterCh[4] = 144; }
+	}
+	Pin { Name = DUT_GPIO14_ABUS0_DCTM; Comment = "OK to duplicate w. GPIO15_ABUS1?"; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = DCTM_89_MH; TesterCh[2] = DCTM_90_MH; TesterCh[3] = DCTM_91_MH; TesterCh[4] = DCTM_92_MH; }
+	}
+	Pin { Name = DUT_GPIO15_ABUS1_DCTM; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = DCTM_89_ML; TesterCh[2] = DCTM_90_ML; TesterCh[3] = DCTM_91_ML; TesterCh[4] = DCTM_92_ML; }
+	}
+	Pin { Name = DUT_GPIO16_ABUS2_DCTM; Comment = "OK to duplicate w. GPIO17_ABUS3?"; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = DCTM_89_MH; TesterCh[2] = DCTM_90_MH; TesterCh[3] = DCTM_91_MH; TesterCh[4] = DCTM_92_MH; }
+	}
+	Pin { Name = DUT_GPIO17_ABUS3_DCTM; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = DCTM_89_ML; TesterCh[2] = DCTM_90_ML; TesterCh[3] = DCTM_91_ML; TesterCh[4] = DCTM_92_ML; }
+	}
+	Pin { Name = DUT_HPD; Comment = ""; XCoord = (0,0); Shape = 0; PinType = OutputPins; 
+		Connection[0] { TesterCh[1] = 44; TesterCh[2] = 63; TesterCh[3] = 160; TesterCh[4] = 187; }
+	}
+	Pin { Name = DUT_HSPD; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = 14; TesterCh[2] = 55; TesterCh[3] = 143; TesterCh[4] = 147; }
+	}
+	Pin { Name = DUT_LMN01A_HVVI; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPinsLoV; 
+		Connection[0] { TesterCh[1] = CXHVVI18; TesterCh[2] = CXHVVI17; TesterCh[3] = CXHVVI82; TesterCh[4] = CXHVVI87; }
+	}
+	Pin { Name = DUT_LMN01B_HVVI; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPinsLoV; 
+		Connection[0] { TesterCh[1] = CXHVVI21; TesterCh[2] = CXHVVI81; TesterCh[3] = CXHVVI84; TesterCh[4] = CXHVVI85; }
+	}
+	Pin { Name = DUT_LMN0A; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS68; TesterCh[2] = HS92; TesterCh[3] = HS80; TesterCh[4] = HS78; }
+	}
+	Pin { Name = DUT_LMN0B; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS70; TesterCh[2] = HS94; TesterCh[3] = HS86; TesterCh[4] = HS77; }
+	}
+	Pin { Name = DUT_LMN1A; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS69; TesterCh[2] = HS93; TesterCh[3] = HS81; TesterCh[4] = HS76; }
+	}
+	Pin { Name = DUT_LMN1B; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS71; TesterCh[2] = HS95; TesterCh[3] = HS87; TesterCh[4] = HS79; }
+	}
+	Pin { Name = DUT_LOCK; Comment = ""; XCoord = (0,0); Shape = 0; PinType = OutputPins; 
+		Connection[0] { TesterCh[1] = 1; TesterCh[2] = 50; TesterCh[3] = 174; TesterCh[4] = 159; }
+	}
+	Pin { Name = DUT_NC_GMSL2B; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = 13; TesterCh[2] = 60; TesterCh[3] = 137; TesterCh[4] = 151; }
+	}
+	Pin { Name = DUT_NC_TRUE; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = 2; TesterCh[2] = 18; TesterCh[3] = 140; TesterCh[4] = 145; }
+	}
+	Pin { Name = DUT_PWDNB; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = 9; TesterCh[2] = 25; TesterCh[3] = 133; TesterCh[4] = 146; }
+	}
+	Pin { Name = DUT_RX0_N; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS67; TesterCh[2] = HS91; TesterCh[3] = HS227; TesterCh[4] = HS241; }
+	}
+	Pin { Name = DUT_RX0_P; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS66; TesterCh[2] = HS90; TesterCh[3] = HS226; TesterCh[4] = HS240; }
+	}
+	Pin { Name = DUT_RX0N_RX1N_GPIO14_ABUS0_VI16; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = VI167; TesterCh[2] = VI1613; TesterCh[3] = VI16B135; TesterCh[4] = VI16B143; }
+	}
+	Pin { Name = DUT_RX0P_RX1P_GPIO15_ABUS1_VI16; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = VI164; TesterCh[2] = VI1612; TesterCh[3] = VI16B144; TesterCh[4] = VI16B137; }
+	}
+	Pin { Name = DUT_RX1_N; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS105; TesterCh[2] = HS125; TesterCh[3] = HS225; TesterCh[4] = HS243; }
+	}
+	Pin { Name = DUT_RX1_P; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS104; TesterCh[2] = HS124; TesterCh[3] = HS224; TesterCh[4] = HS242; }
+	}
+	Pin { Name = DUT_RX2_N; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS107; TesterCh[2] = HS117; TesterCh[3] = HS239; TesterCh[4] = HS245; }
+	}
+	Pin { Name = DUT_RX2_P; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS106; TesterCh[2] = HS116; TesterCh[3] = HS238; TesterCh[4] = HS244; }
+	}
+	Pin { Name = DUT_RX2N_RXCN_GPIO16_ABUS2_VI16; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = VI161; TesterCh[2] = VI1610; TesterCh[3] = VI16B132; TesterCh[4] = VI16B139; }
+	}
+	Pin { Name = DUT_RX2P_RXCP_GPIO17_ABUS3_VI16; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = VI165; TesterCh[2] = VI163; TesterCh[3] = VI16B141; TesterCh[4] = VI16B138; }
+	}
+	Pin { Name = DUT_RXC_N; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS65; TesterCh[2] = HS89; TesterCh[3] = HS237; TesterCh[4] = HS247; }
+	}
+	Pin { Name = DUT_RXC_P; Comment = ""; XCoord = (0,0); Shape = 0; PinType = InputPins; 
+		Connection[0] { TesterCh[1] = HS64; TesterCh[2] = HS88; TesterCh[3] = HS236; TesterCh[4] = HS246; }
+	}
+	Pin { Name = DUT_SCL_TX; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 5; TesterCh[2] = 51; TesterCh[3] = 164; TesterCh[4] = 150; }
+	}
+	Pin { Name = DUT_SDA_RX; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 0; TesterCh[2] = 48; TesterCh[3] = 175; TesterCh[4] = 149; }
+	}
+	Pin { Name = DUT_SIOA_N; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS97; TesterCh[2] = HS121; TesterCh[3] = HS233; TesterCh[4] = HS249; }
+	}
+	Pin { Name = DUT_SIOA_N_VI16; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPinsLoV; 
+		Connection[0] { TesterCh[1] = VI166; TesterCh[2] = VI1615; TesterCh[3] = VI16B142; TesterCh[4] = VI16B130; }
+	}
+	Pin { Name = DUT_SIOA_P; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS96; TesterCh[2] = HS120; TesterCh[3] = HS232; TesterCh[4] = HS248; }
+	}
+	Pin { Name = DUT_SIOA_P_VI16; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPinsLoV; 
+		Connection[0] { TesterCh[1] = VI1611; TesterCh[2] = VI1614; TesterCh[3] = VI16B134; TesterCh[4] = VI16B129; }
+	}
+	Pin { Name = DUT_SIOB_N; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS99; TesterCh[2] = HS122; TesterCh[3] = HS235; TesterCh[4] = HS251; }
+	}
+	Pin { Name = DUT_SIOB_N_VI16; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPinsLoV; 
+		Connection[0] { TesterCh[1] = VI169; TesterCh[2] = VI168; TesterCh[3] = VI16B131; TesterCh[4] = VI16B133; }
+	}
+	Pin { Name = DUT_SIOB_P; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS98; TesterCh[2] = HS123; TesterCh[3] = HS234; TesterCh[4] = HS250; }
+	}
+	Pin { Name = DUT_SIOB_P_VI16; Comment = ""; XCoord = (0,0); Shape = 0; PinType = AnalogPinsLoV; 
+		Connection[0] { TesterCh[1] = VI162; TesterCh[2] = VI1616; TesterCh[3] = VI16B136; TesterCh[4] = VI16B140; }
+	}
+	Pin { Name = DUT_SUPPLY3P3V; Comment = ""; XCoord = (0,0); Shape = 0; PinType = ResourcePins; 
+		Connection[0] { TesterCh[1] = OVI7; TesterCh[2] = OVI3; TesterCh[3] = OVI67; TesterCh[4] = OVI70; }
+	}
+	Pin { Name = DUT_VDD18; Comment = ""; XCoord = (0,0); Shape = 0; PinType = PowerPinVDD18; 
+		Connection[0] { TesterCh[1] = HCOVI9; TesterCh[2] = HCOVI14; TesterCh[3] = HCOVI77; TesterCh[4] = HCOVI78; }
+	}
+	Pin { Name = DUT_VDDIO25; Comment = ""; XCoord = (0,0); Shape = 0; PinType = PowerPins; 
+		Connection[0] { TesterCh[1] = HCOVI13; TesterCh[2] = HCOVI15; TesterCh[3] = HCOVI73; TesterCh[4] = HCOVI76; }
+	}
+	Pin { Name = DUT_VDD33; Comment = ""; XCoord = (0,0); Shape = 0; PinType = PowerPinVDD33; 
+		Connection[0] { TesterCh[1] = HCOVI10; TesterCh[2] = HCOVI12; TesterCh[3] = HCOVI80; TesterCh[4] = HCOVI79; }
+	}
+	Pin { Name = DUT_VDDA; Comment = ""; XCoord = (0,0); Shape = 0; PinType = PowerPin1V; 
+		Connection[0] { TesterCh[1] = OVI8; TesterCh[2] = OVI4; TesterCh[3] = OVI66; TesterCh[4] = OVI71; }
+	}
+	Pin { Name = DUT_VDDD; Comment = "Ganged with QFVI 6, 8, 38, 40, respectively."; XCoord = (0,0); Shape = 0; PinType = AnalogPins1V; 
+		Connection[0] { TesterCh[1] = QFVI5; TesterCh[2] = QFVI7; TesterCh[3] = QFVI37; TesterCh[4] = QFVI39; }
+	}
+	Pin { Name = DUT_VDDIO; Comment = ""; XCoord = (0,0); Shape = 0; PinType = PowerPinVDDIO; 
+		Connection[0] { TesterCh[1] = OVI6; TesterCh[2] = OVI2; TesterCh[3] = OVI69; TesterCh[4] = OVI72; }
+	}
+	Pin { Name = DUT_X1; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 6; TesterCh[2] = 57; TesterCh[3] = 168; TesterCh[4] = 189; }
+	}
+	Pin { Name = DUT_X2; Comment = ""; XCoord = (0,0); Shape = 0; PinType = OutputPins; 
+		Connection[0] { TesterCh[1] = 12; TesterCh[2] = 19; TesterCh[3] = 139; TesterCh[4] = 156; }
+	}
+	Pin { Name = DUT_XRES; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 4; TesterCh[2] = 58; TesterCh[3] = 170; TesterCh[4] = 158; }
+	}
+	Pin { Name = FPGA_CSB; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS103; TesterCh[2] = HS127; TesterCh[3] = HS85; TesterCh[4] = HS75; }
+	}
+	Pin { Name = FPGA_SCLK; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS100; TesterCh[2] = HS118; TesterCh[3] = HS82; TesterCh[4] = HS72; }
+	}
+	Pin { Name = FPGA_SDIN; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS102; TesterCh[2] = HS126; TesterCh[3] = HS84; TesterCh[4] = HS74; }
+	}
+	Pin { Name = FPGA_SDOUT; Comment = ""; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = HS101; TesterCh[2] = HS119; TesterCh[3] = HS83; TesterCh[4] = HS73; }
+	}
+	Pin { Name = LT_POWER; Comment = ""; XCoord = (0,0); Shape = 0; PinType = ResourcePins; 
+		Connection[0] { TesterCh[1] = HCOVI11; TesterCh[2] = HCOVI16; TesterCh[3] = HCOVI74; TesterCh[4] = HCOVI75; }
+	}
+	Pin { Name = LT_RGMII_DUT; Comment = ""; XCoord = (0,0); Shape = 0; PinType = PowerPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVI68; TesterCh[2] = OVI68; TesterCh[3] = OVI68; TesterCh[4] = OVI68; }
+	}
+	Pin { Name = LT_RGMII_FPGA; Comment = ""; XCoord = (0,0); Shape = 0; PinType = PowerPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVI5; TesterCh[2] = OVI5; TesterCh[3] = OVI5; TesterCh[4] = OVI5; }
+	}
+	Pin { Name = K10_K11_HDMI__FXHS_DC; Comment = "HDMI__FXHS_DC_K10_K11"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT16; TesterCh[2] = FXCBIT16; TesterCh[3] = FXCBIT16; TesterCh[4] = FXCBIT16; }
+	}
+	Pin { Name = K12_K21_LMN0AB_LMN1AB__HVVI; Comment = "K12_K21_LMN0AB_LMN1AB__HVVI"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT28; TesterCh[2] = FXCBIT28; TesterCh[3] = FXCBIT28; TesterCh[4] = FXCBIT28; }
+	}
+	Pin { Name = K13_K14_RX0_RX1__DCARD_ATE; Comment = "RX0_RX1__DCARD_ATE_K13_K14"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT1; TesterCh[2] = FXCBIT1; TesterCh[3] = FXCBIT1; TesterCh[4] = FXCBIT1; }
+	}
+	Pin { Name = K15_K33_RX0RX2_RX1RXC__DC; Comment = "RX0RX2_RX1RXC__DC_K15_K33"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT4; TesterCh[2] = FXCBIT4; TesterCh[3] = FXCBIT4; TesterCh[4] = FXCBIT4; }
+	}
+	Pin { Name = K16_SIOAN__DCARD_ATE; Comment = "SIOAN__DCARD_ATE_K16"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT9; TesterCh[2] = HCOVICBIT9; TesterCh[3] = HCOVICBIT9; TesterCh[4] = HCOVICBIT9; }
+	}
+	Pin { Name = K17_K47_GMSL__FXHS_DC; Comment = "GMSL__FXHS_DC_K17_K47"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT3; TesterCh[2] = FXCBIT3; TesterCh[3] = FXCBIT3; TesterCh[4] = FXCBIT3; }
+	}
+	Pin { Name = K18_K48_GMSL__ATTEN_DC; Comment = "GMSL__ATTEN_DC_K18_K48"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT9; TesterCh[2] = FXCBIT9; TesterCh[3] = FXCBIT9; TesterCh[4] = FXCBIT9; }
+	}
+	Pin { Name = K19_K20_HDMI__FXHS_DC; Comment = "HDMI__FXHS_DC_K19_K20"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT24; TesterCh[2] = FXCBIT24; TesterCh[3] = FXCBIT24; TesterCh[4] = FXCBIT24; }
+	}
+	Pin { Name = K2_RESISTOR_XRES_SPST; Comment = "RESISTOR_XRES_SPST_K2"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT10; TesterCh[2] = FXCBIT10; TesterCh[3] = FXCBIT10; TesterCh[4] = FXCBIT10; }
+	}
+	Pin { Name = K23_K54_GMSL__OPEN_DIFFTERM; Comment = "GMSL__OPEN_DIFFTERM_K23_K54"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT12; TesterCh[2] = FXCBIT12; TesterCh[3] = FXCBIT12; TesterCh[4] = FXCBIT12; }
+	}
+	Pin { Name = K24_K55_GMSL__OPEN_1OHM; Comment = "GMSL__OPEN_1OHM_K24_K55"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT8; TesterCh[2] = FXCBIT8; TesterCh[3] = FXCBIT8; TesterCh[4] = FXCBIT8; }
+	}
+	Pin { Name = K25_K57_GMSL_DIFFTEST__VI16; Comment = "GMSL_DIFFTEST__VI16_K25_K57"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT6; TesterCh[2] = FXCBIT6; TesterCh[3] = FXCBIT6; TesterCh[4] = FXCBIT6; }
+	}
+	Pin { Name = K26_K49_GMSL_ATTEN__FXHS; Comment = "GMSL_ATTEN__FXHS_K26_K49"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT22; TesterCh[2] = FXCBIT22; TesterCh[3] = FXCBIT22; TesterCh[4] = FXCBIT22; }
+	}
+	Pin { Name = K28_SIOAP__DC_TERM; Comment = "SIOAP__DC_TERM_K28"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT10; TesterCh[2] = HCOVICBIT10; TesterCh[3] = HCOVICBIT10; TesterCh[4] = HCOVICBIT10; }
+	}
+	Pin { Name = K29_SIOAP__DCARD_ATE; Comment = "SIOAP__DCARD_ATE_K29"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT11; TesterCh[2] = HCOVICBIT11; TesterCh[3] = HCOVICBIT11; TesterCh[4] = HCOVICBIT11; }
+	}
+	Pin { Name = K3_DP__XRES_CMUCAP_OR_DCARD; Comment = "DP__XRES_CMUCAP_OR_DCARD_K3"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT3; TesterCh[2] = OVICBIT3; TesterCh[3] = OVICBIT3; TesterCh[4] = OVICBIT3; }
+	}
+	Pin { Name = K30_SIOAN__DC_TERM; Comment = "SIOAN__DC_TERM_K30"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT12; TesterCh[2] = HCOVICBIT12; TesterCh[3] = HCOVICBIT12; TesterCh[4] = HCOVICBIT12; }
+	}
+	Pin { Name = K31_K32_RX2_RXC__DCARD_ATE; Comment = "RX2_RXC__DCARD_ATE_K31_K32"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT11; TesterCh[2] = FXCBIT11; TesterCh[3] = FXCBIT11; TesterCh[4] = FXCBIT11; }
+	}
+	Pin { Name = K4_K58_GPIO_14_GPIO15_GPIO16_GPIO17__DP_LT; Comment = "GPIO_14_GPIO15_GPIO16_GPIO17__DP_LT_K4_K58"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT2; TesterCh[2] = OVICBIT2; TesterCh[3] = OVICBIT2; TesterCh[4] = OVICBIT2; }
+	}
+	Pin { Name = K43_SIOBN__DCARD_ATE; Comment = "SIOBN__DCARD_ATE_K43"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT13; TesterCh[2] = HCOVICBIT13; TesterCh[3] = HCOVICBIT13; TesterCh[4] = HCOVICBIT13; }
+	}
+	Pin { Name = K44_SIOBP__DCARD_ATE; Comment = "SIOBP__DCARD_ATE_K44"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT14; TesterCh[2] = HCOVICBIT14; TesterCh[3] = HCOVICBIT14; TesterCh[4] = HCOVICBIT14; }
+	}
+	Pin { Name = K45_SIOBN__DC_TERM; Comment = "SIOBN__DC_TERM_K45"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT15; TesterCh[2] = HCOVICBIT15; TesterCh[3] = HCOVICBIT15; TesterCh[4] = HCOVICBIT15; }
+	}
+	Pin { Name = K46_SIOBP__DC_TERM; Comment = "SIOBP__DC_TERM_K46"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT16; TesterCh[2] = HCOVICBIT16; TesterCh[3] = HCOVICBIT16; TesterCh[4] = HCOVICBIT16; }
+	}
+	Pin { Name = K5_DDCSCL_DDCSDA__DP_LT; Comment = "DDCSCL_DDCSDA__DP_LT_K5"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT32; TesterCh[2] = FXCBIT32; TesterCh[3] = FXCBIT32; TesterCh[4] = FXCBIT32; }
+	}
+	Pin { Name = K50_GPIO06_GPIO07__DP_LT; Comment = "GPIO06_GPIO07__DP_LT_K50"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT29; TesterCh[2] = FXCBIT29; TesterCh[3] = FXCBIT29; TesterCh[4] = FXCBIT29; }
+	}
+	Pin { Name = K52_GPIO04_GPIO05__DP_LT; Comment = "GPIO04_GPIO05__DP_LT_K52"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT27; TesterCh[2] = FXCBIT27; TesterCh[3] = FXCBIT27; TesterCh[4] = FXCBIT27; }
+	}
+	Pin { Name = K59_GPIO08_GPIO09__DP_LT; Comment = "GPIO08_GPIO09__DP_LT_K59"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT67; TesterCh[2] = OVICBIT67; TesterCh[3] = OVICBIT67; TesterCh[4] = OVICBIT67; }
+	}
+	Pin { Name = K6_K51_GPIO14_GPIO15_GPIO16_GPIO17__DP_VI; Comment = "GPIO14_GPIO15_GPIO16_GPIO17__DP_VI_K6_K51"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT72; TesterCh[2] = OVICBIT72; TesterCh[3] = OVICBIT72; TesterCh[4] = OVICBIT72; }
+	}
+	Pin { Name = K60_GPIO00_GPIO01__DP_LT; Comment = "GPIO00_GPIO01__DP_LT_K60"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT6; TesterCh[2] = OVICBIT6; TesterCh[3] = OVICBIT6; TesterCh[4] = OVICBIT6; }
+	}
+	Pin { Name = K61_GPIO10_GPIO11__DP_LT; Comment = "GPIO10_GPIO11__DP_LT_K61"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT66; TesterCh[2] = OVICBIT66; TesterCh[3] = OVICBIT66; TesterCh[4] = OVICBIT66; }
+	}
+	Pin { Name = K62_GPIO12_GPIO13__DP_LT; Comment = "GPIO12_GPIO13__DP_LT_K62"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT68; TesterCh[2] = OVICBIT68; TesterCh[3] = OVICBIT68; TesterCh[4] = OVICBIT68; }
+	}
+	Pin { Name = K63_HPD__DP_LT; Comment = "HPD__DP_LT_K63"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT25; TesterCh[2] = FXCBIT25; TesterCh[3] = FXCBIT25; TesterCh[4] = FXCBIT25; }
+	}
+	Pin { Name = K64_GPIO02_GPIO03__DP_LT; Comment = "GPIO02_GPIO03__DP_LT_K64"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT17; TesterCh[2] = FXCBIT17; TesterCh[3] = FXCBIT17; TesterCh[4] = FXCBIT17; }
+	}
+	Pin { Name = K65_K66_HDMI_ABUS__VI16; Comment = "HDMI_ABUS__VI16_K65_K66"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT18; TesterCh[2] = FXCBIT18; TesterCh[3] = FXCBIT18; TesterCh[4] = FXCBIT18; }
+	}
+	Pin { Name = K7_LOCK_ERRB__DP_LT; Comment = "LOCK_ERRB__DP_LT_K7"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT5; TesterCh[2] = OVICBIT5; TesterCh[3] = OVICBIT5; TesterCh[4] = OVICBIT5; }
+	}
+	Pin { Name = K72_X1_X2__OSC_XTAL; Comment = "X1_X2__OSC_XTAL_K72"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT69; TesterCh[2] = OVICBIT69; TesterCh[3] = OVICBIT69; TesterCh[4] = OVICBIT69; }
+	}
+	Pin { Name = K73_ABUS2_ABUS3__VI_DCTM; Comment = "ABUS2_ABUS3__VI_DCTM_K73"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT70; TesterCh[2] = OVICBIT70; TesterCh[3] = OVICBIT70; TesterCh[4] = OVICBIT70; }
+	}
+	Pin { Name = K74_X1__DP_OSC; Comment = "X1__DP_OSC_K74"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT71; TesterCh[2] = OVICBIT71; TesterCh[3] = OVICBIT71; TesterCh[4] = OVICBIT71; }
+	}
+	Pin { Name = K75_ABUS0_ABUS1__VI_DCTM; Comment = "ABUS0_ABUS1__VI_DCTM_K75"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT65; TesterCh[2] = OVICBIT65; TesterCh[3] = OVICBIT65; TesterCh[4] = OVICBIT65; }
+	}
+	Pin { Name = K76_K77_LT_DP__RGMII_GRP_W; Comment = "LT_DP__RGMII_GRP_W_K76_K77"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT13; TesterCh[2] = FXCBIT13; TesterCh[3] = FXCBIT13; TesterCh[4] = FXCBIT13; }
+	}
+	Pin { Name = K78_K79_LT_DP__RGMII_GRP_X; Comment = "LT_DP__RGMII_GRP_X_K78_K79"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT7; TesterCh[2] = FXCBIT7; TesterCh[3] = FXCBIT7; TesterCh[4] = FXCBIT7; }
+	}
+	Pin { Name = K8_SDARX_SCLTX__DP_DCARD; Comment = "SDARX_SCLTX__DP_DCARD_K8"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT4; TesterCh[2] = OVICBIT4; TesterCh[3] = OVICBIT4; TesterCh[4] = OVICBIT4; }
+	}
+	Pin { Name = K80_K81_LT_DP__RGMII_GRP_Y; Comment = "LT_DP__RGMII_GRP_Y_K80_K81"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT30; TesterCh[2] = FXCBIT30; TesterCh[3] = FXCBIT30; TesterCh[4] = FXCBIT30; }
+	}
+	Pin { Name = K82_K83_LT_DP__RGMII_GRP_Z; Comment = "LT_DP__RGMII_GRP_Z_K82_K83"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT19; TesterCh[2] = FXCBIT19; TesterCh[3] = FXCBIT19; TesterCh[4] = FXCBIT19; }
+	}
+	Pin { Name = K84_MDIO__OPEN_1KPU; Comment = "MDIO__OPEN_1KPU_K84"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT31; TesterCh[2] = FXCBIT31; TesterCh[3] = FXCBIT31; TesterCh[4] = FXCBIT31; }
+	}
+	Pin { Name = K9_K85_SDA_SCL_DDCSDA_DDCSCL__OPEN_1KPU; Comment = "SDA_SCL_DDCSDA_DDCSCL__OPEN_1KPU_K9_K85"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT1; TesterCh[2] = OVICBIT1; TesterCh[3] = OVICBIT1; TesterCh[4] = OVICBIT1; }
+	}
+	Pin { Name = K86_GPIO00__LTGPIO_LTI2C; Comment = "GPIO00__LTGPIO_LTI2C_K86"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT20; TesterCh[2] = FXCBIT20; TesterCh[3] = FXCBIT20; TesterCh[4] = FXCBIT20; }
+	}
+	Pin { Name = K87_GPIO01__LTGPIO_LTI2C; Comment = "GPIO01__LTGPIO_LTI2C_K87"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT20; TesterCh[2] = FXCBIT20; TesterCh[3] = FXCBIT20; TesterCh[4] = FXCBIT20; }
+	}
+	Pin { Name = K89_GPIO02__LTGPIO_LTI2C; Comment = "GPIO02__LTGPIO_LTI2C_K88"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT21; TesterCh[2] = FXCBIT21; TesterCh[3] = FXCBIT21; TesterCh[4] = FXCBIT21; }
+	}
+	Pin { Name = K88_GPIO04__LTGPIO_LTI2C; Comment = "GPIO04__LTGPIO_LTI2C_K89"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT21; TesterCh[2] = FXCBIT21; TesterCh[3] = FXCBIT21; TesterCh[4] = FXCBIT21; }
+	}
+	Pin { Name = DCARD_K1_SIOBN_TERM__DNUT; Comment = "DCARD_SIOBN_TERM__DNUT_K1"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = OVICBIT8; TesterCh[2] = OVICBIT8; TesterCh[3] = OVICBIT8; TesterCh[4] = OVICBIT8; }
+	}
+	Pin { Name = DCARD_K13_SIOBN__DNUT1_DNUT2; Comment = "DCARD_SIOBN__DNUT1_DNUT2_K13"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT73; TesterCh[2] = HCOVICBIT73; TesterCh[3] = HCOVICBIT73; TesterCh[4] = HCOVICBIT73; }
+	}
+	Pin { Name = DCARD_K14_SIOBP__DNUT1_DNUT2; Comment = "DCARD_SIOBP__DNUT1_DNUT2_K14"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT78; TesterCh[2] = HCOVICBIT78; TesterCh[3] = HCOVICBIT78; TesterCh[4] = HCOVICBIT78; }
+	}
+	Pin { Name = DCARD_K15_DNUT2_SDA_SCL__FPGA_DP; Comment = "DCARD_DNUT2_SDA_SCL__FPGA_DP_K15"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT75; TesterCh[2] = HCOVICBIT75; TesterCh[3] = HCOVICBIT75; TesterCh[4] = HCOVICBIT75; }
+	}
+	Pin { Name = DCARD_K16_DNUT2_X1_X2__OSC_XTAL; Comment = "DCARD_DNUT2_X1_X2__OSC_XTAL_K16"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT79; TesterCh[2] = HCOVICBIT79; TesterCh[3] = HCOVICBIT79; TesterCh[4] = HCOVICBIT79; }
+	}
+	Pin { Name = DCARD_K2_SIOBP_TERM__DNUT; Comment = "DCARD_SIOBP_TERM__DNUT_K2"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT80; TesterCh[2] = HCOVICBIT80; TesterCh[3] = HCOVICBIT80; TesterCh[4] = HCOVICBIT80; }
+	}
+	Pin { Name = DCARD_K3_SIOAP_TERM__DNUT; Comment = "DCARD_SIOAP_TERM__DNUT_K3"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT5; TesterCh[2] = FXCBIT5; TesterCh[3] = FXCBIT5; TesterCh[4] = FXCBIT5; }
+	}
+	Pin { Name = DCARD_K4_SIOAN_TERM__DNUT; Comment = "DCARD_SIOAN_TERM__DNUT_K4"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT2; TesterCh[2] = FXCBIT2; TesterCh[3] = FXCBIT2; TesterCh[4] = FXCBIT2; }
+	}
+	Pin { Name = DCARD_K5_DNUT1_SDA_SCL__FPGA_DP; Comment = "DCARD_DNUT1_SDA_SCL__FPGA_DP_K5"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT76; TesterCh[2] = HCOVICBIT76; TesterCh[3] = HCOVICBIT76; TesterCh[4] = HCOVICBIT76; }
+	}
+	Pin { Name = DCARD_K6_DNUT1_X1_X2__OSC_XTAL; Comment = "DCARD_DNUT1_X1_X2__OSC_XTAL_K6"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = HCOVICBIT74; TesterCh[2] = HCOVICBIT74; TesterCh[3] = HCOVICBIT74; TesterCh[4] = HCOVICBIT74; }
+	}
+	Pin { Name = DCARD_K7_SIOAP__DNUT1_DNUT2; Comment = "DCARD_SIOAP__DNUT1_DNUT2_K7"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT15; TesterCh[2] = FXCBIT15; TesterCh[3] = FXCBIT15; TesterCh[4] = FXCBIT15; }
+	}
+	Pin { Name = DCARD_K8_SIOAN__DNUT1_DNUT2; Comment = "DCARD_SIOAN__DNUT1_DNUT2_K8"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT14; TesterCh[2] = FXCBIT14; TesterCh[3] = FXCBIT14; TesterCh[4] = FXCBIT14; }
+	}
+	Pin { Name = GMSL_SHORT_PHASE_SWITCH; Comment = "GMSL_SHORT_PHASE_SWITCH"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT26; TesterCh[2] = FXCBIT26; TesterCh[3] = FXCBIT26; TesterCh[4] = FXCBIT26; }
+	}
+	Pin { Name = FPGA_GPIO_P15; XCoord = (0,0); Shape = 0; PinType = BidirectPins; 
+		Connection[0] { TesterCh[1] = 2; TesterCh[2] = 18; TesterCh[3] = 140; TesterCh[4] = 145; }
+	}
+	Pin { Name = FPGA_RELOAD; Comment = "DCARD_SIOAP_TERM__DNUT_K3"; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { evResource = shared; TesterCh[1] = FXCBIT23; TesterCh[2] = FXCBIT23; TesterCh[3] = FXCBIT23; TesterCh[4] = FXCBIT23; }
+	}
+	Pin { Name = dut_rg_mdc; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_mdio; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_rd0; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_rd1; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_rd2; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_rd3; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_rx_ctl; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_rxc; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_td0; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_td1; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_td2; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_td3; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_txc; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_txctl; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = dut_rg_refclk; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = DUT_VDDD_LOWSIDE; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = K69_DUMMY_SIOAP__LOSSY_DC; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = K67_DUMMY_SIOAN__LOSSY_DC; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = K70_DUMMY_SIOBP__LOSSY_DC; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = K68_DUMMY_SIOBN__LOSSY_DC; XCoord = (0,0); Shape = 0; PinType = DummyPins; 
+		Connection[0] { }
+	}
+	Pin { Name = LT_MAX7321_I2C_RESET; Comment = "per-site FXCBIT\'s, used to force reset on port expanders in case they hang the I2C bus."; XCoord = (0,0); Shape = 0; PinType = CbitPins; 
+		Connection[0] { TesterCh[1] = FXCBIT7; TesterCh[2] = FXCBIT13; TesterCh[3] = FXCBIT19; TesterCh[4] = FXCBIT30; }
+	}
+	Pin { Name = DCTM_HF; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = DCTM_89_HF; TesterCh[2] = DCTM_90_HF; TesterCh[3] = DCTM_91_HF; TesterCh[4] = DCTM_92_HF; }
+	}
+	Pin { Name = DCTM_LF; XCoord = (0,0); Shape = 0; PinType = AnalogPins; 
+		Connection[0] { TesterCh[1] = DCTM_89_LF; TesterCh[2] = DCTM_90_LF; TesterCh[3] = DCTM_91_LF; TesterCh[4] = DCTM_92_LF; }
+	}
+	MaxSite = 4;
+}
+PinGroup RESISTOR_XRES_SPST_K2 {
+	Group = Expr { String = "K2_RESISTOR_XRES_SPST"; }
+}
+PinGroup DP__XRES_CMUCAP_OR_DCARD_K3 {
+	Group = Expr { String = "K3_DP__XRES_CMUCAP_OR_DCARD"; }
+}
+PinGroup GPIO_14_GPIO15_GPIO16_GPIO17__DP_LT_K4_K58 {
+	Group = Expr { String = "K4_K58_GPIO_14_GPIO15_GPIO16_GPIO17__DP_LT"; }
+}
+PinGroup DDCSCL_DDCSDA__DP_LT_K5 {
+	Group = Expr { String = "K5_DDCSCL_DDCSDA__DP_LT"; }
+}
+PinGroup GPIO14_GPIO15_GPIO16_GPIO17__DP_VI_K6_K51 {
+	Group = Expr { String = "K6_K51_GPIO14_GPIO15_GPIO16_GPIO17__DP_VI"; }
+}
+PinGroup LOCK_ERRB__DP_LT_K7 {
+	Group = Expr { String = "K7_LOCK_ERRB__DP_LT"; }
+}
+PinGroup SDARX_SCLTX__DP_DCARD_K8 {
+	Group = Expr { String = "K8_SDARX_SCLTX__DP_DCARD"; }
+}
+PinGroup SDA_SCL__OPEN_1KPU_K9 {
+	Group = Expr { String = "K9_K85_SDA_SCL_DDCSDA_DDCSCL__OPEN_1KPU"; }
+}
+PinGroup HDMI__FXHS_DC_K10_K11_K19_K20 {
+	Group = Expr { String = "K10_K11_HDMI__FXHS_DC+K19_K20_HDMI__FXHS_DC"; }
+}
+PinGroup LMN01AB__OPEN_45KOHM_K12_K21 {
+	Group = Expr { String = "K12_K21_LMN01AB__OPEN_45KOHM"; }
+}
+PinGroup RX0_RX1__DCARD_ATE_K13_K14 {
+	Group = Expr { String = "K13_K14_RX0_RX1__DCARD_ATE"; }
+}
+PinGroup RX0RX2_RX1RXC__DC_K15_K33 {
+	Group = Expr { String = "K15_K33_RX0RX2_RX1RXC__DC"; }
+}
+PinGroup GMSL__FXHS_DC_K17_K47 {
+	Group = Expr { String = "K17_K47_GMSL__FXHS_DC "; }
+}
+PinGroup GMSL__ATTEN_DC_K18_K48 {
+	Group = Expr { String = "K18_K48_GMSL__ATTEN_DC"; }
+}
+PinGroup GMSL__OPEN_DIFFTERM_K23_K54 {
+	Group = Expr { String = "K23_K54_GMSL__OPEN_DIFFTERM"; }
+}
+PinGroup GMSL__OPEN_1OHM_K24_K55 {
+	Group = Expr { String = "K24_K55_GMSL__OPEN_1OHM"; }
+}
+PinGroup GMSL_DIFFTEST__VI16_K25_K57 {
+	Group = Expr { String = "K25_K57_GMSL_DIFFTEST__VI16"; }
+}
+PinGroup GMSL_ATTEN__FXHS_K26_K49 {
+	Group = Expr { String = "K26_K49_GMSL_ATTEN__FXHS"; }
+}
+PinGroup SIOAP__DC_TERM_K28 {
+	Group = Expr { String = "K28_SIOAP__DC_TERM"; }
+}
+PinGroup SIOAP__DCARD_LOSSY_K29 {
+	Group = Expr { String = "K29_SIOAP__DCARD_ATE"; }
+}
+PinGroup SIOAN__DC_TERM_K30 {
+	Group = Expr { String = "K30_SIOAN__DC_TERM"; }
+}
+PinGroup RX2_RXC__DCARD_ATE_K31_K32 {
+	Group = Expr { String = "K31_K32_RX2_RXC__DCARD_ATE"; }
+}
+PinGroup SIOBN__DC_TERM_K45 {
+	Group = Expr { String = "K45_SIOBN__DC_TERM"; }
+}
+PinGroup SIOBP__DC_TERM_K46 {
+	Group = Expr { String = "K46_SIOBP__DC_TERM"; }
+}
+PinGroup GPIO06_GPIO07__DP_LT_K50 {
+	Group = Expr { String = "K50_GPIO06_GPIO07__DP_LT"; }
+}
+PinGroup GPIO04_GPIO05__DP_LT_K52 {
+	Group = Expr { String = "K52_GPIO04_GPIO05__DP_LT"; }
+}
+PinGroup GPIO08_GPIO09__DP_LT_K59 {
+	Group = Expr { String = "K59_GPIO08_GPIO09__DP_LT"; }
+}
+PinGroup GPIO00_GPIO01__DP_LT_K60 {
+	Group = Expr { String = "K60_GPIO00_GPIO01__DP_LT"; }
+}
+PinGroup GPIO10_GPIO11__DP_LT_K61 {
+	Group = Expr { String = "K61_GPIO10_GPIO11__DP_LT"; }
+}
+PinGroup GPIO12_GPIO13__DP_LT_K62 {
+	Group = Expr { String = "K62_GPIO12_GPIO13__DP_LT"; }
+}
+PinGroup HPD__DP_LT_K63 {
+	Group = Expr { String = "K63_HPD__DP_LT"; }
+}
+PinGroup GPIO02_GPIO03__DP_LT_K64 {
+	Group = Expr { String = "K64_GPIO02_GPIO03__DP_LT"; }
+}
+PinGroup HDMI_ABUS__VI16_K65_K66 {
+	Group = Expr { String = "K65_K66_HDMI_ABUS__VI16"; }
+}
+PinGroup X1_X2__OSC_XTAL_K72 {
+	Group = Expr { String = "K72_X1_X2__OSC_XTAL"; }
+}
+PinGroup ABUS2_ABUS3__VI_DCTM_K73 {
+	Group = Expr { String = "K73_ABUS2_ABUS3__VI_DCTM"; }
+}
+PinGroup X1__DP_OSC_K74 {
+	Group = Expr { String = "K74_X1__DP_OSC"; }
+}
+PinGroup ABUS0_ABUS1__VI_DCTM_K75 {
+	Group = Expr { String = "K75_ABUS0_ABUS1__VI_DCTM"; }
+}
+PinGroup dut_hcovi_pins {
+	Group = Expr { String = "DUT_VDD18+DUT_VDD33+DUT_VDDIO25"; }
+}
+PinGroup dut_ovi_pins {
+	Group = Expr { String = "DUT_VDDA+DUT_VDDIO"; }
+}
+PinGroup dut_qfvi_pins {
+	Group = Expr { String = "DUT_VDDD"; }
+}
+PinGroup dut_vddd_pins {
+	Group = Expr { String = "DUT_VDDD"; }
+}
+PinGroup dut_i2c_uart_pins {
+	Group = Expr { String = "DUT_SCL_TX+DUT_SDA_RX"; }
+}
+PinGroup dut_i2c_tunnel1_pins {
+	Group = Expr { String = "DUT_GPIO01+DUT_GPIO00"; }
+}
+PinGroup dut_i2c_tunnel2_pins {
+	Group = Expr { String = "DUT_GPIO02_MS+DUT_GPIO03_RCLKOUT_RCLKEN"; }
+}
+PinGroup dnut_i2c_pins {
+	Group = Expr { String = "DNUT_SCL+DNUT_SDA"; }
+}
+PinGroup dut_even_pins {
+	Group = Expr { String = "DUT_GPIO00+DUT_GPIO02_MS+DUT_GPIO04+DUT_GPIO06_RO_SS2+DUT_GPIO08_MOSI+DUT_GPIO09_SCLK+DUT_SCK_GPIO11+DUT_SDOR_GPIO13_ADD0+DUT_GPIO16_CXTP+DUT_RXC_P+DUT_RX0_N+DUT_RX1_N+DUT_RX2_N+DUT_SIOA_N+DUT_SIOB_P+DUT_LMN1A+DUT_LMN1B+DUT_HSPD+DUT_SDA_RX+DUT_ERRB_LFLTB_INTOUTB+DUT_DDCSDA+DUT_X2+DUT_XRES"; }
+}
+PinGroup dut_odd_pins {
+	Group = Expr { String = "DUT_GPIO01+DUT_GPIO03_RCLKOUT_RCLKEN+DUT_GPIO05_BNE_SS1+DUT_GPIO07_MISO+DUT_WS_GPIO10+DUT_SD_GPIO12+DUT_SCKOR_GPIO14_ADD1+DUT_WSOR_GPIO15_ADD2+DUT_GPIO17_I2CSEL+DUT_RXC_N+DUT_RX0_P+DUT_RX1_P+DUT_RX2_P+DUT_SIOA_P+DUT_SIOB_N+DUT_LMN0A+DUT_LMN0B+DUT_X1+DUT_PWDNB+DUT_NC_GMSL2B+DUT_SCL_TX+DUT_DDCSCL+DUT_LOCK+DUT_HPD+DUT_CMU_CAP"; }
+}
+PinGroup dut_mrq_group_A_nonrgmii_pins {
+	Group = Expr { String = "DUT_GPIO00+DUT_GPIO02_MS+DUT_GPIO07_MISO+DUT_SCK_GPIO11+DUT_HSPD+DUT_LMN0B+DUT_LMN1A+DUT_RX1_N+DUT_RX2_P+DUT_RXC_P+DUT_SDA_RX+DUT_SIOB_P+DUT_NC_TRUE+DUT_X2"; }
+}
+PinGroup dut_mrq_group_B_nonrgmii_pins {
+	Group = Expr { String = "DUT_DDCSCL+DUT_GPIO01+DUT_GPIO05_BNE_SS1+DUT_GPIO08_MOSI+DUT_SD_GPIO12+DUT_WSOR_GPIO15_ADD2+DUT_HPD+DUT_LMN1B+DUT_LOCK+DUT_NC_GMSL2B+DUT_RX0_P+DUT_RX2_N+DUT_RXC_N+DUT_SIOA_N+DUT_X1"; }
+}
+PinGroup dut_mrq_group_C_nonrgmii_pins {
+	Group = Expr { String = "DUT_CMU_CAP+DUT_DDCSDA+DUT_ERRB_LFLTB_INTOUTB+DUT_GPIO03_RCLKOUT_RCLKEN+DUT_GPIO04+DUT_GPIO06_RO_SS2+DUT_GPIO09_SCLK+DUT_WS_GPIO10+DUT_SDOR_GPIO13_ADD0+DUT_SCKOR_GPIO14_ADD1+DUT_GPIO16_CXTP+DUT_GPIO17_I2CSEL+DUT_LMN0A+DUT_PWDNB+DUT_RX0_N+DUT_RX1_P+DUT_SCL_TX+DUT_SIOA_P+DUT_SIOB_N+DUT_XRES"; }
+}
+PinGroup dut_mrq_group_A_rgmii_dlog_pins {
+	Group = Expr { String = "dut_rg_mdc+dut_rg_rd1+dut_rg_td3"; }
+}
+PinGroup dut_mrq_group_B_rgmii_dlog_pins {
+	Group = Expr { String = "dut_rg_mdio+dut_rg_rd2+dut_rg_rxc+dut_rg_rx_ctl+dut_rg_td0+dut_rg_td2+dut_rg_txc"; }
+}
+PinGroup dut_mrq_group_C_rgmii_dlog_pins {
+	Group = Expr { String = "dut_rg_rd0+dut_rg_rd3+dut_rg_refclk+dut_rg_td1+dut_rg_txctl"; }
+}
+PinGroup dut_mrq_rgmii_grp_x_dlog_pins {
+	Group = Expr { String = "dut_rg_rd0+dut_rg_rd1+dut_rg_rx_ctl+dut_rg_td0+dut_rg_td1+dut_rg_td2+dut_rg_txc"; }
+}
+PinGroup dut_mrq_rgmii_grp_y_dlog_pins {
+	Group = Expr { String = "dut_rg_mdc+dut_rg_mdio+dut_rg_rd2+dut_rg_rd3+dut_rg_refclk+dut_rg_rxc+dut_rg_td3+dut_rg_txctl"; }
+}
+PinGroup dut_mrq_group_A_rgmii_pins {
+	Group = Expr { String = "dut_rg_mdc_grp+dut_rg_rd1_grp+dut_rg_td3_grp"; }
+}
+PinGroup dut_mrq_group_B_rgmii_pins {
+	Group = Expr { String = "dut_rg_mdio_grp+dut_rg_rd2_grp+dut_rg_rxc_grp+dut_rg_rx_ctl_grp+dut_rg_td0_grp+dut_rg_td2_grp+dut_rg_txc_grp"; }
+}
+PinGroup dut_mrq_group_C_rgmii_pins {
+	Group = Expr { String = "dut_rg_rd0_grp+dut_rg_rd3_grp+dut_rg_refclk_grp+dut_rg_td1_grp+dut_rg_txctl_grp"; }
+}
+PinGroup dut_mrq_rgmii_grp_x_pins {
+	Group = Expr { String = "dut_rg_rd0_grp+dut_rg_rd1_grp+dut_rg_rx_ctl_grp+dut_rg_td0_grp+dut_rg_td1_grp+dut_rg_td2_grp+dut_rg_txc_grp"; }
+}
+PinGroup dut_mrq_rgmii_grp_y_pins {
+	Group = Expr { String = "dut_rg_mdc_grp+dut_rg_mdio_grp+dut_rg_rd2_grp+dut_rg_rd3_grp+dut_rg_refclk_grp+dut_rg_rxc_grp+dut_rg_td3_grp+dut_rg_txctl_grp"; }
+}
+PinGroup dut_rg_mdc_grp {
+	Group = Expr { String = "DUT_SCK_GPIO11"; }
+}
+PinGroup dut_rg_mdio_grp {
+	Group = Expr { String = "DUT_GPIO00"; }
+}
+PinGroup dut_rg_rd0_grp {
+	Group = Expr { String = "DUT_GPIO02_MS"; }
+}
+PinGroup dut_rg_rd1_grp {
+	Group = Expr { String = "DUT_WSOR_GPIO15_ADD2"; }
+}
+PinGroup dut_rg_rd2_grp {
+	Group = Expr { String = "DUT_GPIO03_RCLKOUT_RCLKEN"; }
+}
+PinGroup dut_rg_rd3_grp {
+	Group = Expr { String = "DUT_SCKOR_GPIO14_ADD1"; }
+}
+PinGroup dut_rg_refclk_grp {
+	Group = Expr { String = "DUT_GPIO05_BNE_SS1"; }
+}
+PinGroup dut_rg_rx_ctl_grp {
+	Group = Expr { String = "DUT_GPIO01"; }
+}
+PinGroup dut_rg_rxc_grp {
+	Group = Expr { String = "DUT_GPIO06_RO_SS2"; }
+}
+PinGroup dut_rg_td0_grp {
+	Group = Expr { String = "DUT_GPIO04"; }
+}
+PinGroup dut_rg_td1_grp {
+	Group = Expr { String = "DUT_SDOR_GPIO13_ADD0"; }
+}
+PinGroup dut_rg_td2_grp {
+	Group = Expr { String = "DUT_SD_GPIO12"; }
+}
+PinGroup dut_rg_td3_grp {
+	Group = Expr { String = "DUT_GPIO17_I2CSEL"; }
+}
+PinGroup dut_rg_txc_grp {
+	Group = Expr { String = "DUT_WS_GPIO10"; }
+}
+PinGroup dut_rg_txctl_grp {
+	Group = Expr { String = "DUT_GPIO16_CXTP"; }
+}
+PinGroup dut_all_power_pins {
+	Group = Expr { String = "DUT_VDD18+DUT_VDDA+DUT_VDDIO+DUT_VDDD+DUT_VDD33"; }
+}
+PinGroup board_all_power_pins {
+	Group = Expr { String = "DUT_VDD18+DUT_VDDA+DUT_VDDIO+DUT_VDDD+DUT_VDD33+LT_POWER"; }
+}
+PinGroup dut_all_gpio_pins {
+	Group = Expr { String = "DUT_GPIO00+DUT_GPIO01+DUT_GPIO02_MS+DUT_GPIO03_RCLKOUT_RCLKEN+DUT_GPIO04+DUT_GPIO05_BNE_SS1+DUT_GPIO06_RO_SS2+DUT_GPIO07_MISO+DUT_GPIO08_MOSI+DUT_GPIO09_SCLK+DUT_WS_GPIO10+DUT_SCK_GPIO11+DUT_SD_GPIO12+DUT_SDOR_GPIO13_ADD0+DUT_SCKOR_GPIO14_ADD1+DUT_WSOR_GPIO15_ADD2+DUT_GPIO16_CXTP+DUT_GPIO17_I2CSEL"; }
+}
+PinGroup dut_input_pins {
+	Group = Expr { String = "DUT_NC_GMSL2B+DUT_HSPD+DUT_LMN0A+DUT_LMN0B+DUT_LMN1A+DUT_LMN1B+DUT_PWDNB+DUT_RX0_N+DUT_RX0_P+DUT_RX1_N+DUT_RX1_P+DUT_RX2_N+DUT_RX2_P+DUT_RXC_N+DUT_RXC_P+DUT_X1"; }
+}
+PinGroup dut_input_even_pins {
+	Group = Expr { String = "DUT_HSPD+DUT_LMN1A+DUT_LMN1B+DUT_RX0_N+DUT_RX1_N+DUT_RX2_N+DUT_RXC_P"; }
+}
+PinGroup dut_input_odd_pins {
+	Group = Expr { String = "DUT_NC_GMSL2B+DUT_LMN0A+DUT_LMN0B+DUT_PWDNB+DUT_RX0_P+DUT_RX1_P+DUT_RX2_P+DUT_RXC_N+DUT_X1"; }
+}
+PinGroup dut_output_pins {
+	Group = Expr { String = "DUT_ERRB_LFLTB_INTOUTB+DUT_HPD+DUT_LOCK+DUT_X2"; }
+}
+PinGroup all_analog_pins {
+	Group = Expr { String = "DUT_RX0N_RX1N_GPIO14_ABUS0_VI16+DUT_RX0P_RX1P_GPIO15_ABUS1_VI16+DUT_RX2N_RXCN_GPIO16_ABUS2_VI16+DUT_RX2P_RXCP_GPIO17_ABUS3_VI16+DUT_SIOA_N_VI16+DUT_SIOA_P_VI16+DUT_SIOB_N_VI16+DUT_SIOB_P_VI16+DUT_LMN01A_HVVI+DUT_LMN01B_HVVI+DUT_GPIO14_ABUS0_DCTM+DUT_GPIO15_ABUS1_DCTM+DUT_GPIO16_ABUS2_DCTM+DUT_GPIO17_ABUS3_DCTM"; }
+}
+PinGroup all_cbits {
+	Group = Expr { String = "K29_SIOAP__DCARD_ATE+K16_SIOAN__DCARD_ATE+K44_SIOBP__DCARD_ATE+K43_SIOBN__DCARD_ATE+K69_DUMMY_SIOAP__LOSSY_DC+K67_DUMMY_SIOAN__LOSSY_DC+K70_DUMMY_SIOBP__LOSSY_DC+K68_DUMMY_SIOBN__LOSSY_DC+K28_SIOAP__DC_TERM+K30_SIOAN__DC_TERM+K46_SIOBP__DC_TERM+K45_SIOBN__DC_TERM+K17_K47_GMSL__FXHS_DC+K18_K48_GMSL__ATTEN_DC+K26_K49_GMSL_ATTEN__FXHS+K13_K14_RX0_RX1__DCARD_ATE+K31_K32_RX2_RXC__DCARD_ATE+K10_K11_HDMI__FXHS_DC+K19_K20_HDMI__FXHS_DC+K75_ABUS0_ABUS1__VI_DCTM+K73_ABUS2_ABUS3__VI_DCTM+K60_GPIO00_GPIO01__DP_LT+K64_GPIO02_GPIO03__DP_LT+K52_GPIO04_GPIO05__DP_LT+K50_GPIO06_GPIO07__DP_LT+K59_GPIO08_GPIO09__DP_LT+K61_GPIO10_GPIO11__DP_LT+K62_GPIO12_GPIO13__DP_LT+K6_K51_GPIO14_GPIO15_GPIO16_GPIO17__DP_VI+K4_K58_GPIO_14_GPIO15_GPIO16_GPIO17__DP_LT+K7_LOCK_ERRB__DP_LT+K5_DDCSCL_DDCSDA__DP_LT+K63_HPD__DP_LT+K12_K21_LMN01AB__OPEN_45KOHM+K74_X1__DP_OSC+K72_X1_X2__OSC_XTAL+DCARD_K5_DNUT1_SDA_SCL__FPGA_DP+DCARD_K6_DNUT1_X1_X2__OSC_XTAL+K23_K54_GMSL__OPEN_DIFFTERM+K24_K55_GMSL__OPEN_1OHM+GMSL_SHORT_PHASE_SWITCH+K25_K57_GMSL_DIFFTEST__VI16+K15_K33_RX0RX2_RX1RXC__DC+K65_K66_HDMI_ABUS__VI16+K8_SDARX_SCLTX__DP_DCARD+K9_K85_SDA_SCL_DDCSDA_DDCSCL__OPEN_1KPU+K2_RESISTOR_XRES_SPST+K3_DP__XRES_CMUCAP_OR_DCARD+DCARD_K1_SIOBN_TERM__DNUT+DCARD_K2_SIOBP_TERM__DNUT+DCARD_K3_SIOAP_TERM__DNUT+DCARD_K4_SIOAN_TERM__DNUT+DCARD_K7_SIOAP__DNUT1_DNUT2+DCARD_K14_SIOBP__DNUT1_DNUT2+DCARD_K8_SIOAN__DNUT1_DNUT2+DCARD_K13_SIOBN__DNUT1_DNUT2+DCARD_K15_DNUT2_SDA_SCL__FPGA_DP+DCARD_K16_DNUT2_X1_X2__OSC_XTAL+K76_K77_LT_DP__RGMII_GRP_W+K80_K81_LT_DP__RGMII_GRP_Y+K84_MDIO__OPEN_1KPU+K78_K79_LT_DP__RGMII_GRP_X+K82_K83_LT_DP__RGMII_GRP_Z+K86_GPIO00__LTGPIO_LTI2C+K87_GPIO01__LTGPIO_LTI2C+K89_GPIO02__LTGPIO_LTI2C+K88_GPIO04__LTGPIO_LTI2C"; }
+}
+PinGroup all_dnut_2p7v_io {
+	Group = Expr { String = "DNUT_X1+FPGA_SDIN+FPGA_CSB+FPGA_GPIO_P15+FPGA_SCLK+FPGA_SDOUT"; }
+}
+PinGroup all_fpga_pins {
+	Group = Expr { String = "DNUT_X1+FPGA_SDIN+FPGA_CSB+FPGA_GPIO_P15+FPGA_SCLK+FPGA_SDOUT"; }
+}
+PinGroup atpg_clock_pins {
+	Group = Expr { String = "DUT_GPIO17_I2CSEL"; }
+}
+PinGroup atpg_control_pins {
+	Group = Expr { String = "DUT_GPIO00+DUT_GPIO01+DUT_GPIO02_MS+DUT_GPIO03_RCLKOUT_RCLKEN+DUT_WS_GPIO10"; }
+}
+PinGroup atpg_input_pins {
+	Group = Expr { String = "DUT_GPIO04+DUT_GPIO05_BNE_SS1+DUT_GPIO06_RO_SS2+DUT_GPIO07_MISO+DUT_GPIO08_MOSI+DUT_GPIO09_SCLK"; }
+}
+PinGroup atpg_output_pins {
+	Group = Expr { String = "DUT_SCK_GPIO11+DUT_SD_GPIO12+DUT_SDOR_GPIO13_ADD0+DUT_SCKOR_GPIO14_ADD1+DUT_WSOR_GPIO15_ADD2+DUT_GPIO16_CXTP"; }
+}
+PinGroup atpg_all_pins {
+	Group = Expr { String = "DUT_GPIO00+DUT_GPIO01+DUT_GPIO02_MS+DUT_GPIO03_RCLKOUT_RCLKEN+DUT_GPIO04+DUT_GPIO05_BNE_SS1+DUT_GPIO06_RO_SS2+DUT_GPIO07_MISO+DUT_GPIO08_MOSI+DUT_GPIO09_SCLK+DUT_WS_GPIO10+DUT_SCK_GPIO11+DUT_SD_GPIO12+DUT_SDOR_GPIO13_ADD0+DUT_SCKOR_GPIO14_ADD1+DUT_WSOR_GPIO15_ADD2+DUT_GPIO16_CXTP+DUT_GPIO17_I2CSEL"; }
+}
+PinGroup dut_mbist_output_pins {
+	Group = Expr { String = "DUT_GPIO02_MS+DUT_GPIO03_RCLKOUT_RCLKEN+DUT_GPIO04+DUT_GPIO05_BNE_SS1+DUT_GPIO06_RO_SS2+DUT_GPIO07_MISO+DUT_GPIO08_MOSI+DUT_GPIO09_SCLK+DUT_WS_GPIO10+DUT_SCK_GPIO11+DUT_SD_GPIO12+DUT_SDOR_GPIO13_ADD0+DUT_SCKOR_GPIO14_ADD1+DUT_WSOR_GPIO15_ADD2+DUT_GPIO16_CXTP+DUT_GPIO17_I2CSEL"; }
+}
+PinGroup dut_digital_grp1_pins {
+	Group = Expr { String = "dut_all_gpio_pins+DUT_X1"; }
+}
+PinGroup fpga_pattern_pins {
+	Group = Expr { String = "FPGA_SDIN+FPGA_CSB+FPGA_SCLK+FPGA_SDOUT"; }
+}
+PinGroup dut_digital_grp2_pins {
+	Group = Expr { String = "DUT_ERRB_LFLTB_INTOUTB+DUT_LOCK+DUT_SCL_TX+DUT_SDA_RX"; }
+}
+PinGroup dut_gpio_even_pins {
+	Group = Expr { String = "DUT_GPIO00+DUT_GPIO02_MS+DUT_GPIO04+DUT_GPIO06_RO_SS2+DUT_GPIO08_MOSI+DUT_GPIO09_SCLK+DUT_SCK_GPIO11+DUT_SDOR_GPIO13_ADD0+DUT_GPIO16_CXTP"; }
+}
+PinGroup dut_gpio_odd_pins {
+	Group = Expr { String = "DUT_GPIO01+DUT_GPIO03_RCLKOUT_RCLKEN+DUT_GPIO05_BNE_SS1+DUT_GPIO07_MISO+DUT_WS_GPIO10+DUT_SD_GPIO12+DUT_SCKOR_GPIO14_ADD1+DUT_WSOR_GPIO15_ADD2+DUT_GPIO17_I2CSEL"; }
+}
+PinGroup dut_IIL_even_pins {
+	Group = Expr { String = "DUT_GPIO00+DUT_GPIO02_MS+DUT_GPIO04+DUT_GPIO06_RO_SS2+DUT_GPIO08_MOSI+DUT_GPIO09_SCLK+DUT_SCK_GPIO11+DUT_SDOR_GPIO13_ADD0+DUT_GPIO16_CXTP+DUT_RXC_P+DUT_RX0_N+DUT_RX1_N+DUT_RX2_N+DUT_LMN1A+DUT_LMN1B+DUT_HSPD+DUT_SDA_RX+DUT_ERRB_LFLTB_INTOUTB+DUT_DDCSDA+DUT_X2+DUT_XRES"; }
+}
+PinGroup dut_IIL_odd_pins {
+	Group = Expr { String = "DUT_GPIO01+DUT_GPIO03_RCLKOUT_RCLKEN+DUT_GPIO05_BNE_SS1+DUT_GPIO07_MISO+DUT_WS_GPIO10+DUT_SD_GPIO12+DUT_SCKOR_GPIO14_ADD1+DUT_WSOR_GPIO15_ADD2+DUT_GPIO17_I2CSEL+DUT_RXC_N+DUT_RX0_P+DUT_RX1_P+DUT_RX2_P+DUT_LMN0A+DUT_LMN0B+DUT_X1+DUT_PWDNB+DUT_SCL_TX+DUT_DDCSCL+DUT_LOCK+DUT_HPD+DUT_CMU_CAP+DUT_NC_GMSL2B"; }
+}
+PinGroup dut_IIH_even_vddio_pins {
+	Group = Expr { String = "DUT_GPIO00+DUT_GPIO02_MS+DUT_GPIO04+DUT_GPIO06_RO_SS2+DUT_GPIO08_MOSI+DUT_GPIO09_SCLK+DUT_SCK_GPIO11+DUT_SDOR_GPIO13_ADD0+DUT_GPIO16_CXTP+DUT_HSPD+DUT_SDA_RX+DUT_ERRB_LFLTB_INTOUTB+DUT_DDCSDA"; }
+}
+PinGroup dut_IIH_odd_vddio_pins {
+	Group = Expr { String = "DUT_GPIO01+DUT_GPIO03_RCLKOUT_RCLKEN+DUT_GPIO05_BNE_SS1+DUT_GPIO07_MISO+DUT_WS_GPIO10+DUT_SD_GPIO12+DUT_SCKOR_GPIO14_ADD1+DUT_WSOR_GPIO15_ADD2+DUT_GPIO17_I2CSEL+DUT_NC_GMSL2B+DUT_SCL_TX+DUT_DDCSCL+DUT_LOCK+DUT_HPD"; }
+}
+PinGroup dut_IIH_even_vdd33_pins {
+	Group = Expr { String = "DUT_RXC_P+DUT_RX0_N+DUT_RX1_N+DUT_RX2_N"; }
+}
+PinGroup dut_IIH_odd_vdd33_pins {
+	Group = Expr { String = "DUT_RXC_N+DUT_RX0_P+DUT_RX1_P+DUT_RX2_P"; }
+}
+PinGroup dut_IIH_even_vdd18_pins {
+	Group = Expr { String = "DUT_LMN0A+DUT_LMN0B"; }
+}
+PinGroup dut_IIH_odd_vdd18_pins {
+	Group = Expr { String = "DUT_LMN0A+DUT_LMN0B"; }
+}
+PinGroup dut_IOZL_even_pins {
+	Group = Expr { String = "DUT_GPIO00+DUT_GPIO02_MS+DUT_GPIO04+DUT_GPIO06_RO_SS2+DUT_GPIO08_MOSI+DUT_GPIO09_SCLK+DUT_SCK_GPIO11+DUT_SDOR_GPIO13_ADD0+DUT_GPIO16_CXTP+DUT_RXC_P+DUT_RX0_N+DUT_RX1_N+DUT_RX2_N+DUT_LMN1A+DUT_LMN1B+DUT_SDA_RX+DUT_DDCSDA"; }
+}
+PinGroup dut_IOZL_odd_pins {
+	Group = Expr { String = "DUT_GPIO01+DUT_GPIO03_RCLKOUT_RCLKEN+DUT_GPIO05_BNE_SS1+DUT_GPIO07_MISO+DUT_WS_GPIO10+DUT_SD_GPIO12+DUT_SCKOR_GPIO14_ADD1+DUT_WSOR_GPIO15_ADD2+DUT_GPIO17_I2CSEL+DUT_RXC_N+DUT_RX0_P+DUT_RX1_P+DUT_RX2_P+DUT_LMN0A+DUT_LMN0B+DUT_SCL_TX+DUT_DDCSCL"; }
+}
+PinGroup dut_IOZH_even_vddio_pins {
+	Group = Expr { String = "DUT_GPIO00+DUT_GPIO02_MS+DUT_GPIO04+DUT_GPIO06_RO_SS2+DUT_GPIO08_MOSI+DUT_GPIO09_SCLK+DUT_SCK_GPIO11+DUT_SDOR_GPIO13_ADD0+DUT_GPIO16_CXTP+DUT_SDA_RX+DUT_DDCSDA"; }
+}
+PinGroup dut_IOZH_odd_vddio_pins {
+	Group = Expr { String = "DUT_GPIO01+DUT_GPIO03_RCLKOUT_RCLKEN+DUT_GPIO05_BNE_SS1+DUT_GPIO07_MISO+DUT_WS_GPIO10+DUT_SD_GPIO12+DUT_SCKOR_GPIO14_ADD1+DUT_WSOR_GPIO15_ADD2+DUT_GPIO17_I2CSEL+DUT_SCL_TX+DUT_DDCSCL"; }
+}
+PinGroup dut_IOZH_even_vdd33_pins {
+	Group = Expr { String = "DUT_RXC_P+DUT_RX0_N+DUT_RX1_N+DUT_RX2_N"; }
+}
+PinGroup dut_IOZH_odd_vdd33_pins {
+	Group = Expr { String = "DUT_RXC_N+DUT_RX0_P+DUT_RX1_P+DUT_RX2_P"; }
+}
+PinGroup dut_IOZH_even_vdd18_pins {
+	Group = Expr { String = "DUT_LMN1A+DUT_LMN1B"; }
+}
+PinGroup dut_IOZH_odd_vdd18_pins {
+	Group = Expr { String = "DUT_LMN0A+DUT_LMN0B"; }
+}
+PinGroup dut_even_iil_vddio_pins {
+	Group = Expr { String = "dut_gpio_even_pins+DUT_SDA_RX+DUT_DDCSDA"; }
+}
+PinGroup dut_even_iih_vddio_pins {
+	Group = Expr { String = "dut_gpio_odd_pins+DUT_SCL_TX+DUT_DDCSCL"; }
+}
+PinGroup dut_even_iil_vdd33_pins {
+	Group = Expr { String = "DUT_SDA_RX+DUT_ERRB_LFLTB_INTOUTB+DUT_DDCSDA"; }
+}
+PinGroup dut_even_iih_vdd33_pins {
+	Group = Expr { String = "DUT_SDA_RX+DUT_ERRB_LFLTB_INTOUTB+DUT_DDCSDA"; }
+}
+PinGroup dut_open_drain_even_pins {
+	Group = Expr { String = "DUT_SDA_RX+DUT_ERRB_LFLTB_INTOUTB+DUT_DDCSDA"; }
+}
+PinGroup dut_open_drain_odd_pins {
+	Group = Expr { String = "DUT_SCL_TX+DUT_LOCK+DUT_DDCSCL"; }
+}
+PinGroup dut_sio_even_pins {
+	Group = Expr { String = "DUT_SIOA_N+DUT_SIOB_P"; }
+}
+PinGroup dut_sio_odd_pins {
+	Group = Expr { String = "DUT_SIOA_P+DUT_SIOB_N"; }
+}
+PinGroup dut_all_digital_pins {
+	Group = Expr { String = "DUT_CMU_CAP+DUT_DDCSCL+DUT_DDCSDA+DUT_ERRB_LFLTB_INTOUTB+DUT_NC_GMSL2B+DUT_GPIO00+DUT_GPIO01+DUT_GPIO02_MS+DUT_GPIO03_RCLKOUT_RCLKEN+DUT_GPIO04+DUT_GPIO05_BNE_SS1+DUT_GPIO06_RO_SS2+DUT_GPIO07_MISO+DUT_GPIO08_MOSI+DUT_GPIO09_SCLK+DUT_GPIO16_CXTP+DUT_GPIO17_I2CSEL+DUT_HPD+DUT_HSPD+DUT_LMN0A+DUT_LMN0B+DUT_LMN1A+DUT_LMN1B+DUT_LOCK+DUT_PWDNB+DUT_RX0_N+DUT_RX0_P+DUT_RX1_N+DUT_RX1_P+DUT_RX2_N+DUT_RX2_P+DUT_RXC_N+DUT_RXC_P+DUT_SCK_GPIO11+DUT_SCKOR_GPIO14_ADD1+DUT_SCL_TX+DUT_SD_GPIO12+DUT_SDA_RX+DUT_SDOR_GPIO13_ADD0+DUT_SIOA_N+DUT_SIOA_P+DUT_SIOB_N+DUT_SIOB_P+DUT_WS_GPIO10+DUT_WSOR_GPIO15_ADD2+DUT_X1+DUT_X2+DUT_XRES"; }
+}
+PinGroup dut_all_FX1_digital_pins {
+	Group = Expr { String = "DUT_CMU_CAP+DUT_DDCSCL+DUT_DDCSDA+DUT_ERRB_LFLTB_INTOUTB+DUT_NC_GMSL2B+DUT_GPIO00+DUT_GPIO01+DUT_GPIO02_MS+DUT_GPIO03_RCLKOUT_RCLKEN+DUT_GPIO04+DUT_GPIO05_BNE_SS1+DUT_GPIO06_RO_SS2+DUT_GPIO07_MISO+DUT_GPIO08_MOSI+DUT_GPIO16_CXTP+DUT_GPIO17_I2CSEL+DUT_HPD+DUT_HSPD+DUT_LOCK+DUT_PWDNB+DUT_SCK_GPIO11+DUT_SCKOR_GPIO14_ADD1+DUT_SCL_TX+DUT_SD_GPIO12+DUT_SDA_RX+DUT_SDOR_GPIO13_ADD0+DUT_SIOA_N+DUT_SIOA_P+DUT_SIOB_N+DUT_SIOB_P+DUT_WS_GPIO10+DUT_WSOR_GPIO15_ADD2+DUT_X1+DUT_X2+DUT_XRES"; }
+}
+PinGroup dut_ddc_pins {
+	Group = Expr { String = "DUT_DDCSCL+DUT_DDCSDA"; }
+}
+PinGroup func_patsetup_pins {
+	Group = Expr { String = "DUT_PWDNB+DUT_X1+DUT_SDA_RX+DUT_SCL_TX+DUT_LOCK+DUT_ERRB_LFLTB_INTOUTB+DUT_GPIO17_I2CSEL+DUT_GPIO02_MS+DUT_GPIO08_MOSI+DUT_GPIO07_MISO+DUT_GPIO09_SCLK+DUT_GPIO00+DUT_GPIO01+DUT_GPIO03_RCLKOUT_RCLKEN+DUT_GPIO04+DUT_GPIO05_BNE_SS1+DUT_WS_GPIO10+DUT_SCK_GPIO11+DUT_SD_GPIO12+DUT_GPIO16_CXTP+DUT_GPIO06_RO_SS2+DUT_SDOR_GPIO13_ADD0+DUT_SCKOR_GPIO14_ADD1+DUT_WSOR_GPIO15_ADD2+DUT_DDCSDA+DUT_DDCSCL+DUT_HSPD+DUT_NC_GMSL2B+DNUT_X1+DNUT_SDA+DNUT_SCL+FPGA_CSB+FPGA_SCLK+FPGA_SDOUT+FPGA_SDIN+DUT_HPD"; }
+}
+PinGroup dut_hdmi_even_pins {
+	Group = Expr { String = "DUT_RXC_P+DUT_RX0_N+DUT_RX1_N+DUT_RX2_N"; }
+}
+PinGroup dut_hdmi_odd_pins {
+	Group = Expr { String = "DUT_RXC_N+DUT_RX0_P+DUT_RX1_P+DUT_RX2_P"; }
+}
+PinGroup dut_hdmi_pins {
+	Group = Expr { String = "dut_hdmi_even_pins+dut_hdmi_odd_pins"; }
+}
+PinGroup dut_lmn_pins {
+	Group = Expr { String = "DUT_LMN0A+DUT_LMN0B+DUT_LMN1A+DUT_LMN1B"; }
+}
+PinGroup dut_lmn_even_pins {
+	Group = Expr { String = "DUT_LMN1A+DUT_LMN1B"; }
+}
+PinGroup dut_lmn_odd_pins {
+	Group = Expr { String = "DUT_LMN0A+DUT_LMN0B"; }
+}
+PinGroup abus0_VI16_pins {
+	Group = Expr { String = "DUT_RX0N_RX1N_GPIO14_ABUS0_VI16"; }
+}
+PinGroup abus1_VI16_pins {
+	Group = Expr { String = "DUT_RX0P_RX1P_GPIO15_ABUS1_VI16"; }
+}
+PinGroup abus2_VI16_pins {
+	Group = Expr { String = "DUT_RX2N_RXCN_GPIO16_ABUS2_VI16"; }
+}
+PinGroup abus3_VI16_pins {
+	Group = Expr { String = "DUT_RX2P_RXCP_GPIO17_ABUS3_VI16"; }
+}
+PinGroup abus_VI16_pins {
+	Group = Expr { String = "DUT_RX0N_RX1N_GPIO14_ABUS0_VI16+DUT_RX0P_RX1P_GPIO15_ABUS1_VI16+DUT_RX2N_RXCN_GPIO16_ABUS2_VI16+DUT_RX2P_RXCP_GPIO17_ABUS3_VI16"; }
+}
+PinGroup abus_DP_pins {
+	Group = Expr { String = "DUT_SCKOR_GPIO14_ADD1+DUT_WSOR_GPIO15_ADD2+DUT_GPIO16_CXTP+DUT_GPIO17_I2CSEL"; }
+}
+PinGroup dut_rg_td_pins {
+	Group = Expr { String = "dut_rg_txctl+dut_rg_td3+dut_rg_td2+dut_rg_td1+dut_rg_td0"; }
+}
+PinGroup dut_hdmi_VI16_pins {
+	Group = Expr { String = "DUT_RX0N_RX1N_GPIO14_ABUS0_VI16+DUT_RX0P_RX1P_GPIO15_ABUS1_VI16+DUT_RX2N_RXCN_GPIO16_ABUS2_VI16+DUT_RX2P_RXCP_GPIO17_ABUS3_VI16"; }
+}
+PinGroup focus_cal_pins {
+	Group = Expr { String = "DUT_GPIO06_RO_SS2+DUT_GPIO08_MOSI+DUT_GPIO09_SCLK+DUT_WS_GPIO10+DUT_SCK_GPIO11+DUT_SD_GPIO12"; }
+}
+PinGroup dut_level_translator_relays {
+	Group = Expr { String = "K4_K58_GPIO_14_GPIO15_GPIO16_GPIO17__DP_LT+K6_K51_GPIO14_GPIO15_GPIO16_GPIO17__DP_VI+K50_GPIO06_GPIO07__DP_LT+K52_GPIO04_GPIO05__DP_LT+K59_GPIO08_GPIO09__DP_LT+K60_GPIO00_GPIO01__DP_LT+K61_GPIO10_GPIO11__DP_LT+K62_GPIO12_GPIO13__DP_LT+K64_GPIO02_GPIO03__DP_LT"; }
+}
+PinGroup gmsl_VI16_pins {
+	Group = Expr { String = "DUT_SIOA_N_VI16+DUT_SIOA_P_VI16+DUT_SIOB_N_VI16+DUT_SIOB_P_VI16"; }
+}

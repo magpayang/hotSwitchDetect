@@ -1,0 +1,477 @@
+enVision:"bl8:R15.7.2:S4.5";
+
+
+SubFlow Write_EEPROM_SubFlow {
+    Node[0] =     FlowNode_  {
+        XCoord = (78,53);
+        Port[0] {
+            UIFPort = 160;
+        }
+        Port[1] {
+            UIFPort = 180;
+        }
+        UIFInfo = 0;
+        TestId = "73000000";
+        Exec = Write_LB_EEPROM;
+    }
+    StartState = 0;
+}
+
+SubFlow FlowEnable_SubFlow {
+    Node[0] =     FlowNode_  {
+        XCoord = (259,121);
+        Port[0] {
+            To = 2;
+            UIFPort = 228;
+        }
+        Port[1] {
+            UIFPort = 115;
+        }
+        Port[2] {
+            To = 1;
+            UIFPort = 54;
+        }
+        Port[3] {
+            To = 4;
+            UIFPort = 166;
+        }
+        Port[4] {
+            UIFPort = 304;
+        }
+        UIFInfo = 272;
+        TestId = "60000000";
+        Exec = Enable_Testing;
+    }
+    Node[1] =     FlowNode_  {
+        XCoord = (407,30);
+        Port[0] {
+            UIFPort = 160;
+        }
+        Port[1] {
+            UIFPort = 180;
+        }
+        UIFInfo = 271;
+        TestId = "61000000";
+        Exec = Disable_Test;
+    }
+    Node[2] =     FlowNode_  {
+        XCoord = (76,243);
+        Port[0] {
+            UIFPort = 160;
+        }
+        UIFInfo = 0;
+        TestId = "";
+        PortSelect = "0";
+        PortNumber = 0;
+    }
+    Node[4] =     FlowNode_  {
+        XCoord = (310,311);
+        Port[0] {
+            UIFPort = 232;
+        }
+        Port[1] {
+            UIFPort = 181;
+        }
+        UIFInfo = 313;
+        TestId = "";
+        Exec = HW_Check;
+    }
+    StartState = 0;
+    Background {
+        String = "EnableTesting = TRUE";
+        Data = (0,0,55,332,0,0,23,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "BarcodeMatch = TRUE";
+        Data = (0,0,51,353,0,0,23,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "OpVar_FCal_Failed = TRUE";
+        Data = (0,0,504,33,0,0,26,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "BarcodeMatch = FALSE";
+        Data = (0,0,346,174,0,0,22,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "During OnLoad, FocusCal - and possibly HW Checker failed";
+        Data = (0,0,505,64,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Error message prints to screen with fail information";
+        Data = (0,0,506,88,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Setup must be fixed, and program unloaded and reloaded.";
+        Data = (0,0,504,112,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Loadboard was changed";
+        Data = (0,0,347,194,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Program must be unloaded and reloaded.";
+        Data = (0,0,348,216,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "(Loadboard matches initially installed version)";
+        Data = (0,0,589,320,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "BarcodeMatch = TRUE";
+        Data = (0,0,415,317,0,0,23,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "OpVar_Force_HWCheck = TRUE";
+        Data = (0,0,431,374,0,0,26,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "2)";
+        Data = (0,0,412,373,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Proceed to Continuity Tests";
+        Data = (0,0,49,374,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "1) FCal Passed, but HW checker failed during OnLoad or";
+        Data = (0,0,411,346,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+}
+SubFlow UsrCal_Flow {
+    Node[0] =     FlowNode_  {
+        XCoord = (240,176);
+        Port[0] {
+            To = 4;
+            UIFPort = 87;
+        }
+        Port[1] {
+            To = 1;
+            UIFPort = 45;
+        }
+        UIFInfo = 278;
+        SpecPairs {
+            Pin_Param_Spec = Expr { String = "Pin_Param_Spec.FCal_Params"; }
+            DC_Spec = Expr { String = "OpVar_LimitsCategory"; }
+        }
+        TestId = "8.1e+07";
+        Exec = LoVDD_Calibration;
+    }
+    Node[1] =     FlowNode_  {
+        XCoord = (503,181);
+        Port[0] {
+            To = 5;
+            UIFPort = 77;
+        }
+        Port[1] {
+            To = 3;
+            UIFPort = 45;
+        }
+        UIFInfo = 1;
+        SpecPairs {
+            Pin_Param_Spec = Expr { String = "Pin_Param_Spec.FCal_Params"; }
+            DC_Spec = Expr { String = "OpVar_LimitsCategory"; }
+        }
+        TestId = "8.3e+07";
+        Exec = HiVDD_Calibration;
+    }
+    Node[3] =     FlowNode_  {
+        XCoord = (797,165);
+        Port[0] {
+            UIFPort = 81;
+        }
+        UIFInfo = 308;
+        TestId = "";
+        PortSelect = "0";
+        PortNumber = 0;
+    }
+    Node[4] =     FlowNode_  {
+        XCoord = (377,173);
+        Port[0] {
+            To = 1;
+            UIFPort = 65;
+        }
+        Port[1] {
+            To = 1;
+            UIFPort = 91;
+        }
+        UIFInfo = 287;
+        TestId = "8.2e+07";
+        Exec = LoVDD_PASS;
+    }
+    Node[5] =     FlowNode_  {
+        XCoord = (643,177);
+        Port[0] {
+            To = 3;
+            UIFPort = 66;
+        }
+        Port[1] {
+            To = 3;
+            UIFPort = 97;
+        }
+        UIFInfo = 271;
+        SpecPairs {
+            Globals_Spec = Expr { String = "Globals_Spec.Globals1"; }
+        }
+        TestId = "8.4e+07";
+        Exec = HiVDD_PASS;
+    }
+    Node[6] =     FlowNode_  {
+        XCoord = (100,143);
+        Port[0] {
+            To = 0;
+            UIFPort = 173;
+        }
+        Port[1] {
+            To = 3;
+            UIFPort = 2;
+        }
+        UIFInfo = 272;
+        TestId = "8e+07";
+        Exec = Run_UsrCal_Flow;
+    }
+    StartState = 6;
+    Background {
+        String = "OpVar_RunUsrCal_Flow = TRUE";
+        Data = (0,0,25,291,0,0,23,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "OpVar_RunUsrCal_Flow = FALSE";
+        Data = (0,0,27,80,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Exit Port 1 when";
+        Data = (0,0,31,47,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Exit Port 0 when";
+        Data = (0,0,27,264,0,0,23,0,0,6,0,0,1,0,0,0);
+    }
+}
+
+OperatorVariable OpVar_FlowEnable {
+    Comment = "Conditional boolean for Production flow enable based on Checker, FCal & HWNameCheckResult";
+    Expr = Expr { String = "#"; Mode = Output; }
+    Direction = Output;
+    Value = "TRUE";
+    UserMode = Engineering;
+}
+
+OperatorVariable OpVar_FlowEnableOverride {
+    Comment = "Conditional boolean to override the ability of OpVar_FlowEnable to disable flow - Set to FALSE during OnLoad in Global_SW_Init";
+    Expr = Expr { String = "#"; Mode = Output; }
+    Direction = Output;
+    Value = "FALSE";
+    UserMode = Engineering;
+}
+OperatorVariable OpVar_FCal_Failed {
+    Comment = "Conditional boolean set in FlowEnable subflow based on FCal results - Disables testing if TRUE";
+    Expr = Expr { String = "#"; Mode = Output; }
+    Direction = Output;
+    Value = "FALSE";
+    UserMode = Engineering;
+}
+OperatorVariable Execute_Cal {
+    Comment = "Used in UsrCal flow to enable FCal TDR execution - if FALSE then stored FCal data is loaded from file";
+    Expr = Expr { String = "TRUE"; }
+    UserMode = Engineering;
+}
+
+MicroFlow Set_FlowEnable_False {
+    Event[0] {
+        Value = Expr { String = "#"; Mode = Output; }
+        Index = Expr { String = "1"; }
+        Enable = Expr { String = "TRUE"; }
+        Method {
+                MicroFlowMid = "FlowControl.mod.Set_FlowEnable_False";
+        }
+    }
+}
+
+MicroFlow Get_HW_Barcode {
+    Event[0] {
+        Value = Expr { String = "#"; Mode = Output; }
+        Index = Expr { String = "1"; }
+        Method {
+                MicroFlowMid = "FlowControl.mod.Get_LB_Barcode";
+        }
+    }
+}
+
+MicroFlow Get_HW_Name {
+    Event[0] {
+        Value = Expr { String = "#"; Mode = Output; }
+        Index = Expr { String = "1"; }
+        Method {
+                MicroFlowMid = "FlowControl.mod.Get_LB_Name";
+        }
+    }
+}
+MicroFlow Set_FCal_Flags_False {
+    Event[0] {
+        Value = Expr { String = "#"; Mode = Output; }
+        Index = Expr { String = "1"; }
+        Method {
+                MicroFlowMid = "FlowControl.mod.Set_FCal_Flags_False";
+        }
+    }
+}
+ETest Write_LB_EEPROM {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = ".Result = tm_rslt:PASS OR NOT TestProgData.evFastBinning"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = WR_LB_Data;
+        EnableExpr = Expr { String = "TRUE"; }
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_operator_prompt.mod.Write_Maxim_EEPROM";
+        }
+    }
+    evBlock[1] = {
+        Title = Check_LB_Write;
+        EnableExpr = Expr { String = "TRUE"; }
+        Value = Expr { String = "#"; Mode = Output; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_operator_prompt.mod.RW_Maxim_EEPROM_Data";
+            ReadOrWrite = Expr { String = "1"; }
+            PromNum = Expr { String = "1"; }
+            Board_HardwareRevision = Expr { String = "'A'"; }
+            Board_HardwareRevision_out = Expr { String = "#"; Mode = Output; }
+            Board_HardwareBarcode = Expr { String = "'A'"; }
+            Board_HardwareBarcode_out = Expr { String = "#"; Mode = Output; }
+            Board_HardwareName = Expr { String = "'A'"; }
+            Board_HardwareName_out = Expr { String = "#"; Mode = Output; }
+            Board_HardwareNumber = Expr { String = "0"; }
+            Board_HardwareNumber_out = Expr { String = "#"; Mode = Output; }
+        }
+    }
+}
+
+ETest Enable_Testing {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "Enable_Testing.Test1.Value AND Enable_Testing.BC_Match.Value"; }
+    PortExpr[1] = Expr { String = "NOT Enable_Testing.BC_Match.Value"; }
+    PortExpr[2] = Expr { String = "OpVar_FCal_Failed"; }
+    PortExpr[3] = Expr { String = "Enable_Testing.BC_Match.Value"; }
+    PortExpr[4] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = Set_Enable;
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "FlowControl.mod.Set_Enable_boolean";
+        }
+    }
+    evBlock[1] = {
+        Title = BC_Match;
+        Value = Expr { String = "#"; Mode = Output; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "FlowControl.mod.Check_Loadboard_ID";
+            Allow_Retry = Expr { String = "FALSE"; }
+        }
+    }
+    evBlock[2] = {
+        Title = Test1;
+        EnableExpr = Expr { String = "TRUE"; }
+        Value = Expr { String = "#"; Mode = Output; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "FlowControl.mod.Enable_Testing";
+        }
+    }
+}
+
+ETest Disable_Test {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = ".Result = tm_rslt:NO_TEST"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "FlowControl.mod.Display_Disable_Statement";
+        }
+    }
+}
+
+ETest LoVDD_PASS {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "LoVDD_PASS.LoVDD1.Value"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = LoVDD1;
+        Value = Expr { String = "#"; Mode = Output; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "FlowControl.mod.LoVDD_Testing";
+        }
+    }
+}
+ETest HiVDD_PASS {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "HiVDD_PASS.HiVDD1.Value"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    PortAction[0] = Expr { String = "FALSE->FCAL_FirstRun"; }
+    PortAction[1] = Expr { String = "FALSE->FCAL_FirstRun"; }
+    evBlock[0] = {
+        Title = HiVDD1;
+        Value = Expr { String = "#"; Mode = Output; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "FlowControl.mod.HiVDD_Testing";
+        }
+    }
+}
+
+Test LoVDD_Calibration {
+    Result = Expr { String = "#"; Mode = Output; }
+    Mask[0] = Pin_Param_Mask;
+    Mask[1] = DC_Min_Mask;
+    Entry[0] = hs87_PatSetup;
+    Entry[1] = Set_FCal_Flags_False;
+    PortExpr[0] = Expr { String = ".Result = tm_rslt:PASS"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    LoopDepth = Outside;
+    Title[0] = LoV_Cal;
+    TestMethod = Tcal;
+    Cal_enable = Expr { String = "TRUE"; }
+    Test_pins = Expr { String = "focus_cal_pins"; }
+    TcalObject = Focused_VDDL;
+    Levels_setup = FCAL_Levels;
+    Calibration_mode = Expr { String = "if (Execute_Cal,CalMode:Execute_Calibration,CalMode:Load_From_File)"; }
+    DebugAnalysis = Expr { String = "arg_switch:SWITCH_ON"; }
+    Driver_Align_Enable = Expr { String = "TRUE"; }
+    User_Load_Board_Enable = Expr { String = "TRUE"; }
+    SaveCalFile = Expr { String = "TRUE"; }
+    Flush_Driver_Cache = Expr { String = "TRUE"; }
+    Flush_Length_Cache = Expr { String = "TRUE"; }
+}
+Test HiVDD_Calibration {
+    FinderFilter = "";
+    Result = Expr { String = "#"; Mode = Output; }
+    Mask[0] = Pin_Param_Mask;
+    Mask[1] = DC_Max_Mask;
+    Entry[0] = hs87_PatSetup;
+    PortExpr[0] = Expr { String = ".Result = tm_rslt:PASS"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    LoopDepth = Outside;
+    Title[0] = HiV_Cal;
+    TestMethod = Tcal;
+    Cal_enable = Expr { String = "TRUE"; }
+    Test_pins = Expr { String = "focus_cal_pins"; }
+    TcalObject = Focused_VDDH;
+    Levels_setup = FCAL_Levels;
+    Calibration_mode = Expr { String = "if(Execute_Cal,CalMode:Execute_Calibration,CalMode:Load_From_File)"; }
+    DebugAnalysis = Expr { String = "arg_switch:SWITCH_ON"; }
+    Driver_Align_Enable = Expr { String = "TRUE"; }
+    User_Load_Board_Enable = Expr { String = "TRUE"; }
+    SaveCalFile = Expr { String = "TRUE"; }
+    Flush_Driver_Cache = Expr { String = "TRUE"; }
+    Flush_Length_Cache = Expr { String = "TRUE"; }
+}
+EVO_Calibration Focused_VDDH {
+}
+EVO_Calibration Focused_VDDL {
+}

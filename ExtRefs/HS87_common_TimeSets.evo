@@ -1,0 +1,2079 @@
+enVision:"bl8:R15.7.2:S4.5";
+TimeSet ATPG_DPLL_TS {
+    evT0 = Expr { String = "atpg_dpll_prd"; }
+    evC0 = Expr { String = "atpg_dpll_prd.Typ"; }
+    Row TSR0 {
+        evPins = Expr { String = "atpg_clock_pins"; }
+        evDrive RZ {
+            evEdge On = Expr { String = "atpg_dpll_t0.Typ"; }
+            evEdge Data = Expr { String = "atpg_dpll_c1.Typ"; }
+            evEdge Return = Expr { String = "atpg_dpll_c2.Typ"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "atpg_dpll_t0.Typ"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "atpg_control_pins-DUT_GPIO00"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "atpg_dpll_t0.Typ"; }
+            evEdge Data = Expr { String = "atpg_dpll_d1.Typ"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "atpg_dpll_t0.Typ"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "atpg_input_pins"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "atpg_dpll_t0.Typ"; }
+            evEdge Data = Expr { String = "atpg_dpll_d1.Typ"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "atpg_dpll_t0.Typ"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "atpg_output_pins"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "atpg_dpll_t0.Typ"; }
+            evEdge Data = Expr { String = "atpg_dpll_d1.Typ"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "atpg_dpll_t0.Typ"; }
+            evEdge Data = Expr { String = "atpg_dpll_s1.Typ"; }
+        }
+        evSubRow TSR3_1 {
+            evPins = Expr { String = "DUT_SD_GPIO12"; }
+            evCompare  {
+                evEdge Data = Expr { String = "atpg_dpll_s1"; }
+            }
+        }
+    }
+    Row TSR4 {
+        evPins = Expr { String = "DUT_ERRB_LFLTB_INTOUTB+DUT_LOCK+DUT_SCL_TX+DUT_SDA_RX+DUT_X1+DNUT_SCL+DNUT_SDA+DNUT_X1+DUT_DDCSCL+DUT_DDCSDA+DUT_HSPD+DUT_HPD"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR5 {
+        evPins = Expr { String = "fpga_pattern_pins"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR6 {
+        evPins = Expr { String = "DUT_GPIO00"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "04ns"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "4ns"; }
+        }
+    }
+    Row TSR7 {
+        evPins = Expr { String = "DUT_PWDNB"; }
+        evDrive PBO {
+            evEdge Precede = Expr { String = "atpg_dpll_c1.Typ"; }
+            evEdge Data = Expr { String = "atpg_dpll_c2.Typ"; }
+        }
+    }
+}
+TimeSet ATPG_TS {
+    evT0 = Expr { String = "atpg_prd"; }
+    evC0 = Expr { String = "atpg_prd.Typ"; }
+    Row TSR0 {
+        evPins = Expr { String = "atpg_clock_pins"; }
+        evDrive RZ {
+            evEdge On = Expr { String = "atpg_t0.Typ"; }
+            evEdge Data = Expr { String = "atpg_c1.Typ"; }
+            evEdge Return = Expr { String = "atpg_c2.Typ"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "atpg_t0.Typ"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "atpg_control_pins-DUT_GPIO00"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "atpg_t0.Typ"; }
+            evEdge Data = Expr { String = "atpg_d1.Typ"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "atpg_t0.Typ"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "atpg_input_pins"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "atpg_t0.Typ"; }
+            evEdge Data = Expr { String = "atpg_d1.Typ"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "atpg_t0.Typ"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "atpg_output_pins"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "atpg_t0.Typ"; }
+            evEdge Data = Expr { String = "atpg_d1.Typ"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "atpg_t0.Typ"; }
+            evEdge Data = Expr { String = "atpg_s1.Typ"; }
+        }
+        evSubRow TSR3_0 {
+            evPins = Expr { String = "DUT_SCK_GPIO11"; }
+            evCompare  {
+                evEdge Data = Expr { String = "atpg_s2.Typ"; }
+            }
+        }
+    }
+    Row TSR4 {
+        evPins = Expr { String = "DUT_ERRB_LFLTB_INTOUTB+DUT_LOCK+DUT_SCL_TX+DUT_SDA_RX+DUT_X1+DNUT_SCL+DNUT_SDA+DNUT_X1+DUT_DDCSCL+DUT_DDCSDA+DUT_HSPD+DUT_HPD"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR5 {
+        evPins = Expr { String = "fpga_pattern_pins"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR7_0 {
+        evPins = Expr { String = "DUT_GPIO00"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "04ns"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "4ns"; }
+        }
+    }
+    Row TSR8 {
+        evPins = Expr { String = "DUT_PWDNB"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+}
+TimeSet ATPG_NOCOMP_TS {
+    evT0 = Expr { String = "atpg_nocomp_prd"; }
+    evC0 = Expr { String = "atpg_nocomp_prd.Typ"; }
+    Row TSR0 {
+        evPins = Expr { String = "atpg_clock_pins"; }
+        evDrive RZ {
+            evEdge On = Expr { String = "atpg_nocomp_t0.Typ"; }
+            evEdge Data = Expr { String = "atpg_nocomp_c1.Typ"; }
+            evEdge Return = Expr { String = "atpg_nocomp_c2.Typ"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "atpg_nocomp_t0.Typ"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "atpg_control_pins-DUT_GPIO00"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "atpg_nocomp_t0.Typ"; }
+            evEdge Data = Expr { String = "atpg_nocomp_d1.Typ"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "atpg_nocomp_t0.Typ"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "atpg_input_pins"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "atpg_nocomp_t0.Typ"; }
+            evEdge Data = Expr { String = "atpg_nocomp_d1.Typ"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "atpg_nocomp_t0.Typ"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "atpg_output_pins"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "atpg_nocomp_t0.Typ"; }
+            evEdge Data = Expr { String = "atpg_nocomp_d1.Typ"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "atpg_nocomp_t0.Typ"; }
+            evEdge Data = Expr { String = "atpg_nocomp_s1.Typ"; }
+        }
+        evSubRow TSR3_0 {
+            evPins = Expr { String = "DUT_SCK_GPIO11"; }
+            evCompare  {
+                evEdge Data = Expr { String = "atpg_nocomp_s2.Typ"; }
+            }
+        }
+    }
+    Row TSR4 {
+        evPins = Expr { String = "DUT_ERRB_LFLTB_INTOUTB+DUT_LOCK+DUT_SCL_TX+DUT_SDA_RX+DUT_X1+DNUT_SCL+DNUT_SDA+DNUT_X1+DUT_DDCSCL+DUT_DDCSDA+DUT_HSPD+DUT_HPD"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR5 {
+        evPins = Expr { String = "fpga_pattern_pins"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR7_0 {
+        evPins = Expr { String = "DUT_GPIO00"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "04ns"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "4ns"; }
+        }
+    }
+    Row TSR8 {
+        evPins = Expr { String = "DUT_PWDNB"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+}
+TimeSet DNUT_TS {
+    evT0 = Expr { String = "1000ns"; }
+    evC0 = Expr { String = "1000ns"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SDA_RX-DNUT_SDA+DUT_DDCSCL+DUT_DDCSDA+DUT_HPD+DUT_HSPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "300ns"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SDA_RX+DNUT_SDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "165ns"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "312ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive RZ {
+            evEdge Data = Expr { String = "5ns"; }
+            evEdge Return = Expr { String = "15ns"; }
+        }
+        evSubRow TSR2_0 {
+            evPins = Expr { String = "DUT_RXC_P"; }
+            evDrive RZ {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+        evSubRow TSR2_1 {
+            evPins = Expr { String = "DUT_RXC_N"; }
+            evDrive RO {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_LMN0A+DUT_LMN0B+DUT_LMN1A+DUT_LMN1B"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet FPGA_TS {
+    evT0 = Expr { String = "100ns"; }
+    evC0 = Expr { String = "100ns"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-FPGA_SCLK+DUT_HPD"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "50ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "FPGA_SCLK"; }
+        evDrive RZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "25ns"; }
+            evEdge Return = Expr { String = "75ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive RZ {
+            evEdge Data = Expr { String = "5ns"; }
+            evEdge Return = Expr { String = "15ns"; }
+        }
+        evSubRow TSR2_0 {
+            evPins = Expr { String = "DUT_RXC_P"; }
+            evDrive RZ {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+        evSubRow TSR2_1 {
+            evPins = Expr { String = "DUT_RXC_N"; }
+            evDrive RO {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_LMN0A+DUT_LMN0B+DUT_LMN1A+DUT_LMN1B"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet I2C_ACK {
+    evT0 = Expr { String = "I2C_Period"; }
+    evC0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.7"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "0ns"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.8"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet I2C_ACK_FT {
+    evT0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.5"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "I2C_tvdack/2.0-50ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet I2C_CLK_LOW_FT {
+    evT0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "I2C_scl_pulse_L/2.0"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "5ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet I2C_DATA1 {
+    evT0 = Expr { String = "I2C_Period"; }
+    evC0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.7"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "10ns"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.8"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "1ns"; }
+        }
+    }
+}
+TimeSet I2C_DATA1_FT {
+    evT0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0-I2C_scl_pulse_H/2.0"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0-I2C_scl_pulse_H/2.0-I2C_dat_setup"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet I2C_DATA2 {
+    evT0 = Expr { String = "I2C_Period"; }
+    evC0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0/2.0"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "I2C_Period-10ns"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.5"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "1ns"; }
+        }
+    }
+}
+TimeSet I2C_DATA2_FT {
+    evT0 = Expr { String = "I2C_Period"; }
+    Row TSR0I2C_Period {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "I2C_scl_pulse_H/2.0"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "I2C_scl_pulse_H/2.0+I2C_dat_hold"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet I2C_DDC_STA {
+    evT0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.5"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.1"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet I2C_DDC_TBUF {
+    evT0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = ".T0/2.0"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive RZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0uS"; }
+            evEdge Return = Expr { String = ".T0/2.0"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet I2C_DDC_TBUF1 {
+    evT0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = ".T0/2.0"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive RZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "0ns"; }
+            evEdge Return = Expr { String = ".T0/2.0"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet I2C_GENERIC_TS {
+    evT0 = Expr { String = "1uS"; }
+    evC0 = Expr { String = "1uS"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DNUT_SCL-DNUT_SDA+DUT_HPD"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DNUT_SCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = ".T0*0.5"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DNUT_SDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = ".T0*.01"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = ".T0*0.5+35ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive RZ {
+            evEdge Data = Expr { String = "12.5ns"; }
+            evEdge Return = Expr { String = "37.5ns"; }
+        }
+    }
+}
+TimeSet I2C_HIGH {
+    evT0 = Expr { String = "I2C_Period"; }
+    evC0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.7"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "10ns"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.8"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "1ns"; }
+        }
+    }
+}
+TimeSet I2C_LOW {
+    evT0 = Expr { String = "I2C_Period"; }
+    evC0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0/2.0"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "I2C_Period-10ns"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.5"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "1ns"; }
+        }
+    }
+}
+TimeSet I2C_PRE_ACK_FT {
+    evT0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0-I2C_tvdack/2.0-50ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0-I2C_tvdack/2.0-25ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet I2C_PRE_CLK_LOW_FT {
+    evT0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0-I2C_scl_pulse_L/2"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "I2C_Period-5ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet I2C_RPSTA {
+    evT0 = Expr { String = "I2C_Period"; }
+    evC0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive RZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.25"; }
+            evEdge Return = Expr { String = ".T0*0.9"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.6"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "1ns"; }
+        }
+    }
+}
+TimeSet I2C_RPSTA_FT {
+    evT0 = Expr { String = "I2C_Period
+"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive RZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = ".T0*0.1"; }
+            evEdge Return = Expr { String = ".T0*0.9"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.1+I2C_re_st_setup"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet I2C_SPIKE {
+    evT0 = Expr { String = "I2C_Period"; }
+    evC0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0/2.0"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive RZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.6 "; }
+            evEdge Return = Expr { String = ".T0*0.6+1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "1ns"; }
+        }
+    }
+}
+TimeSet I2C_SPIKE_FT {
+    evT0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0/2.0"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive RZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.57"; }
+            evEdge Return = Expr { String = ".T0*0.57+I2C_tspike"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet I2C_STA {
+    evT0 = Expr { String = "I2C_Period"; }
+    evC0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0/2.0"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "1ns"; }
+        }
+    }
+}
+TimeSet I2C_STA_HOLD_FT {
+    evT0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "I2C_st_hold"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0S"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet I2C_STO {
+    evT0 = Expr { String = "I2C_Period"; }
+    evC0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.25"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.75"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "1ns"; }
+        }
+    }
+}
+TimeSet I2C_STO_FT {
+    evT0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0-I2C_tbuf/4-I2C_stop_setup"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0-I2C_tbuf/4"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet I2C_STO1 {
+    evT0 = Expr { String = "I2C_Period"; }
+    evC0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.5"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.25"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "1ns"; }
+        }
+    }
+}
+TimeSet I2C_STO1_FT {
+    evT0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0-I2C_tbuf/4"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "1ns"; }
+        }
+    }
+}
+TimeSet I2C_STRETCH {
+    evT0 = Expr { String = "1uS"; }
+    evC0 = Expr { String = "1uS"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DNUT_SCL-DNUT_SDA+DUT_DDCSCL+DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_SDA_RX+DNUT_SCL+DNUT_SDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "1ns"; }
+        }
+    }
+}
+TimeSet I2C_STRETCH_TS {
+    evT0 = Expr { String = "1us"; }
+    evC0 = Expr { String = "1us"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DNUT_SCL-DNUT_SDA+DUT_DDCSCL+DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_SDA_RX+DNUT_SCL+DNUT_SDA"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "200ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive RZ {
+            evEdge Data = Expr { String = "5ns"; }
+            evEdge Return = Expr { String = "15ns"; }
+        }
+        evSubRow TSR2_0 {
+            evPins = Expr { String = "DUT_RXC_P"; }
+            evDrive RZ {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+        evSubRow TSR2_1 {
+            evPins = Expr { String = "DUT_RXC_N"; }
+            evDrive RO {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "dut_lmn_pins"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0s"; }
+        }
+    }
+}
+TimeSet I2C_TBUF_FT {
+    evT0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX+DUT_DDCSCL+DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "I2C_tbuf*3/4"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = ".T0*0.8"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet I2S_Write_TS {
+    evT0 = Expr { String = "160ns"; }
+    evC0 = Expr { String = "160ns"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCK_GPIO11"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = ".T0*0.5"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCK_GPIO11"; }
+        evDrive RZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = ".T0*0.50"; }
+            evEdge Return = Expr { String = ".T0"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0s"; }
+        }
+    }
+}
+TimeSet REGSEND_TS {
+    evT0 = Expr { String = "REGACC_WritePrd.Typ"; }
+    evC0 = Expr { String = "REGACC_WritePrd.Typ"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins+DUT_DDCSCL+DUT_DDCSDA+DUT_HPD+DUT_HSPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "REGACC_DriveOn.Typ"; }
+            evEdge Data = Expr { String = "REGACC_Drive1.Typ"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "REGACC_Strobe1.Typ"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive RZ {
+            evEdge Data = Expr { String = "5ns"; }
+            evEdge Return = Expr { String = "15ns"; }
+        }
+        evSubRow TSR1_0 {
+            evPins = Expr { String = "DUT_RXC_P"; }
+            evDrive RZ {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+        evSubRow TSR1_1 {
+            evPins = Expr { String = "DUT_RXC_N"; }
+            evDrive RO {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "dut_lmn_pins"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0s"; }
+        }
+    }
+}
+TimeSet REGSEND_noFPGA_TS {
+    evT0 = Expr { String = "REGACC_WritePrd.Typ"; }
+    evC0 = Expr { String = "REGACC_WritePrd.Typ"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins+DUT_DDCSCL+DUT_DDCSDA+DUT_HPD+DUT_HSPD+DUT_NC_GMSL2B-FPGA_SDIN-FPGA_CSB-FPGA_SCLK-FPGA_SDOUT"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "REGACC_DriveOn.Typ"; }
+            evEdge Data = Expr { String = "REGACC_Drive1.Typ"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "REGACC_Strobe1.Typ"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive RZ {
+            evEdge Data = Expr { String = "5ns"; }
+            evEdge Return = Expr { String = "15ns"; }
+        }
+        evSubRow TSR1_0 {
+            evPins = Expr { String = "DUT_RXC_P"; }
+            evDrive RZ {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+        evSubRow TSR1_1 {
+            evPins = Expr { String = "DUT_RXC_N"; }
+            evDrive RO {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "dut_lmn_pins"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0s"; }
+        }
+    }
+}
+TimeSet RGMII_10M_TS {
+    evT0 = Expr { String = "100ns"; }
+    evC0 = Expr { String = "100ns"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins+DUT_DDCSCL+DUT_DDCSDA+DUT_HPD+DUT_HSPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "REGACC_DriveOn.Typ"; }
+            evEdge Data = Expr { String = "REGACC_Drive1.Typ"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "REGACC_Strobe1.Typ"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive RZ {
+            evEdge Data = Expr { String = "5ns"; }
+            evEdge Return = Expr { String = "15ns"; }
+        }
+    }
+}
+TimeSet RGMII_100M_TS {
+    evT0 = Expr { String = "100ns"; }
+    evC0 = Expr { String = "100ns"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins+DUT_DDCSCL+DUT_DDCSDA+DUT_HPD+DUT_HSPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "REGACC_DriveOn.Typ"; }
+            evEdge Data = Expr { String = "REGACC_Drive1.Typ"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "REGACC_Strobe1.Typ"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive RZ {
+            evEdge Data = Expr { String = "5ns"; }
+            evEdge Return = Expr { String = "15ns"; }
+        }
+    }
+}
+TimeSet RGMII_1000M_TS {
+    evT0 = Expr { String = "100ns"; }
+    evC0 = Expr { String = "100ns"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins+DUT_DDCSCL+DUT_DDCSDA+DUT_HPD+DUT_HSPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "REGACC_DriveOn.Typ"; }
+            evEdge Data = Expr { String = "REGACC_Drive1.Typ"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "REGACC_Strobe1.Typ"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive RZ {
+            evEdge Data = Expr { String = "5ns"; }
+            evEdge Return = Expr { String = "15ns"; }
+        }
+    }
+}
+TimeSet SPI_Search_TS {
+    evT0 = Expr { String = "40ns"; }
+    evC0 = Expr { String = "1us"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_GPIO08_MOSI-DUT_GPIO09_SCLK"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_GPIO08_MOSI"; }
+        evDrive RZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+            evEdge Return = Expr { String = ".T0*0.9"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_GPIO09_SCLK"; }
+        evDrive RZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = ".T0*0.4"; }
+            evEdge Return = Expr { String = ".T0*0.75"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0s"; }
+        }
+    }
+}
+TimeSet SPI_TS {
+    evT0 = Expr { String = "40ns"; }
+    evC0 = Expr { String = "1us"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_GPIO08_MOSI-DUT_GPIO09_SCLK"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_GPIO08_MOSI"; }
+        evDrive RZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+            evEdge Return = Expr { String = ".T0*0.9"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_GPIO09_SCLK"; }
+        evDrive RZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = ".T0*0.4"; }
+            evEdge Return = Expr { String = ".T0*0.75"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0s"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0s"; }
+        }
+    }
+}
+TimeSet TBUF {
+    evT0 = Expr { String = "I2C_Period"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins-DUT_SCL_TX-DUT_SDA_RX-DUT_DDCSCL-DUT_DDCSDA+DUT_HSPD+DUT_HPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "1ns"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_SCL_TX+DUT_DDCSCL"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = ".T0/2.0"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "DUT_SDA_RX+DUT_DDCSDA"; }
+        evDrive RZ {
+            evEdge On = Expr { String = "0ns"; }
+            evEdge Data = Expr { String = "0ns"; }
+            evEdge Return = Expr { String = ".T0/2.0"; }
+        }
+        evCompare Mask {
+            evEdge Off = Expr { String = "0ns"; }
+        }
+    }
+    Row TSR3 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0ns"; }
+        }
+    }
+}
+TimeSet TESTMODE_DEL_TS {
+    evT0 = Expr { String = "1us"; }
+    evC0 = Expr { String = "1us"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "500ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0s"; }
+        }
+    }
+}
+TimeSet TESTMODE_TS {
+    evT0 = Expr { String = "1us"; }
+    evC0 = Expr { String = "1us"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins+DUT_DDCSCL+DUT_DDCSDA+DUT_HPD+DUT_HSPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "500ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive RZ {
+            evEdge Data = Expr { String = "5ns"; }
+            evEdge Return = Expr { String = "15ns"; }
+        }
+        evSubRow TSR1_0 {
+            evPins = Expr { String = "DUT_RXC_P"; }
+            evDrive RZ {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+        evSubRow TSR1_1 {
+            evPins = Expr { String = "DUT_RXC_N"; }
+            evDrive RO {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "dut_lmn_pins"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0s"; }
+        }
+    }
+}
+TimeSet TESTMODE_noFPGA_TS {
+    evT0 = Expr { String = "1us"; }
+    evC0 = Expr { String = "1us"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins+DUT_DDCSCL+DUT_DDCSDA+DUT_HPD+DUT_HSPD+DUT_NC_GMSL2B-FPGA_SDIN-FPGA_CSB-FPGA_SCLK-FPGA_SDOUT"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "0s"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "500ns"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive RZ {
+            evEdge Data = Expr { String = "5ns"; }
+            evEdge Return = Expr { String = "15ns"; }
+        }
+        evSubRow TSR1_0 {
+            evPins = Expr { String = "DUT_RXC_P"; }
+            evDrive RZ {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+        evSubRow TSR1_1 {
+            evPins = Expr { String = "DUT_RXC_N"; }
+            evDrive RO {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "dut_lmn_pins"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "0s"; }
+        }
+    }
+}
+TimeSet UART_READ_TS {
+    evT0 = Expr { String = "REGACC_ReadPrd.Typ"; }
+    evC0 = Expr { String = "REGACC_ReadPrd.Typ"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins+DUT_DDCSCL+DUT_DDCSDA+DUT_HPD+DUT_HSPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "REGACC_DriveOn.Typ"; }
+            evEdge Data = Expr { String = "REGACC_Drive1.Typ"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "REGACC_Strobe1.Typ"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive RZ {
+            evEdge Data = Expr { String = "5ns"; }
+            evEdge Return = Expr { String = "15ns"; }
+        }
+        evSubRow TSR1_0 {
+            evPins = Expr { String = "DUT_RXC_P"; }
+            evDrive RZ {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+        evSubRow TSR1_1 {
+            evPins = Expr { String = "DUT_RXC_N"; }
+            evDrive RO {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "dut_lmn_pins"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "REGACC_DriveOn.Typ"; }
+        }
+    }
+}
+TimeSet UART_READ_noFPGA_TS {
+    evT0 = Expr { String = "REGACC_ReadPrd.Typ"; }
+    evC0 = Expr { String = "REGACC_ReadPrd.Typ"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins+DUT_DDCSCL+DUT_DDCSDA+DUT_HPD+DUT_HSPD+DUT_NC_GMSL2B-FPGA_SDIN-FPGA_CSB-FPGA_SCLK-FPGA_SDOUT"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "REGACC_DriveOn.Typ"; }
+            evEdge Data = Expr { String = "REGACC_Drive1.Typ"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "REGACC_Strobe1.Typ"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive RZ {
+            evEdge Data = Expr { String = "5ns"; }
+            evEdge Return = Expr { String = "15ns"; }
+        }
+        evSubRow TSR1_0 {
+            evPins = Expr { String = "DUT_RXC_P"; }
+            evDrive RZ {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+        evSubRow TSR1_1 {
+            evPins = Expr { String = "DUT_RXC_N"; }
+            evDrive RO {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "dut_lmn_pins"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "REGACC_DriveOn.Typ"; }
+        }
+    }
+}
+TimeSet UART_WRITE_TS {
+    evT0 = Expr { String = "REGACC_WritePrd.Typ"; }
+    evC0 = Expr { String = "REGACC_WritePrd.Typ"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins+DUT_DDCSCL+DUT_DDCSDA+DUT_HPD+DUT_HSPD+DUT_NC_GMSL2B"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "REGACC_DriveOn.Typ"; }
+            evEdge Data = Expr { String = "REGACC_Drive1.Typ"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "REGACC_Strobe1.Typ"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive RZ {
+            evEdge Data = Expr { String = "5ns"; }
+            evEdge Return = Expr { String = "15ns"; }
+        }
+        evSubRow TSR1_0 {
+            evPins = Expr { String = "DUT_RXC_P"; }
+            evDrive RZ {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+        evSubRow TSR1_1 {
+            evPins = Expr { String = "DUT_RXC_N"; }
+            evDrive RO {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "dut_lmn_pins"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "REGACC_DriveOn.Typ"; }
+        }
+    }
+}
+TimeSet UART_WRITE_noFPGA_TS {
+    evT0 = Expr { String = "REGACC_WritePrd.Typ"; }
+    evC0 = Expr { String = "REGACC_WritePrd.Typ"; }
+    Row TSR0 {
+        evPins = Expr { String = "func_patsetup_pins+DUT_DDCSCL+DUT_DDCSDA+DUT_HPD+DUT_HSPD+DUT_NC_GMSL2B-FPGA_SDIN-FPGA_CSB-FPGA_SCLK-FPGA_SDOUT"; }
+        evDrive NRZ {
+            evEdge On = Expr { String = "REGACC_DriveOn.Typ"; }
+            evEdge Data = Expr { String = "REGACC_Drive1.Typ"; }
+        }
+        evCompare Edge {
+            evEdge Off = Expr { String = "0s"; }
+            evEdge Data = Expr { String = "REGACC_Strobe1.Typ"; }
+        }
+    }
+    Row TSR1 {
+        evPins = Expr { String = "DUT_RXC_P+DUT_RXC_N"; }
+        evDrive RZ {
+            evEdge Data = Expr { String = "5ns"; }
+            evEdge Return = Expr { String = "15ns"; }
+        }
+        evSubRow TSR1_0 {
+            evPins = Expr { String = "DUT_RXC_P"; }
+            evDrive RZ {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+        evSubRow TSR1_1 {
+            evPins = Expr { String = "DUT_RXC_N"; }
+            evDrive RO {
+                evEdge Data = Expr { String = "5ns"; }
+                evEdge Return = Expr { String = "15ns"; }
+            }
+        }
+    }
+    Row TSR2 {
+        evPins = Expr { String = "dut_lmn_pins"; }
+        evDrive NRZ {
+            evEdge Data = Expr { String = "REGACC_DriveOn.Typ"; }
+        }
+    }
+}

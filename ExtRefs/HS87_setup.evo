@@ -1,0 +1,782 @@
+enVision:"bl8:R15.7.2:S4.5";
+
+Spec DC_Spec {
+    Category QA_COLD {
+        Inherit QA_ROOM;
+        VDDC.Min = "0.95V";
+        VDDC.Typ = "1.0V";
+        VDDC.Max = "1.05V";
+        VDDA.Min = "950mV";
+        VDDA.Typ = "1.0V";
+        VDDA.Max = "1.05V";
+        VDD18.Min = "1.7V";
+        VDD18.Typ = "1.8V";
+        VDD18.Max = "1.9V";
+        VDDIO.Min = "1.7V";
+        VDDIO.Typ = "3.3V";
+        VDDIO.Max = "3.6V";
+        VDD33.Min = "3.13V";
+        VDD33.Typ = "3.3V";
+        VDD33.Max = "3.47V";
+        VDDIO25.Min = "1.7V";
+        VDDIO25.Typ = "2.5V";
+        VDDIO25.Max = "3.6V";
+    }
+    Category FT_COLD {
+        Inherit QA_ROOM;
+        VDDC.Min = "0.95V-10mV";
+        VDDC.Typ = "1.0V";
+        VDDC.Max = "1.05V+10mV";
+        VDDA.Min = "950mV-10mV";
+        VDDA.Typ = "1.0V";
+        VDDA.Max = "1.05V+10mV";
+        VDD18.Min = "1.7V-10mV";
+        VDD18.Typ = "1.8V";
+        VDD18.Max = "1.9V+10mV";
+        VDDIO.Min = "1.7V-10mV";
+        VDDIO.Typ = "3.3V";
+        VDDIO.Max = "3.6V+10mV";
+        VDD33.Min = "3.13V-10mV";
+        VDD33.Typ = "3.3V";
+        VDD33.Max = "3.47V+10mV";
+        VDDIO25.Min = "1.7V-10mV";
+        VDDIO25.Typ = "2.5V";
+        VDDIO25.Max = "3.6V+10mV";
+    }
+    Category QA_ROOM {
+        VDDC.Min = "0.95V";
+        VDDC.Typ = "1.0V";
+        VDDC.Max = "1.05V";
+        VDDA.Min = "950mV";
+        VDDA.Typ = "1.0V";
+        VDDA.Max = "1.05V";
+        VDD18.Min = "1.7V";
+        VDD18.Typ = "1.8V";
+        VDD18.Max = "1.9V";
+        VDDIO.Min = "1.7V";
+        VDDIO.Typ = "3.3V";
+        VDDIO.Max = "3.6V";
+        VDD33.Min = "3.13V";
+        VDD33.Typ = "3.3V";
+        VDD33.Max = "3.47V";
+        VDDIO25.Min = "1.7V";
+        VDDIO25.Typ = "2.5V";
+        VDDIO25.Max = "3.6V";
+        VIL = "0V";
+        VIH = "VDDIO";
+        VOH = "VDDIO*0.5";
+        VOL = "VDDIO*0.5";
+        VTERM = "VDDIO*0.5";
+        IOL = "0uA";
+        IOH = "0uA";
+    }
+    Category FT_ROOM {
+        Inherit QA_ROOM;
+        VDDC.Min = "0.95V-10mV";
+        VDDC.Typ = "1.0V";
+        VDDC.Max = "1.05V+10mV";
+        VDDA.Min = "950mV-10mV";
+        VDDA.Typ = "1.0V";
+        VDDA.Max = "1.05V+10mV";
+        VDD18.Min = "1.7V-10mV";
+        VDD18.Typ = "1.8V";
+        VDD18.Max = "1.9V+10mV";
+        VDDIO.Min = "1.7V-10mV";
+        VDDIO.Typ = "3.3V";
+        VDDIO.Max = "3.6V+10mV";
+        VDD33.Min = "3.13V-10mV";
+        VDD33.Typ = "3.3V";
+        VDD33.Max = "3.47V+10mV";
+        VDDIO25.Min = "1.7V-10mV";
+        VDDIO25.Typ = "2.5V";
+        VDDIO25.Max = "3.6V+10mV";
+    }
+    Category QA_HOT {
+        Inherit QA_ROOM;
+        VDDC.Min = "0.95V";
+        VDDC.Typ = "1.0V";
+        VDDC.Max = "1.05V";
+        VDDA.Min = "950mV";
+        VDDA.Typ = "1.0V";
+        VDDA.Max = "1.05V";
+        VDD18.Min = "1.7V";
+        VDD18.Typ = "1.8V";
+        VDD18.Max = "1.9V";
+        VDDIO.Min = "1.7V";
+        VDDIO.Typ = "3.3V";
+        VDDIO.Max = "3.6V";
+        VDD33.Min = "3.13V";
+        VDD33.Typ = "3.3V";
+        VDD33.Max = "3.47V";
+        VDDIO25.Min = "1.7V";
+        VDDIO25.Typ = "2.5V";
+        VDDIO25.Max = "3.6V";
+    }
+    Category FT_HOT {
+        Inherit QA_ROOM;
+        VDDC.Min = "0.95V-10mV";
+        VDDC.Typ = "1.0V";
+        VDDC.Max = "1.05V+10mV";
+        VDDA.Min = "950mV-10mV";
+        VDDA.Typ = "1.0V";
+        VDDA.Max = "1.05V+10mV";
+        VDD18.Min = "1.7V-10mV";
+        VDD18.Typ = "1.8V";
+        VDD18.Max = "1.9V+10mV";
+        VDDIO.Min = "1.7V-10mV";
+        VDDIO.Typ = "3.3V";
+        VDDIO.Max = "3.6V+10mV";
+        VDD33.Min = "3.13V-10mV";
+        VDD33.Typ = "3.3V";
+        VDD33.Max = "3.47V+10mV";
+        VDDIO25.Min = "1.7V-10mV";
+        VDDIO25.Typ = "2.5V";
+        VDDIO25.Max = "3.6V+10mV";
+    }
+    Category DVDD_MIN {
+        AVDD.Min = "AVDD.Typ-0.25V";
+        AVDD.Typ = "1.8V";
+        AVDD.Max = "AVDD.Typ+0.25V";
+        DVDD.Min = "DVDD.Typ-0.25V";
+        DVDD.Typ = "1.8V";
+        DVDD.Max = "DVDD.Typ+0.25V";
+        VIL = "0V";
+        VIH = "DVDD";
+        VOH = "1.7V";
+        VOL = "1.3V";
+        VTERM = "1.5V";
+        IOL = "0.125mA";
+        IOH = "-0.125mA";
+        VClampLo = "-300mV";
+        VClampHi = "DVDD+625mV";
+    }
+    Category POWERDOWN {
+        AVDD.Min = "0V";
+        AVDD.Typ = "0V";
+        AVDD.Max = "0V";
+        DVDD.Min = "0V";
+        DVDD.Typ = "0V";
+        DVDD.Max = "0V";
+        VIL.Min = "0V";
+        VIL.Typ = "0V";
+        VIL.Max = "0V";
+        VIH.Min = "0V";
+        VIH.Typ = "50mV";
+        VIH.Max = "0V";
+        VOH.Min = "0V";
+        VOH.Typ = "0V";
+        VOH.Max = "0V";
+        VOL.Min = "0V";
+        VOL.Typ = "0V";
+        VOL.Max = "0V";
+        VTERM.Min = "0V";
+        VTERM.Typ = "0V";
+        VTERM.Max = "0V";
+        IOL.Min = "0A";
+        IOL.Typ = "0A";
+        IOL.Max = "0A";
+        IOH.Min = "0A";
+        IOH.Typ = "0A";
+        IOH.Max = "0A";
+        VClampLo = "-300mV";
+        VClampHi = "VClampLo+1260mV";
+    }
+    Category DVDD_FCAL {
+        AVDD.Min = "1.8V";
+        AVDD.Max = "3.6V";
+        DVDD.Min = "1.8V";
+        DVDD.Max = "3.6V";
+        VIL = "0V";
+        VIH = "DVDD";
+        VOH = "DVDD/2+100mV";
+        VOL = "DVDD/2-100mV";
+        VTERM = "DVDD/2";
+        IOL = "0.125mA";
+        IOH = "-0.125mA";
+        VClampLo = "-300mV";
+        VClampHi = "DVDD+625mV";
+    }
+    ParamGlobals {
+            VDDC { Type = V; }
+            VDDA { Type = V; }
+            VDD18 { Type = V; }
+            VDDIO { Type = V; }
+            VDD33 { Type = V; }
+            VDDIO25 { Type = V; }
+            AVDD { Type = V; }
+            DVDD { Type = V; }
+            VIL { Type = V; }
+            VIH { Type = V; }
+            VOH { Type = V; }
+            VOL { Type = V; }
+            VTERM { Type = V; }
+            IOL { Type = A; }
+            IOH { Type = A; }
+            VClampLo { Type = V; }
+            VClampHi { Type = V; }
+    }
+}
+Spec Timing_Spec {
+    Category Normal_timing {
+        clock_frequency = "10MHz";
+        clock_period = "1/clock_frequency";
+        DOUT_r1 = "4/clock_frequency";
+        DOUT_r2 = "4.5/clock_frequency";
+        tDS_d1 = "1/(5*clock_frequency)";
+        tCSH_d1 = "1/(2*clock_frequency)";
+        tCSS_d1 = "1/(20*clock_frequency)";
+        tDR_r1 = "7/(10*clock_frequency)";
+        tDR_r2 = "8/(10*clock_frequency)";
+        tDV_r1 = "7/(10*clock_frequency)";
+        tDV_r2 = "8/(10*clock_frequency)";
+        tCH_d1 = "1/(2*clock_frequency)";
+        DOUT_TS10_r1 = "7/(10*clock_frequency)";
+        DOUT_TS10_r2 = "clock_period*0.8";
+        atpg_freq.Min = "12MHz";
+        atpg_freq.Typ = "50MHz";
+        atpg_freq.Max = "28.57MHz";
+        atpg_prd.Typ = "1/atpg_freq";
+        atpg_prd.Max = "100ns";
+        atpg_t0.Typ = "0.0ns";
+        atpg_t0.Max = "0s";
+        atpg_d1.Typ = "0.0ns";
+        atpg_d1.Max = "0s";
+        atpg_c1.Typ = "atpg_prd * 0.25 + 4.3ns - 4.3ns";
+        atpg_c1.Max = "5ns";
+        atpg_c2.Typ = "atpg_prd * 0.75 + 6ns - 6ns";
+        atpg_c2.Max = "15ns";
+        atpg_s1.Typ = "atpg_prd * 0.25";
+        atpg_s1.Max = "8ns";
+        atpg_s2.Typ = "atpg_prd * 0.8";
+        atpg_s2.Max = "12ns";
+        atpg_nocomp_freq.Min = "12MHz";
+        atpg_nocomp_freq.Typ = "20MHz";
+        atpg_nocomp_freq.Max = "28.57MHz";
+        atpg_nocomp_prd.Typ = "1/atpg_nocomp_freq";
+        atpg_nocomp_prd.Max = "1/atpg_nocomp_freq";
+        atpg_nocomp_t0.Typ = "0.0ns";
+        atpg_nocomp_t0.Max = "0s";
+        atpg_nocomp_d1.Typ = "0.0ns";
+        atpg_nocomp_d1.Max = "0s";
+        atpg_nocomp_c1.Typ = "atpg_nocomp_prd * 0.25";
+        atpg_nocomp_c1.Max = "atpg_nocomp_prd * 0.25";
+        atpg_nocomp_c2.Typ = "atpg_nocomp_prd * 0.75";
+        atpg_nocomp_c2.Max = "atpg_nocomp_prd * 0.75";
+        atpg_nocomp_s1.Typ = "atpg_nocomp_prd * 0.25";
+        atpg_nocomp_s1.Max = "atpg_nocomp_prd * 0.25";
+        atpg_nocomp_s2.Typ = "atpg_nocomp_prd * 0.8";
+        atpg_nocomp_s2.Max = "atpg_nocomp_prd * 0.8";
+        atpg_dpll_freq.Min = "35MHz";
+        atpg_dpll_freq.Typ = "40MHz";
+        atpg_dpll_freq.Max = "50MHz";
+        atpg_dpll_prd = "1/atpg_dpll_freq";
+        atpg_dpll_t0 = "0.0ns";
+        atpg_dpll_d1 = "0.0ns";
+        atpg_dpll_c1 = "atpg_dpll_prd * 0.25";
+        atpg_dpll_c2 = "atpg_dpll_prd * 0.75";
+        atpg_dpll_s1 = "atpg_dpll_prd * 0.2";
+    }
+    ParamGlobals {
+            clock_frequency { Type = Hz; }
+            clock_period { Type = s; }
+            DOUT_r1 { Type = s; }
+            DOUT_r2 { Type = s; }
+         evBlankLine ;
+            tDS_d1 { Type = s; }
+         evBlankLine ;
+            tCSH_d1 { Type = s; }
+         evBlankLine ;
+            tCSS_d1 { Type = s; }
+         evBlankLine ;
+            tDR_r1 { Type = s; }
+            tDR_r2 { Type = s; }
+         evBlankLine ;
+            tDV_r1 { Type = s; }
+            tDV_r2 { Type = s; }
+         evBlankLine ;
+            tCH_d1 { Type = s; }
+         evBlankLine ;
+            DOUT_TS10_r1 { Type = s; }
+            DOUT_TS10_r2 { Type = s; }
+            atpg_freq { Type = Hz; }
+            atpg_prd { Type = s; }
+            atpg_t0 { Type = s; }
+            atpg_d1 { Type = s; }
+            atpg_c1 { Type = s; }
+            atpg_c2 { Type = s; }
+            atpg_s1 { Type = s; }
+            atpg_s2 { Type = s; }
+         evBlankLine ;
+            atpg_nocomp_freq { Type = Hz; }
+            atpg_nocomp_prd { Type = s; }
+            atpg_nocomp_t0 { Type = s; }
+            atpg_nocomp_d1 { Type = s; }
+            atpg_nocomp_c1 { Type = s; }
+            atpg_nocomp_c2 { Type = s; }
+            atpg_nocomp_s1 { Type = s; }
+            atpg_nocomp_s2 { Type = s; }
+         evBlankLine ;
+            atpg_dpll_freq { Type = Hz; }
+            atpg_dpll_prd { Type = s; }
+            atpg_dpll_t0 { Type = s; }
+            atpg_dpll_d1 { Type = s; }
+            atpg_dpll_c1 { Type = s; }
+            atpg_dpll_c2 { Type = s; }
+            atpg_dpll_s1 { Type = s; }
+    }
+}
+Spec Pin_Param_Spec {
+    Category Test_Params {
+        pin_v_param = "3.9V";
+        pin_i_param = "-3mA";
+        vil_param = "800mV";
+        vih_param = "1.8V";
+        vol_param = "2.1V";
+        voh_param = "1.6V";
+        iol_param = "1.0mA";
+        ioh_param = "-1.0mA";
+        vref_param = "1.8V";
+        clampLo_param.Typ = "-300mV";
+        clampLo_param.Max = "0.0V";
+        clampHi_param.Min = "3.0V";
+        clampHi_param.Typ = "3.9V";
+        loadComp_param.Min = "1uF";
+        loadComp_param.Max = "10uF";
+        iccMax_param.Min = "10mA";
+        iccMax_param.Typ = "10mA";
+        iccMax_param.Max = "50mA";
+        powerSupply_param.Min = "0V";
+        powerSupply_param.Max = "3.9V";
+        refPin_v_param = "2.048V";
+        refPin_i_param = "1mA";
+    }
+    Category FCal_Params {
+        pin_v_param.Typ = "7.0V";
+        pin_v_param.Max = "7.0V";
+        pin_i_param = "-1mA";
+        vil_param = "200mV";
+        vih_param = "50mV";
+        vol_param = "3.0V";
+        voh_param = "-1.0V";
+        iol_param = "1mA";
+        ioh_param = "-1mA";
+        vref_param = "pin_v_param/2.0";
+        clampLo_param.Typ = "-2.0V";
+        clampLo_param.Max = "-2.0V";
+        clampHi_param.Min = "7.0V";
+        clampHi_param.Typ = "7.0V";
+        loadComp_param.Min = "1uF";
+        loadComp_param.Max = "10uF";
+        iccMax_param.Min = "10mA";
+        iccMax_param.Typ = "10mA";
+        iccMax_param.Max = "50mA";
+        powerSupply_param.Min = "0V";
+        powerSupply_param.Max = "3.3V";
+        refPin_v_param = "2.048V";
+        refPin_i_param = "1mA";
+    }
+    Category PwrDwn_Params {
+        pin_v_param = "100mV";
+        pin_i_param = "-100uA";
+        vil_param = "0.0V";
+        vih_param.Typ = "0.0V";
+        vih_param.Max = "100mV";
+        vol_param = "100mV";
+        voh_param.Typ = "0.0V";
+        voh_param.Max = "500mV";
+        iol_param = "100uA";
+        ioh_param = "-100uA";
+        vref_param = "250mV";
+        clampLo_param = "-300mV";
+        clampHi_param = "1V";
+        loadComp_param.Min = "1uF";
+        loadComp_param.Max = "10uF";
+        iccMax_param.Min = "100uA";
+        iccMax_param.Typ = "100uA";
+        iccMax_param.Max = "50mA";
+        powerSupply_param.Min = "0V";
+        powerSupply_param.Max = "650mV";
+        refPin_v_param = "2.048V";
+        refPin_i_param = "100uA";
+    }
+    ParamGlobals {
+            pin_v_param { Type = V; }
+            pin_i_param { Type = A; }
+            vil_param { Type = V; }
+            vih_param { Type = V; }
+            vol_param { Type = V; }
+            voh_param { Type = V; }
+            iol_param { Type = A; }
+            ioh_param { Type = A; }
+            vref_param { Type = V; }
+            clampLo_param { Type = V; }
+            clampHi_param { Type = V; }
+            loadComp_param { Type = F; }
+            iccMax_param { Type = A; }
+            powerSupply_param { Type = V; }
+            refPin_v_param { Type = V; }
+            refPin_i_param { Type = A; }
+    }
+}
+Spec Globals_Spec {
+    Category Globals1 {
+        HP_METER = "20";
+        DCTM_HP_METER = "24";
+        QA_COLD = "0";
+        FT_COLD = "1";
+        QA_ROOM = "2";
+        FT_ROOM = "3";
+        QA_HOT = "4";
+        FT_HOT = "5";
+        NUM_SITES = "4";
+        Checker_DLog_Num = "2";
+        Tester_Femcon = "FALSE";
+        Tester_GTO = "FALSE";
+        Meter_GPIB8 = "FALSE";
+        Meter_GPIB9 = "FALSE";
+        DEGLITCH_ON = "FALSE";
+        STDF_SPEC_VERSION = "'Maxim 1.0'";
+        GRABBED_HDCP_KEY = "false";
+        GRABBED_HDCP_KEY1 = "FALSE";
+        GRABBED_HDCP_KEY2 = "FALSE";
+        FCAL_FirstRun = "TRUE";
+    }
+    ParamGlobals {
+            HP_METER { Type = SCALAR; }
+            DCTM_HP_METER { Type = SCALAR; }
+            QA_COLD { Type = SCALAR; }
+            FT_COLD { Type = SCALAR; }
+            QA_ROOM { Type = SCALAR; }
+            FT_ROOM { Type = SCALAR; }
+            QA_HOT { Type = SCALAR; }
+            FT_HOT { Type = SCALAR; }
+            NUM_SITES { Type = SCALAR; }
+            Checker_DLog_Num { Type = SCALAR; }
+            Tester_Femcon { Type = BOOLEAN; }
+            Tester_GTO { Type = BOOLEAN; }
+            Meter_GPIB8 { Type = BOOLEAN; }
+            Meter_GPIB9 { Type = BOOLEAN; }
+            DEGLITCH_ON { Type = BOOLEAN; }
+            STDF_SPEC_VERSION { Type = STRING; }
+            GRABBED_HDCP_KEY { Type = BOOLEAN; }
+            GRABBED_HDCP_KEY1 { Type = BOOLEAN; }
+            GRABBED_HDCP_KEY2 { Type = BOOLEAN; }
+            FCAL_FirstRun { Type = BOOLEAN; }
+    }
+}
+Mask DC_Mask {
+    AVDD = Typ;
+    DVDD = Typ;
+    VIL = Typ;
+    VIH = Typ;
+    VOL = Typ;
+    VTERM = Typ;
+    IOL = Typ;
+    IOH = Typ;
+    VOH = Typ;
+    VClampLo = Typ;
+    VClampHi = Typ;
+}
+Mask DC_Min_Mask {
+    DVDD = Min;
+    VIL = Typ;
+    VIH = Typ;
+    AVDD = Min;
+    VOH = Typ;
+    VTERM = Typ;
+    VOL = Typ;
+    IOL = Typ;
+    IOH = Typ;
+    VClampHi = Typ;
+    VClampLo = Typ;
+    VDDIO = Min;
+}
+Mask DC_Max_Mask {
+    AVDD = Max;
+    DVDD = Max;
+    VIL = Typ;
+    VIH = Typ;
+    VOL = Typ;
+    VTERM = Typ;
+    IOL = Typ;
+    IOH = Typ;
+    VClampLo = Typ;
+    VClampHi = Typ;
+    VOH = Typ;
+    VDDIO = Max;
+}
+Mask Timing_Mask {
+    clock_frequency = Typ;
+    clock_period = Typ;
+    DOUT_r1 = Typ;
+    DOUT_r2 = Typ;
+    tDS_d1 = Typ;
+    tCSH_d1 = Typ;
+    tCSS_d1 = Typ;
+    tDR_r1 = Typ;
+    tDR_r2 = Typ;
+    tDV_r1 = Typ;
+    tDV_r2 = Typ;
+    tCH_d1 = Typ;
+    DOUT_TS10_r1 = Typ;
+    DOUT_TS10_r2 = Typ;
+    atpg_freq = Typ;
+    atpg_prd = Typ;
+    atpg_t0 = Typ;
+    atpg_d1 = Typ;
+    atpg_c1 = Typ;
+    atpg_c2 = Typ;
+    atpg_s1 = Typ;
+    atpg_nocomp_freq = Typ;
+    atpg_nocomp_prd = Typ;
+    atpg_nocomp_t0 = Typ;
+    atpg_nocomp_d1 = Typ;
+    atpg_nocomp_c1 = Typ;
+    atpg_nocomp_c2 = Typ;
+    atpg_nocomp_s1 = Typ;
+    atpg_dpll_freq = Typ;
+    atpg_dpll_prd = Typ;
+    atpg_dpll_t0 = Typ;
+    atpg_dpll_d1 = Typ;
+    atpg_dpll_c1 = Typ;
+    atpg_dpll_c2 = Typ;
+    atpg_dpll_s1 = Typ;
+}
+Mask Pin_Param_Mask {
+    pin_v_param = Typ;
+    vil_param = Typ;
+    vih_param = Typ;
+    vol_param = Typ;
+    voh_param = Typ;
+    ioh_param = Typ;
+    vref_param = Typ;
+    clampHi_param = Typ;
+    clampLo_param = Typ;
+    iol_param = Typ;
+    pin_i_param = Typ;
+    iccMax_param = Typ;
+    refPin_v_param = Typ;
+    refPin_i_param = Typ;
+}
+Mask Globals_Mask {
+    DCTM_HP_METER = Typ;
+    HP_METER = Typ;
+    QA_COLD = Typ;
+    FT_COLD = Typ;
+    QA_ROOM = Typ;
+    FT_ROOM = Typ;
+    FT_HOT = Typ;
+    QA_HOT = Typ;
+    NUM_SITES = Typ;
+    Checker_DLog_Num = Typ;
+    Tester_Femcon = Meas;
+    Tester_GTO = Meas;
+    Meter_GPIB8 = Meas;
+    Meter_GPIB9 = Meas;
+    DEGLITCH_ON = Typ;
+    STDF_SPEC_VERSION = Typ;
+    GRABBED_HDCP_KEY = Typ;
+    GRABBED_HDCP_KEY1 = Typ;
+    GRABBED_HDCP_KEY2 = Typ;
+    FCAL_FirstRun = Meas;
+}
+
+Levels Levels_VDD_down {
+    Column[0] {
+    	LevelsColumnType = evPowerType;
+    	Title = DVDD_PIN;
+    	ExecSeq = Expr { String = "1"; }
+    	PowerSupply = Expr { String = "DVDD"; }
+    }
+    Column[1] {
+    	LevelsColumnType = evDigitalType;
+    	Title = Digital_pin_levels;
+    	ExecSeq = Expr { String = "0"; }
+    	Vil = Expr { String = "VIL"; }
+    	Vih = Expr { String = "VIH"; }
+    	Vol = Expr { String = "VOL"; }
+    	Voh = Expr { String = "VOH"; }
+    	Iol = Expr { String = "IOL"; }
+    	Ioh = Expr { String = "IOH"; }
+    	Vref = Expr { String = "VTERM"; }
+    	ClampLo = Expr { String = "VClampLo"; }
+    	ClampHi = Expr { String = "VClampHi"; }
+    }
+}
+Levels Levels_VDD_up {
+    Column[0] {
+    	LevelsColumnType = evPowerType;
+    	Title = DVDD_PIN;
+    	ExecSeq = Expr { String = "0"; }
+    	PowerSupply = Expr { String = "DVDD"; }
+    }
+    Column[1] {
+    	LevelsColumnType = evDigitalType;
+    	Title = Digital_pin_levels;
+    	ExecSeq = Expr { String = "1"; }
+    	Vil = Expr { String = "VIL"; }
+    	Vih = Expr { String = "VIH"; }
+    	Vol = Expr { String = "VOL"; }
+    	Voh = Expr { String = "VOH"; }
+    	Iol = Expr { String = "IOL"; }
+    	Ioh = Expr { String = "IOH"; }
+    	Vref = Expr { String = "VTERM"; }
+    	ClampLo = Expr { String = "VClampLo"; }
+    	ClampHi = Expr { String = "VClampHi"; }
+    }
+}
+Levels FCAL_Levels {
+	FinderFilter = "";
+    Column[0] {
+    	LevelsColumnType = evDigitalType;
+    	Title = DIGITAL_PIN;
+    	Group = Expr { String = "focus_cal_pins"; }
+    	ExecSeq = Expr { String = "1"; }
+    	Vil = Expr { String = "VIL"; }
+    	Vih = Expr { String = "VIH"; }
+    	Vol = Expr { String = "VOL"; }
+    	Voh = Expr { String = "VOH"; }
+    	Iol = Expr { String = "IOL"; }
+    	Ioh = Expr { String = "IOH"; }
+    	Vref = Expr { String = "VTERM"; }
+    }
+}
+Mask I2C_Mask {
+    I2C_Freq = Typ;
+    I2C_Period = Typ;
+    I2C_re_st_setup = Typ;
+    I2C_tbuf = Typ;
+    I2C_tspike = Typ;
+    I2C_tvddat = Typ;
+    I2C_tvdack = Typ;
+    I2C_dat_setup = Typ;
+    I2C_dat_hold = Typ;
+    I2C_scl_pulse_H = Typ;
+    I2C_scl_pulse_L = Typ;
+    I2C_st_hold = Typ;
+    I2C_stop_setup = Typ;
+    I2C_freq = Typ;
+    I2C_period = Typ;
+}
+Spec I2C_Spec {
+    Category I2C_100KHz {
+        I2C_Freq = "100KHz";
+        I2C_Period = "1/I2C_Freq/2.0";
+        I2C_freq = "100KHz";
+        I2C_period = "1/I2C_freq";
+        I2C_dat_setup = "I2C_dat_setup_100KHz_lim";
+        I2C_dat_hold = "I2C_dat_hold_100KHz_lim";
+        I2C_scl_pulse_H = "I2C_scl_pulse_H_100KHz_lim";
+        I2C_scl_pulse_L = "I2C_scl_pulse_L_100KHz_lim";
+        I2C_st_hold = "I2C_st_hold_100KHz_lim";
+        I2C_stop_setup = "I2C_stop_setup_100KHz_lim-0.0us";
+        I2C_re_st_setup = "I2C_re_st_setup_100KHz_lim";
+        I2C_tbuf = "I2C_tbuf_100KHz_lim";
+        I2C_tspike = "I2C_tspike_100KHz_lim";
+        I2C_tvddat = "I2C_tvddat_100KHz_lim";
+        I2C_tvdack = "I2C_tvdack_100KHz_lim";
+    }
+    Category I2C_400KHz {
+        I2C_Freq = "400KHz";
+        I2C_Period = "1/I2C_Freq/2.0";
+        I2C_freq = "400KHz";
+        I2C_period = "1/I2C_freq";
+        I2C_dat_setup = "I2C_dat_setup_400KHz_lim";
+        I2C_dat_hold = "I2C_dat_hold_400KHz_lim";
+        I2C_scl_pulse_H = "I2C_scl_pulse_H_400KHz_lim";
+        I2C_scl_pulse_L = "I2C_scl_pulse_L_400KHz_lim";
+        I2C_st_hold = "I2C_st_hold_400KHz_lim";
+        I2C_stop_setup = "I2C_stop_setup_400KHz_lim";
+        I2C_re_st_setup = "I2C_re_st_setup_400KHz_lim";
+        I2C_tbuf = "I2C_tbuf_400KHz_lim";
+        I2C_tspike = "I2C_tspike_400KHz_lim ";
+        I2C_tvddat = "I2C_tvddat_400KHz_lim";
+        I2C_tvdack = "I2C_tvdack_400KHz_lim";
+    }
+    Category I2C_1MHz {
+        I2C_Freq = "1MHz";
+        I2C_Period = "1/I2C_Freq/2.0";
+        I2C_freq = "1MHz";
+        I2C_period = "1.0/I2C_freq";
+        I2C_dat_setup = "I2C_dat_setup_1MHz_lim";
+        I2C_dat_hold = "I2C_dat_hold_1MHz_lim";
+        I2C_scl_pulse_H = "I2C_scl_pulse_H_1MHz_lim";
+        I2C_scl_pulse_L = "I2C_scl_pulse_L_1MHz_lim";
+        I2C_st_hold = "I2C_st_hold_1MHz_lim";
+        I2C_stop_setup = "I2C_stop_setup_1MHz_lim";
+        I2C_re_st_setup = "I2C_re_st_setup_1MHz_lim";
+        I2C_tbuf = "I2C_tbuf_1MHz_lim";
+        I2C_tspike = "I2C_tspike_1MHz_lim";
+        I2C_tvddat = "I2C_tvddat_1MHz_lim";
+        I2C_tvdack = "I2C_tvdack_1MHz_lim";
+    }
+    ParamGlobals {
+            I2C_Freq { Type = Hz; Comment = "Base Frequency for SCL & SDA"; }
+            I2C_Period { Type = s; Comment = "Base Period for SCL & SDA"; }
+            I2C_freq { Type = Hz; }
+            I2C_period { Type = s; }
+            I2C_dat_setup { Type = s; }
+            I2C_dat_hold { Type = s; }
+            I2C_scl_pulse_H { Type = s; }
+            I2C_scl_pulse_L { Type = s; }
+            I2C_st_hold { Type = s; }
+            I2C_stop_setup { Type = s; }
+            I2C_re_st_setup { Type = s; }
+            I2C_tbuf { Type = s; }
+            I2C_tspike { Type = s; }
+            I2C_tvddat { Type = s; }
+            I2C_tvdack { Type = s; }
+    }
+}
+Mask RGMII_Mask {
+    RXC_Freq = Typ;
+    RXC_Period = Typ;
+    RXD_d1 = Typ;
+    RXD_data1 = Typ;
+    RXD_data2 = Typ;
+    RXC_d1 = Typ;
+    RXC_d2 = Typ;
+    TXD_c1 = Typ;
+}
+Spec RGMII_Spec {
+    Category RGMII_10Mb {
+        RXC_Freq = "2.5MHz";
+        RXC_Period = "1/RXC_Freq";
+        RXD_d1 = "RXC_Period/2";
+        RXD_data1 = "0s";
+        RXD_data2 = "RXC_Period";
+        RXC_d1 = "RXC_Period*0.25";
+        RXC_d2 = "RXC_Period*0.75";
+        TXD_c1 = "RXC_Period/2 + 150ns";
+    }
+    Category RGMII_100Mb {
+        RXC_Freq = "25MHz";
+        RXC_Period = "1/RXC_Freq";
+        RXD_d1 = "2.5ns";
+        RXD_data1 = "0ns";
+        RXD_data2 = "RXC_Period";
+        RXC_d1 = "RXC_Period*0.25";
+        RXC_d2 = "RXC_Period*0.75";
+        TXD_c1 = "RXC_Period/2 + 5ns";
+    }
+    Category RGMII_1000Mb {
+        RXC_Freq = "125MHz";
+        RXC_Period = "1/RXC_Freq";
+        RXD_d1 = "2.5ns";
+        RXD_data1 = "0s";
+        RXD_data2 = "RXC_Period";
+        RXC_d1 = "RXC_Period*0.25";
+        RXC_d2 = "RXC_Period*0.75";
+        TXD_c1 = "RXC_Period/2";
+    }
+    ParamGlobals {
+            RXC_Freq { Type = Hz; Comment = "Base Frequency for RGMII input clock"; }
+            RXC_Period { Type = s; Comment = "Base Period for RGMII"; }
+            RXD_d1 { Type = s; }
+            RXD_data1 { Type = s; }
+            RXD_data2 { Type = s; }
+            RXC_d1 { Type = s; }
+            RXC_d2 { Type = s; }
+            TXD_c1 { Type = s; }
+    }
+}

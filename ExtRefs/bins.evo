@@ -1,0 +1,348 @@
+enVision:"bl8:R15.7.2:S4.5";
+Bin_ PASS {
+    Comment = "Exact text required by 75-0020";
+    Number = 1;
+    Result = True;
+    CheckOverFlow = True;
+    Color = 0;
+}
+Bin_ Opens {
+    Comment = "Exact text required by 75-0020";
+    Number = 5;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ Supply_Current_Active {
+    Comment = "Exact text required by 75-0020";
+    Number = 7;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ Leakage_Current {
+    Comment = "Exact text required by 75-0020";
+    Number = 9;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ evRunTimeErrorBin {
+    Result = False;
+    CheckOverFlow = True;
+    Color = 8;
+}
+Bin_ Shorts {
+    Comment = "Exact text required by 75-0020";
+    Number = 6;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ Standby_Current {
+    Comment = "Exact text required by 75-0020";
+    Number = 8;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ DPAT_fail {
+    Comment = "Exact text required by 75-0020";
+    Number = 10;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ Binning_Error {
+    Number = 31;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 8;
+}
+Bin_ SPAT_fail {
+    Number = 11;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ evResetBin {
+    Result = False;
+    CheckOverFlow = True;
+    Color = 8;
+}
+BinMap Bins_Nominal {
+    Bin PASS = 1;
+    Bin Opens = 8;
+    Bin Supply_Current_Active = 8;
+    Bin Leakage_Current = 8;
+    Bin evRunTimeErrorBin = 8;
+    Bin Shorts = 8;
+    Bin Standby_Current = 8;
+    Bin Binning_Error = 8;
+    Bin SPAT_fail = 8;
+    Bin DPAT_fail = 7;
+    Bin evResetBin = 8;
+    Bin POR_fail = 8;
+    Bin ICC = 8;
+    Bin LOCK = 8;
+    Bin AtpgFail = 8;
+    Bin DigVilFail = 8;
+    Bin DigVihFail = 8;
+    Bin DigVolFail = 8;
+    Bin DigVohFail = 8;
+    Bin TxVolFail = 8;
+    Bin TxVohFail = 8;
+    Bin SioVodFail = 8;
+    Bin SioVosFail = 8;
+    Bin SioVodDeltaFail = 8;
+    Bin SioVosDeltaFail = 8;
+    Bin LvdsVodFail = 8;
+    Bin LvdsVosFail = 8;
+    Bin LvdsVodDeltaFail = 8;
+    Bin LvdsVosDeltaFail = 8;
+    Bin LvdsIosFail = 8;
+    Bin LvdsIosDFail = 8;
+    Bin OpenSocketFail = 8;
+    Bin IccSleepFail = 8;
+    Bin IccPwdnFail = 8;
+    Bin OscCommAlarm = 8;
+    Bin DutCommunicationFail = 8;
+    Bin DevIdFail = 8;
+    Bin MBistFail = 8;
+    Bin SioIosFail = 8;
+    Bin SioIosDFail = 8;
+    Bin DaughterCardPowerFail = 8;
+    Bin GmslLockErrorFail = 8;
+    Bin GmslPrbsFail = 8;
+    Bin RegulatorFail = 8;
+    Bin TestTempFail = 8;
+    Bin GmslOutputResFail = 8;
+
+
+
+
+    Bin CmuCapVltgFail = 8;
+    Bin I2cClkFreqFail = 8;
+    Bin XresVltgFail = 8;
+    Bin SioPwrdnVltgFail = 8;
+    Bin PullupPullDownFail = 8;
+
+    Bin IddPRBSFail = 8;
+
+}
+Bin_ AtpgFail {
+    Number = 38;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ POR_fail {
+    Number = 35;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ ICC {
+    Number = 36;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ LOCK {
+    Number = 37;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ DigVilFail {
+    Number = 39;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ DigVihFail {
+    Number = 40;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ DigVolFail {
+    Number = 41;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ DigVohFail {
+    Number = 42;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ TxVolFail {
+    Number = 43;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ TxVohFail {
+    Number = 44;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SioVodFail {
+    Number = 45;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SioVosFail {
+    Number = 46;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SioVodDeltaFail {
+    Number = 47;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SioVosDeltaFail {
+    Number = 48;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OpenSocketFail {
+    Number = 55;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ IddSleepFail {
+    Number = 56;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ IddPwdnFail {
+    Number = 57;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OscCommAlarm {
+    Number = 58;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ DutCommunicationFail {
+    Number = 59;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ DevIdFail {
+    Number = 60;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ MBistFail {
+    Number = 61;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ GmslLockErrorFail {
+    Number = 65;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ GmslPrbsFail {
+    Number = 66;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ LMN_VihVil {
+    Number = 27;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ TestTempFail {
+    Number = 68;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SioIosFail {
+    Number = 62;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SioIosDFail {
+    Number = 63;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ GmslOutputResFail {
+    Number = 69;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bin_ I2C_TIMING_TEST {
+    Number = 28;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ HDMITermFail {
+    Number = 90;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+

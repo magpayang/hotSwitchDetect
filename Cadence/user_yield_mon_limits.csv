@@ -1,0 +1,7 @@
+"Bin","Overall Limit","Yield Prompt","Site Limit","Site Prompt","Begin Units","Rolling Units"
+"Yield",90%,"Overall yield below 90%",85%,"Yield for site below 85%",50,100
+"Yield_Imbalance",10%,"Yield Imbalance between Sites > 10%",,,,
+5,10%,"Overall Contact Opens Failure > 10%.",7%,"Per-Site Contact Failure > 7%.",20,100
+6,10%,"Overall Contact Shorts Failure > 10%.",7%,"Per-Site Contact Failure > 7%.",20,100
+7,5%,"Overall Leakage Failure > 5%.",3%,"Per-Site Leakage Failure > 3%.",25,100
+8,,"No yield Prompt, because there is no Site limit set.",,,13,30

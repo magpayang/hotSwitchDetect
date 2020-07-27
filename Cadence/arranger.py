@@ -1,0 +1,23 @@
+#! /usr/bin/python
+
+f = open('findThenReplace.py', 'r')
+ff = f.read()
+
+g = open('findThenReplace3.py', 'w')
+
+tempoString = ''
+
+for entry in ff:
+	#print(entry)
+	if entry == '\n':
+		tempoString = '\t' + tempoString + entry
+		print(tempoString)
+		g.write(tempoString)
+		tempoString = ''
+	else:
+		tempoString = tempoString + entry
+g.write(tempoString)
+tempoString = ''
+
+g.close()
+f.close()

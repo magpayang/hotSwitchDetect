@@ -1,0 +1,757 @@
+enVision:"bl8:R15.7.2:S4.5";
+PatternSetup hs87_PatSetup {
+    evClocking {
+        evAutoBasePeriod = True;
+    }
+}
+PatternSetup Template_PatSetup {
+    evClocking {
+        evAutoBasePeriod = True;
+    }
+}
+PatternSetup ATPG_PatSetup {
+    evPatternList {
+        dut_powerup;
+        dut_uart_read;
+        dut_uart_write;
+        dut_i2c_read;
+        dut_i2c_write;
+        dnut_i2c_read;
+        dnut_i2c_write;
+        dnut_uart_read;
+        dnut_uart_write;
+        util_dnut_i2c_read;
+        util_dnut_i2c_write;
+        util_dnut_uart_read;
+        util_dnut_uart_write;
+        dpll_saf;
+        dpll_tdf;
+        dpll_sbf;
+        dpll_dbf;
+        fpga;
+        util_dnut_noreg_i2c_write;
+        hs87d0b_PFM_saf_0;
+        hs87d0b_PFM_saf_1;
+        hs87d0b_PFM_sbf;
+        hs87d0b_tdf_comp_0;
+        hs87d0b_tdf_comp_1;
+        hs87d0b_tdf_comp_2;
+        hs87d0b_tdf_comp_3;
+        hs87d0b_tdf_comp_4;
+        hs87d0b_tdf_comp_5;
+        hs87d0b_tdf_comp_p2_00_09;
+        hs87d0b_tdf_comp_p2_10_19;
+        hs87d0b_tdf_comp_p2_20_29;
+        hs87d0b_tdf_comp_p2_30_37;
+        hs87d0b_tdf_comp_p3_0;
+        hs87d0b_tdf_comp_p3_1;
+        hs87d0b_tdf_comp_p3_2;
+        hs87d0b_tdf_comp_p3_3;
+        hs87d0b_tdf_comp_p3_4;
+    }
+    evPinConfig {
+        Row {
+            evPins = Expr { String = "DUT_GPIO00"; }
+            evAlias = "0";
+            evCmpFormat = Mask;
+        }
+        Row {
+            evPins = Expr { String = "DUT_PWDNB"; }
+            evAlias = "1";
+            evCmpFormat = Mask;
+        }
+        Row {
+            evPins = Expr { String = "DUT_X1"; }
+            evAlias = "0";
+            evCmpFormat = Mask;
+        }
+        Row {
+            evPins = Expr { String = "DUT_SCL_TX"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SDA_RX"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_LOCK"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_ERRB_LFLTB_INTOUTB"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO01"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO02_MS"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO03_RCLKOUT_RCLKEN"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO04"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO05_BNE_SS1"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO06_RO_SS2"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO07_MISO"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO08_MOSI"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO09_SCLK"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_WS_GPIO10"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SCK_GPIO11"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SD_GPIO12"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SDOR_GPIO13_ADD0"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SCKOR_GPIO14_ADD1"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_WSOR_GPIO15_ADD2"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO16_CXTP"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO17_I2CSEL"; }
+        }
+        Row {
+            evPins = Expr { String = "DNUT_SCL"; }
+        }
+        Row {
+            evPins = Expr { String = "DNUT_SDA"; }
+        }
+        Row {
+            evPins = Expr { String = "DNUT_X1"; }
+            evAlias = "0";
+        }
+        Row {
+            evPins = Expr { String = "FPGA_CSB"; }
+        }
+        Row {
+            evPins = Expr { String = "FPGA_SCLK"; }
+        }
+        Row {
+            evPins = Expr { String = "FPGA_SDOUT"; }
+        }
+        Row {
+            evPins = Expr { String = "FPGA_SDIN"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_DDCSCL"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_DDCSDA"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_HSPD"; }
+            evAlias = "1";
+        }
+        Row {
+            evPins = Expr { String = "DUT_HPD"; }
+        }
+    }
+    evClocking {
+        evAutoBasePeriod = True;
+        evRow { REGSEND_TS; }
+        evRow { ATPG_TS; }
+        evRow { TESTMODE_TS; }
+        evRow { UART_WRITE_TS; }
+        evRow { UART_READ_TS; }
+        evRow { DNUT_TS; }
+        evRow { I2C_STRETCH_TS; }
+        evRow { I2C_GENERIC_TS; }
+        evRow { ATPG_DPLL_TS; }
+        evRow { FPGA_TS; }
+        evRow { ATPG_NOCOMP_TS; }
+    }
+}
+PatternSetup DC_LMN {
+    evPatternList {
+        dut_powerup;
+        dut_uart_read;
+        dut_uart_write;
+        LMN_Vih_Vil_pat;
+        fpga;
+        util_dnut_i2c_read;
+        util_dnut_i2c_write;
+        dnut_uart_read;
+        dnut_uart_write;
+        dnut_i2c_read;
+        dnut_i2c_write;
+        util_dnut_noreg_i2c_write;
+    }
+    evPinConfig {
+        Row {
+            evPins = Expr { String = "DNUT_SCL"; }
+        }
+        Row {
+            evPins = Expr { String = "DNUT_SDA"; }
+        }
+        Row {
+            evPins = Expr { String = "DNUT_X1"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_ERRB_LFLTB_INTOUTB"; }
+        }
+        Row {
+            evPins = Expr { String = "FPGA_SDIN"; }
+        }
+        Row {
+            evPins = Expr { String = "FPGA_CSB"; }
+        }
+        Row {
+            evPins = Expr { String = "FPGA_SCLK"; }
+        }
+        Row {
+            evPins = Expr { String = "FPGA_SDOUT"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO00"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO01"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO02_MS"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO03_RCLKOUT_RCLKEN"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO04"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO05_BNE_SS1"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO06_RO_SS2"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO07_MISO"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO08_MOSI"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO09_SCLK"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_WS_GPIO10"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SCK_GPIO11"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SD_GPIO12"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SDOR_GPIO13_ADD0"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SCKOR_GPIO14_ADD1"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_WSOR_GPIO15_ADD2"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO16_CXTP"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO17_I2CSEL"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_LOCK"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_PWDNB"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SCL_TX"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SDA_RX"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_X1"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_LMN0A"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_LMN0B"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_LMN1A"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_LMN1B"; }
+        }
+    }
+    evClocking {
+        evAutoBasePeriod = True;
+        evRow { TESTMODE_TS; }
+        evRow { UART_WRITE_TS; }
+        evRow { UART_READ_TS; }
+        evRow { REGSEND_TS; }
+        evRow { FPGA_TS; }
+        evRow { DNUT_TS; }
+        evRow { I2C_STRETCH_TS; }
+    }
+}
+PatternSetup Func_PatSetup {
+    evPatternList {
+        dut_powerup;
+        dut_uart_read;
+        dut_uart_write;
+        dnut_uart_read;
+        dnut_uart_write;
+        dut_i2c_write;
+        dut_i2c_read;
+        dut_clear_i2c;
+        dnut_i2c_write;
+        dnut_i2c_read;
+        util_dnut_clear_i2c;
+        util_dnut_i2c_write;
+        util_dnut_i2c_read;
+        util_dnut_uart_write;
+        util_dnut_uart_read;
+        dut_vil_vih;
+        dut_vol_voh;
+        util_dnut_noreg_i2c_write;
+        util_dnut_noreg_i2c_read;
+        dut_uart_read2;
+        fpga;
+        dnut_to_dut_i2c_cc;
+        dut_to_dnut_i2c_cc;
+        SER_UART_Write_LockTime;
+        I2S_16bit_Write;
+        I2S_16bit_Write_Hold;
+        dut_i2c_read_address;
+        dut_spi_timing;
+        OTP_Read;
+        OTP_Write;
+        OTP_WRITE_READ_BURST_UART;
+        hspd_hpd_check;
+        DDC_I2C_READ;
+        dut_i2c_rlms_read;
+        dut_uart_rlms_read;
+        dnut_i2c_rlms_read;
+        dnut_uart_rlms_read;
+        phya_osn_loop;
+        phyb_osn_loop;
+    }
+    evPinConfig {
+        Row {
+            evPins = Expr { String = "DUT_PWDNB"; }
+            evAlias = "1";
+        }
+        Row {
+            evPins = Expr { String = "DUT_X1"; }
+            evAlias = "X";
+        }
+        Row {
+            evPins = Expr { String = "DUT_SCL_TX"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SDA_RX"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_LOCK"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_ERRB_LFLTB_INTOUTB"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO00"; }
+            evAlias = "X";
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO01"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO02_MS"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO03_RCLKOUT_RCLKEN"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO04"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO05_BNE_SS1"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO06_RO_SS2"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO07_MISO"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO08_MOSI"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO09_SCLK"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_WS_GPIO10"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SCK_GPIO11"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SD_GPIO12"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SDOR_GPIO13_ADD0"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SCKOR_GPIO14_ADD1"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_WSOR_GPIO15_ADD2"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO16_CXTP"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO17_I2CSEL"; }
+        }
+        Row {
+            evPins = Expr { String = "DNUT_SCL"; }
+        }
+        Row {
+            evPins = Expr { String = "DNUT_SDA"; }
+        }
+        Row {
+            evPins = Expr { String = "DNUT_X1"; }
+            evAlias = "X";
+        }
+        Row {
+            evPins = Expr { String = "FPGA_SDIN"; }
+        }
+        Row {
+            evPins = Expr { String = "FPGA_CSB"; }
+        }
+        Row {
+            evPins = Expr { String = "FPGA_SCLK"; }
+        }
+        Row {
+            evPins = Expr { String = "FPGA_SDOUT"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_NC_GMSL2B"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_DDCSCL"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_HSPD"; }
+            evDirection = Expr { String = "Dir:Bidirect"; }
+            evAlias = "1";
+        }
+        Row {
+            evPins = Expr { String = "DUT_HPD"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_DDCSDA"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_RXC_N"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_RXC_P"; }
+        }
+    }
+    evClocking {
+        evAutoBasePeriod = True;
+        evRow { REGSEND_TS; }
+        evRow { I2C_STRETCH_TS; }
+        evRow { I2C_GENERIC_TS; }
+        evRow { TESTMODE_TS; }
+        evRow { DNUT_TS; }
+        evRow { UART_WRITE_TS; }
+        evRow { UART_READ_TS; }
+        evRow { FPGA_TS; }
+        evRow { I2S_Write_TS; }
+        evRow { TESTMODE_DEL_TS; }
+        evRow { SPI_TS; }
+        evRow { SPI_Search_TS; }
+    }
+}
+PatternSetup I2C_Timing_PatSetup {
+    evPatternList {
+        dut_powerup;
+        dut_i2c_write;
+        dut_i2c_read;
+        SER_I2C_Write_Char;
+        dut_uart_read;
+        SER_I2C_STOP_WRITE_CHAR;
+        SER_I2C_Write_FT;
+        SER_I2C_STOP_WRITE_FT;
+        DDC_I2C_WRITE;
+        DDC_I2C_READ;
+        DDC_I2C_READ_CHAR;
+        fpga;
+        util_dnut_noreg_i2c_write;
+    }
+    evPinConfig {
+        Row {
+            evPins = Expr { String = "DNUT_SCL"; }
+        }
+        Row {
+            evPins = Expr { String = "DNUT_SDA"; }
+        }
+        Row {
+            evPins = Expr { String = "DNUT_X1"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_ERRB_LFLTB_INTOUTB"; }
+        }
+        Row {
+            evPins = Expr { String = "FPGA_SDIN"; }
+        }
+        Row {
+            evPins = Expr { String = "FPGA_CSB"; }
+        }
+        Row {
+            evPins = Expr { String = "FPGA_SCLK"; }
+        }
+        Row {
+            evPins = Expr { String = "FPGA_SDOUT"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO00"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO01"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO02_MS"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO03_RCLKOUT_RCLKEN"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO04"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO05_BNE_SS1"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO06_RO_SS2"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO07_MISO"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO08_MOSI"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO09_SCLK"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_WS_GPIO10"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SCK_GPIO11"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SD_GPIO12"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SDOR_GPIO13_ADD0"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SCKOR_GPIO14_ADD1"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_WSOR_GPIO15_ADD2"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO16_CXTP"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO17_I2CSEL"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_LOCK"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_PWDNB"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SCL_TX"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SDA_RX"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_X1"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_DDCSDA"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_DDCSCL"; }
+        }
+    }
+    evClocking {
+        evAutoBasePeriod = True;
+        evRow { TESTMODE_TS; }
+        evRow { REGSEND_TS; }
+        evRow { I2C_STRETCH_TS; }
+        evRow { I2C_STA; }
+        evRow { I2C_DATA1; }
+        evRow { I2C_DATA2; }
+        evRow { I2C_ACK; }
+        evRow { I2C_SPIKE; }
+        evRow { I2C_HIGH; }
+        evRow { I2C_LOW; }
+        evRow { I2C_STRETCH; }
+        evRow { I2C_STO; }
+        evRow { I2C_RPSTA; }
+        evRow { UART_WRITE_TS; }
+        evRow { UART_READ_TS; }
+        evRow { I2C_STO1; }
+        evRow { I2C_STA_HOLD_FT; }
+        evRow { I2C_DATA1_FT; }
+        evRow { I2C_DATA2_FT; }
+        evRow { I2C_CLK_LOW_FT; }
+        evRow { I2C_PRE_ACK_FT; }
+        evRow { I2C_ACK_FT; }
+        evRow { I2C_SPIKE_FT; }
+        evRow { I2C_STO_FT; }
+        evRow { I2C_TBUF_FT; }
+        evRow { I2C_RPSTA_FT; }
+        evRow { I2C_PRE_CLK_LOW_FT; }
+        evRow { I2C_STO1_FT; }
+        evRow { DNUT_TS; }
+        evRow { I2C_DDC_STA; }
+        evRow { I2C_DDC_TBUF; }
+        evRow { FPGA_TS; }
+        evRow { I2C_DDC_TBUF1; }
+        evRow { TBUF; }
+    }
+}
+PatternSetup OTP_PatSetup {
+    evPatternList {
+        OTP_Read_noFPGA;
+        OTP_Write_noFPGA;
+        dut_powerup_no_fpga;
+        OTP_WRITE_READ_BURST_UART_noFPGA;
+        OTP_WRITE_BURST_MATCH_UART evPerSite;
+        dut_uart_read;
+        dut_uart_write;
+        OTP_WRITE_READ_BURST_UART;
+    }
+    evPinConfig {
+        Row {
+            evPins = Expr { String = "DNUT_SCL"; }
+        }
+        Row {
+            evPins = Expr { String = "DNUT_SDA"; }
+        }
+        Row {
+            evPins = Expr { String = "DNUT_X1"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_ERRB_LFLTB_INTOUTB"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO00"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO01"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO02_MS"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO03_RCLKOUT_RCLKEN"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO04"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO05_BNE_SS1"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO06_RO_SS2"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO07_MISO"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO08_MOSI"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO09_SCLK"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_WS_GPIO10"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SCK_GPIO11"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SD_GPIO12"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SDOR_GPIO13_ADD0"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SCKOR_GPIO14_ADD1"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_WSOR_GPIO15_ADD2"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO16_CXTP"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_GPIO17_I2CSEL"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_LOCK"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_PWDNB"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SCL_TX"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_SDA_RX"; }
+        }
+        Row {
+            evPins = Expr { String = "DUT_X1"; }
+        }
+    }
+    evClocking {
+        evAutoBasePeriod = True;
+        evRow { UART_WRITE_noFPGA_TS; }
+        evRow { UART_READ_noFPGA_TS; }
+        evRow { REGSEND_noFPGA_TS; }
+        evRow { TESTMODE_noFPGA_TS; }
+        evRow { UART_WRITE_TS; }
+        evRow { UART_READ_TS; }
+        evRow { REGSEND_TS; }
+        evSyncRow meas_otp_i {
+            evA0 = Expr { }
+        }
+    }
+}

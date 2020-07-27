@@ -1,0 +1,45 @@
+enVision:"bl8:R15.7.2:S4.5";
+Spec Limits_Spec {
+    Category QA_Cold {
+        Cont_Dig_Neg_lim.Min = "-900mV";
+        Cont_Dig_Neg_lim.Max = "-300mV";
+        SPI_Lkg_lim.Min = "-1uA";
+        SPI_Lkg_lim.Max = "1uA";
+    }
+    Category FT_Cold {
+        Cont_Dig_Neg_lim.Min = "-900mV";
+        Cont_Dig_Neg_lim.Max = "-300mV";
+        SPI_Lkg_lim.Min = "-1uA";
+        SPI_Lkg_lim.Max = "1uA";
+    }
+    Category QA_Room {
+        Cont_Dig_Neg_lim.Min = "-900mV";
+        Cont_Dig_Neg_lim.Max = "-300mV";
+        SPI_Lkg_lim.Min = "-1uA";
+        SPI_Lkg_lim.Max = "1uA";
+    }
+    Category FT_Room {
+        Cont_Dig_Neg_lim.Min = "-900mV";
+        Cont_Dig_Neg_lim.Max = "-300mV";
+        SPI_Lkg_lim.Min = "-1uA";
+        SPI_Lkg_lim.Max = "1uA";
+    }
+    Category QA_Hot {
+        Cont_Dig_Neg_lim.Min = "-900mV";
+        Cont_Dig_Neg_lim.Max = "-300mV";
+        SPI_Lkg_lim.Min = "-1uA";
+        SPI_Lkg_lim.Max = "1uA";
+    }
+    Category FT_Hot {
+        Cont_Dig_Neg_lim.Min = "-900mV";
+        Cont_Dig_Neg_lim.Max = "-300mV";
+        SPI_Lkg_lim.Min = "-1uA";
+        SPI_Lkg_lim.Max = "1uA";
+    }
+    ParamGlobals {
+            Cont_Dig_Neg_lim { Type = V; }
+            SPI_Lkg_lim { Type = A; }
+    }
+}
+Mask Mask_Limits_Spec {
+}

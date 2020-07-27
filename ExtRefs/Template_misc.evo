@@ -1,0 +1,1428 @@
+enVision:"bl8:R15.7.2:S4.5";
+
+OperatorVariable curi_equipment_file {
+    Comment = "'Path and CURI equipment selection file name.'";
+    Expr = Expr { String = "'/opt/ateTools/curi/CURI/selection_files/MT9510.txt'"; }
+    UserMode = Production;
+}
+OperatorVariable Error_Message {
+    Comment = "Message defined by error routines for PopErrorTool_mf microflow";
+    Expr = Expr { String = "#"; Mode = Output; }
+    Direction = Output;
+    Value = "???";
+    UserMode = Engineering;
+}
+OperatorVariable OpVar_BypassPrompt {
+    Comment = "Used by Engineering to Bypass the operator prompts - Default (Content) values used.";
+    Expr = Expr { String = "FALSE"; }
+    UserMode = Engineering;
+}
+OperatorVariable OpVar_TestType {
+    Comment = "Used by User_Prompt";
+    Expr = Expr { String = "#"; Mode = Output; }
+    Direction = Output;
+    Value = "'FT'";
+    UserMode = Engineering;
+}
+OperatorVariable OpVar_TestTemp {
+    Comment = "Used by User_Prompt";
+    Expr = Expr { String = "#"; Mode = Output; }
+    Direction = Output;
+    Value = "'HOT'";
+    UserMode = Engineering;
+}
+OperatorVariable OpVar_ReTest {
+    Comment = "Used by User_Prompt";
+    Expr = Expr { String = "#"; Mode = Output; }
+    Direction = Output;
+    Value = "0";
+    UserMode = Engineering;
+}
+OperatorVariable OpVar_LimitsCategory {
+    Comment = "0:QA_COLD, 1:FT_COLD, 2:QA_ROOM, 3:FT_ROOM, 4:QA HOT, 5:FT_HOT";
+    Expr = Expr { String = "#"; Mode = Output; }
+    Direction = Output;
+    Value = "5";
+    UserMode = Engineering;
+}
+OperatorVariable Handler_Options {
+    Comment = "Needed for Maxim_parallel EIM";
+    Expr = Expr { String = "'log=off log_file=off'"; }
+    UserMode = Production;
+}
+OperatorVariable OpVar_DPAT_Flow {
+    Comment = "Used by Galaxy-DPAT to determine if DPAT should have run";
+    Expr = Expr { }
+    UserMode = Engineering;
+}
+OperatorVariable OpVar_PPMU_LMN {
+    Comment = "Used to enable PPMU-based line fault tests";
+    Expr = Expr { String = "FALSE"; }
+    UserMode = Engineering;
+}
+SubFlow OnLoad_Nominal {
+    Node[3] =     FlowNode_  {
+        XCoord = (181,117);
+        Port[0] {
+            To = 19;
+            UIFPort = 91;
+        }
+        UIFInfo = 271;
+        SpecPairs {
+            Globals_Spec = Expr { String = "Globals_Spec.Globals1"; }
+        }
+        TestId = "1.2e+07";
+        Exec = Operator_Prompt;
+    }
+    Node[4] =     FlowNode_  {
+        XCoord = (40,241);
+        Port[0] {
+            To = 17;
+            UIFPort = 350;
+        }
+        Port[1] {
+            To = 16;
+            UIFPort = 172;
+        }
+        UIFInfo = 271;
+        TestId = "1e+07";
+        Exec = Check_Testhead_PowerOn;
+    }
+    Node[5] =     FlowNode_  {
+        XCoord = (801,111);
+        Port[0] {
+            To = 20;
+            UIFPort = 91;
+        }
+        UIFInfo = 271;
+        TestId = "30000000";
+        Exec = Global_SW_Init;
+    }
+    Node[6] =     FlowNode_  {
+        XCoord = (565,114);
+        Port[0] {
+            To = 14;
+            UIFPort = 82;
+        }
+        Port[1] {
+            To = 10;
+            UIFPort = 177;
+        }
+        Port[2] {
+            To = 18;
+            UIFPort = 0;
+        }
+        UIFInfo = 271;
+        SpecPairs {
+            Globals_Spec = Expr { String = "Globals_Spec.Globals1"; }
+        }
+        TestId = "2e+07";
+        Exec = Common_Tester_Init;
+    }
+    Node[10] =     FlowNode_  {
+        XCoord = (684,202);
+        Port[0] {
+            To = 5;
+            UIFPort = 90;
+        }
+        UIFInfo = 272;
+        TestId = "21000000";
+        Exec = SMA_and_DVM_Init;
+    }
+    Node[11] =     FlowNode_  {
+        XCoord = (458,179);
+        Port[0] {
+            To = 6;
+            UIFPort = 88;
+        }
+        Port[1] {
+            To = 16;
+            UIFPort = 180;
+        }
+        UIFInfo = 270;
+        TestId = "19000000";
+        Exec = Board_HW_Name_Check;
+    }
+    Node[12] =     FlowNode_  {
+        XCoord = (1035,100);
+        Port[0] {
+            To = 15;
+            UIFPort = 211;
+        }
+        Port[1] {
+            To = 13;
+            UIFPort = 90;
+        }
+        UIFInfo = 271;
+        TestId = "31000000";
+        Exec = Define_Capture_WF;
+    }
+    Node[13] =     FlowNode_  {
+        XCoord = (1281,104);
+        Port[0] {
+            UIFPort = 91;
+        }
+        UIFInfo = 271;
+        TestId = "32000000";
+        Exec = TestFixture_Init;
+    }
+    Node[14] =     FlowNode_  {
+        XCoord = (682,110);
+        Port[0] {
+            To = 5;
+            UIFPort = 88;
+        }
+        UIFInfo = 271;
+        TestId = "22000000";
+        Exec = DVM_Init;
+    }
+    Node[15] =     FlowNode_  {
+        XCoord = (1218,296);
+        Port[0] {
+            To = 13;
+            UIFPort = 90;
+        }
+        Port[1] {
+            UIFPort = 400;
+        }
+        UIFInfo = 271;
+        TestId = "";
+        Exec = HW_Check;
+    }
+    Node[16] =     FlowNode_  {
+        XCoord = (452,367);
+        Port[0] {
+            UIFPort = 160;
+        }
+        Port[1] {
+            UIFPort = 180;
+        }
+        UIFInfo = 0;
+        TestId = "13000000";
+        Exec = Halt_OnLoad;
+    }
+    Node[17] =     FlowNode_  {
+        XCoord = (51,113);
+        Port[0] {
+            To = 3;
+            UIFPort = 96;
+        }
+        UIFInfo = 258;
+        SpecPairs {
+            Globals_Spec = Expr { String = "Globals_Spec.Globals1"; }
+        }
+        TestId = "1.1e+07";
+        Exec = Device_Name;
+    }
+    Node[18] =     FlowNode_  {
+        XCoord = (680,17);
+        Port[0] {
+            To = 5;
+            UIFPort = 94;
+        }
+        UIFInfo = 271;
+        TestId = "2000000";
+        Exec = GTO_Init;
+    }
+    Node[19] =     FlowNode_  {
+        XCoord = (325,117);
+        Port[0] {
+            To = 6;
+            UIFPort = 88;
+        }
+        UIFInfo = 272;
+        TestId = "6000000";
+        Exec = GTL_Open;
+    }
+    Node[20] =     FlowNode_  {
+        XCoord = (898,371);
+        Port[0] {
+            To = 12;
+            UIFPort = 160;
+        }
+        Port[1] {
+            To = 12;
+            UIFPort = 180;
+        }
+        UIFInfo = 0;
+        TestId = "11000000";
+        Exec = Dal_Init_Wrapper;
+    }
+    StartState = 4;
+    Background {
+        String = "Testhead Power is off";
+        Data = (0,0,38,360,0,0,22,0,0,7,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Wrong board detected";
+        Data = (0,0,410,279,0,0,22,0,0,7,0,0,1,0,0,0);
+    }
+    Background {
+        String = "or OpVar_Force_HW_Check = TRUE";
+        Data = (0,0,870,261,0,0,23,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Checker has not passed yet";
+        Data = (0,0,879,239,0,0,23,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Testing Disabled";
+        Data = (0,0,431,300,0,0,22,0,0,7,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Start OnLoad flow";
+        Data = (0,0,26,22,0,0,23,0,0,7,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Check to see if DPAT/SPAT";
+        Data = (0,0,262,59,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "should be run.  If true, then";
+        Data = (0,0,262,76,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "open GTL and link to GTM.";
+        Data = (0,0,266,94,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+}
+SubFlow OnPwrDwn_Nominal {
+    Node[1] =     FlowNode_  {
+        XCoord = (78,64);
+        Port[0] {
+            To = 4;
+            UIFPort = 91;
+        }
+        UIFInfo = 274;
+        SpecPairs {
+            Pin_Param_Spec = Expr { String = "Pin_Param_Spec.PwrDwn_Params"; }
+            Globals_Spec = Expr { String = "Globals_Spec.Globals1"; }
+        }
+        TestId = "7e+07";
+        Exec = OnPowerdown_Disconnect;
+    }
+    Node[2] =     FlowNode_  {
+        XCoord = (239,65);
+        Port[0] {
+            To = 4;
+            UIFPort = 87;
+        }
+        UIFInfo = 274;
+        TestId = "7.1e+07";
+        Exec = YieldMonitor;
+    }
+    Node[3] =     FlowNode_  {
+        XCoord = (633,74);
+        UIFInfo = 268;
+        TestId = "";
+        PortSelect = "0";
+        PortNumber = 0;
+    }
+    Node[4] =     FlowNode_  {
+        XCoord = (397,63);
+        Port[0] {
+            To = 3;
+            UIFPort = 67;
+        }
+        Port[1] {
+            To = 6;
+            UIFPort = 161;
+        }
+        Port[2] {
+            To = 5;
+            UIFPort = 197;
+        }
+        Port[3] {
+            To = 3;
+            UIFPort = 106;
+        }
+        UIFInfo = 271;
+        TestId = "9e8";
+        Exec = PAT_BinCheck;
+    }
+    Node[5] =     FlowNode_  {
+        XCoord = (389,247);
+        Port[0] {
+            To = 3;
+            UIFPort = 27;
+        }
+        UIFInfo = 330;
+        TestId = "";
+        Exec = SPAT_fail;
+    }
+    Node[6] =     FlowNode_  {
+        XCoord = (475,249);
+        Port[0] {
+            To = 3;
+            UIFPort = 25;
+        }
+        UIFInfo = 337;
+        TestId = "";
+        Exec = DPAT_fail;
+    }
+    Node[7] =     FlowNode_  {
+        XCoord = (136,215);
+        Port[0] {
+            To = 2;
+            UIFPort = 160;
+        }
+        Port[1] {
+            To = 2;
+            UIFPort = 180;
+        }
+        UIFInfo = 0;
+        TestId = "12000000";
+        Exec = Dal_Cleanup_Wrapper;
+    }
+    StartState = 1;
+    Background {
+        String = "This Flow also runs after";
+        Data = (0,0,71,11,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Cadence 'stop' command.";
+        Data = (0,0,69,29,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "If DPAT/SPAT is active, check for PAT";
+        Data = (0,0,362,9,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "failures and log PAT test result.";
+        Data = (0,0,360,33,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Port 0: Good Part; Bin 1";
+        Data = (0,0,389,302,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Port 1: Bin 1 failed DPAT; Bin 10";
+        Data = (0,0,390,324,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Port 2: Bin 1 failed SPAT; Bin 11";
+        Data = (0,0,389,346,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Port 3: Bad Part; Bin x";
+        Data = (0,0,390,369,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+}
+SubFlow OnInitFlow_0 {
+    Node[2] =     FlowNode_  {
+        XCoord = (251,52);
+        Port[0] {
+            To = 6;
+            UIFPort = 90;
+        }
+        UIFInfo = 271;
+        SpecPairs {
+            Pin_Param_Spec = Expr { String = "Pin_Param_Spec.PwrDwn_Params"; }
+            DC_Spec = Expr { String = "OpVar_LimitsCategory"; }
+            Globals_Spec = Expr { String = "Globals_Spec.Globals1"; }
+            Limits_Spec = Expr { String = "OpVar_LimitsCategory"; }
+            RegAccess_Spec = Expr { String = "RegAccess_Spec.UART_1Mbps"; }
+            Timing_Spec = Expr { String = "Timing_Spec.Normal_timing"; }
+        }
+        TestId = "5.2e+07";
+        Exec = Start_Timer;
+    }
+    Node[3] =     FlowNode_  {
+        XCoord = (689,63);
+        UIFInfo = 271;
+        TestId = "";
+        PortSelect = "0";
+        PortNumber = 0;
+    }
+    Node[6] =     FlowNode_  {
+        XCoord = (390,53);
+        Port[0] {
+            To = 10;
+            UIFPort = 91;
+        }
+        UIFInfo = 270;
+        SpecPairs {
+            Pin_Param_Spec = Expr { String = "Pin_Param_Spec.PwrDwn_Params"; }
+            Globals_Spec = Expr { String = "Globals_Spec.Globals1"; }
+            DC_Spec = Expr { String = "OpVar_LimitsCategory"; }
+            Limits_Spec = Expr { String = "OpVar_LimitsCategory"; }
+            RegAccess_Spec = Expr { String = "RegAccess_Spec.UART_1Mbps"; }
+            Timing_Spec = Expr { String = "Timing_Spec.Normal_timing"; }
+        }
+        TestId = "1e+08";
+        Exec = OnInit_Connect;
+    }
+    Node[8] =     FlowNode_  {
+        XCoord = (79,53);
+        Port[0] {
+            To = 2;
+            UIFPort = 91;
+        }
+        Port[1] {
+            To = 9;
+            UIFPort = 180;
+        }
+        UIFInfo = 271;
+        SpecPairs {
+            Pin_Param_Spec = Expr { String = "Pin_Param_Spec.PwrDwn_Params"; }
+            DC_Spec = Expr { String = "OpVar_LimitsCategory"; }
+            Globals_Spec = Expr { String = "Globals_Spec.Globals1"; }
+            Limits_Spec = Expr { String = "OpVar_LimitsCategory"; }
+            RegAccess_Spec = Expr { String = "RegAccess_Spec.UART_1Mbps"; }
+            Timing_Spec = Expr { String = "Timing_Spec.Normal_timing"; }
+        }
+        TestId = "5e+07";
+        Exec = Check_HWName_Result;
+    }
+    Node[9] =     FlowNode_  {
+        XCoord = (78,196);
+        Port[0] {
+            UIFPort = 160;
+        }
+        Port[1] {
+            UIFPort = 180;
+        }
+        UIFInfo = 0;
+        SpecPairs {
+            Pin_Param_Spec = Expr { String = "Pin_Param_Spec.PwrDwn_Params"; }
+            DC_Spec = Expr { String = "OpVar_LimitsCategory"; }
+            Globals_Spec = Expr { String = "Globals_Spec.Globals1"; }
+            Limits_Spec = Expr { String = "OpVar_LimitsCategory"; }
+            RegAccess_Spec = Expr { String = "RegAccess_Spec.UART_1Mbps"; }
+            Timing_Spec = Expr { String = "Timing_Spec.Normal_timing"; }
+        }
+        TestId = "5.1e+07";
+        Exec = Halt_OnLoad;
+    }
+    Node[10] =     FlowNode_  {
+        XCoord = (544,54);
+        Port[0] {
+            To = 3;
+            UIFPort = 90;
+        }
+        UIFInfo = 272;
+        SpecPairs {
+            Pin_Param_Spec = Expr { String = "Pin_Param_Spec.PwrDwn_Params"; }
+            DC_Spec = Expr { String = "OpVar_LimitsCategory"; }
+            Globals_Spec = Expr { String = "Globals_Spec.Globals1"; }
+            Limits_Spec = Expr { String = "OpVar_LimitsCategory"; }
+            RegAccess_Spec = Expr { String = "RegAccess_Spec.UART_1Mbps"; }
+            Timing_Spec = Expr { String = "Timing_Spec.Normal_timing"; }
+        }
+        TestId = "7000000";
+        Exec = GTL_Begin;
+    }
+    StartState = 2;
+    Background {
+        String = "Wrong board detected during OnLoad - Testing Disabled";
+        Data = (0,0,33,311,0,0,22,0,0,7,0,0,1,0,0,0);
+    }
+    Background {
+        String = "If Operator installs incorrect board for test program then program load is aborted prematurely";
+        Data = (0,0,33,337,0,0,26,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "OnInit flow checks for this condition and prevents operation of tester due to unknown state ";
+        Data = (0,0,37,365,0,0,26,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Program must be unloaded and setup corrected before testing can continue.";
+        Data = (0,0,39,393,0,0,26,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "If DPAT/SPAT is active,";
+        Data = (0,0,518,164,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "initialize GTL for current DUT";
+        Data = (0,0,520,185,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+}
+SubFlow OnUnload_Nominal {
+    Node[0] =     FlowNode_  {
+        XCoord = (112,105);
+        Port[0] {
+            To = 2;
+            UIFPort = 74;
+        }
+        Port[1] {
+            To = 1;
+            UIFPort = 105;
+        }
+        UIFInfo = 267;
+        SpecPairs {
+            Globals_Spec = Expr { String = "Globals_Spec.Globals1"; }
+        }
+        TestId = "74000000";
+        Exec = Powerdown_Disconnect_All;
+    }
+    Node[1] =     FlowNode_  {
+        XCoord = (297,180);
+        Port[0] {
+            To = 3;
+            UIFPort = 98;
+        }
+        UIFInfo = 268;
+        TestId = "3000000";
+        Exec = GTO_Init;
+    }
+    Node[2] =     FlowNode_  {
+        XCoord = (297,50);
+        Port[0] {
+            To = 3;
+            UIFPort = 95;
+        }
+        Port[1] {
+            UIFPort = 180;
+        }
+        UIFInfo = 258;
+        TestId = "5000000";
+        Exec = SMA_and_DVM_Init;
+    }
+    Node[3] =     FlowNode_  {
+        XCoord = (505,129);
+        Port[0] {
+            To = 4;
+            UIFPort = 87;
+        }
+        UIFInfo = 274;
+        TestId = "10000000";
+        Exec = GTL_Close;
+    }
+    Node[4] =     FlowNode_  {
+        XCoord = (655,141);
+        UIFInfo = 274;
+        TestId = "";
+        PortSelect = "0";
+        PortNumber = 0;
+    }
+    StartState = 0;
+    Background {
+        String = "Close Galaxy Log file and";
+        Data = (0,0,483,224,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Galaxy CCC library.";
+        Data = (0,0,485,244,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+}
+SubFlow Tester_Spcific_Init {
+    StartState = 3;
+}
+SubFlow OnFault_Flow {
+    Node[0] =     FlowNode_  {
+        XCoord = (53,59);
+        Port[0] {
+            UIFPort = 160;
+        }
+        Port[1] {
+            UIFPort = 180;
+        }
+        UIFInfo = 0;
+        TestId = "4000000";
+        Exec = OnFault_Message;
+    }
+    StartState = 0;
+    Background {
+        String = "This Flow also runs after";
+        Data = (0,0,195,65,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Cadence 'halt' command.";
+        Data = (0,0,197,86,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+}
+SubFlow UsrReset_SubFlow {
+    Node[0] =     FlowNode_  {
+        XCoord = (103,83);
+        Port[0] {
+            To = 2;
+            UIFPort = 57;
+        }
+        Port[1] {
+            UIFPort = 180;
+        }
+        UIFInfo = 274;
+        TestId = "72000000";
+        Exec = OnPowerdown_Disconnect;
+    }
+    Node[2] =     FlowNode_  {
+        XCoord = (274,182);
+        UIFInfo = 345;
+        TestId = "";
+        Exec = evResetBin;
+    }
+    StartState = 0;
+}
+
+PinType BidirectPins {
+    Type = Norm;
+    Direction = Bidirect;
+    Mode = NoTerm;
+    Mux = False;
+}
+PinType AnalogPins {
+    Comment = "Suggested use for all analog DUT pins controlled via Cadence";
+    Type = Res;
+    Min {
+        ClampLo = Expr { String = "clampLo_param"; }
+    }
+    Max {
+        PinVoltage = Expr { String = "3.7V"; }
+        Vil = Expr { String = "vil_param"; }
+        ClampHi = Expr { String = "4.5V"; }
+    }
+}
+PinType PowerPins {
+    Comment = "Program with Levels block and connect\/disconnect with SYSctrl test method";
+    Type = Pwr;
+    Min {
+        IccMax = Expr { String = "-1mA"; }
+        PowerSupply = Expr { String = "powerSupply_param.Min"; }
+        LoadComp = Expr { String = "loadComp_param.Min"; }
+    }
+    Max {
+        PowerSupply = Expr { String = "4V"; }
+        LoadComp = Expr { String = "loadComp_param.Max"; }
+    }
+    evSetupSelection = Expr { String = "PowerPins.Select.Safe.e4"; }
+    evSupplyType = Expr { String = "PowerType:HCOVI"; }
+}
+PinType PowerPinsX2 {
+    Comment = "Program with Levels block and connect\/disconnect with SYSctrl test method";
+    Type = Pwr;
+    Min {
+        IccMax = Expr { String = "-1mA"; }
+        PowerSupply = Expr { String = "-1V"; }
+        LoadComp = Expr { String = "loadComp_param.Min"; }
+    }
+    Max {
+        PowerSupply = Expr { String = "4V"; }
+        LoadComp = Expr { String = "loadComp_param.Max"; }
+    }
+    evSupplyType = Expr { String = "PowerType:HCOVI"; }
+}
+PinType GNDPins {
+    Type = Pwr;
+    Min {
+        IccMax = Expr { String = "iccMax_param.Min"; }
+        PowerSupply = Expr { String = "powerSupply_param.Min"; }
+        LoadComp = Expr { String = "loadComp_param.Min"; }
+    }
+    Max {
+        IccMax = Expr { String = "iccMax_param.Max"; }
+        PowerSupply = Expr { String = "powerSupply_param.Max"; }
+        LoadComp = Expr { String = "loadComp_param.Max"; }
+    }
+    evSupplyType = Expr { String = "PowerType:HCOVI"; }
+}
+PinType ResourcePins {
+    Comment = "Suggested use for all pins controlled via Cadence not defined as AnalogPins pinType";
+    Type = Res;
+    Min {
+        ClampLo = Expr { String = "clampLo_param"; }
+    }
+    Max {
+        ClampHi = Expr { String = "3.7V"; }
+    }
+}
+PinType hcovi_type {
+    Type = Pwr;
+    Min {
+        IccMax = Expr { String = "-1mA"; }
+        PowerSupply = Expr { String = "-1V"; }
+        LoadComp = Expr { String = "loadComp_param.Min"; }
+    }
+    Max {
+        PowerSupply = Expr { String = "2.15V"; }
+        LoadComp = Expr { String = "loadComp_param.Max"; }
+    }
+    evSetupSelection = Expr { String = "hcovi_type.Select.Safe.e4"; }
+    evSupplyType = Expr { String = "PowerType:HCOVI"; }
+}
+PinType InputPins {
+    Type = Norm;
+    Direction = Input;
+    Mode = NoTerm;
+    Mux = False;
+    Min {
+        ClampHi = Expr { String = "4.0V"; }
+    }
+    Max {
+        ClampHi = Expr { String = "4.0V"; }
+    }
+}
+PinType OutputPins {
+    Comment = "";
+    Type = Norm;
+    Direction = Output;
+    Mode = NoTerm;
+    Mux = False;
+    Min {
+        ClampHi = Expr { String = "4.0V"; }
+    }
+    Max {
+        ClampHi = Expr { String = "4.0V"; }
+    }
+}
+PinType CbitPins {
+    Type = CBit;
+}
+PinType DCRefPins {
+    Comment = "Constant DC voltage or current source programmed via Levels block and connect\/disconnect via SYSctrl";
+    Type = DCRef;
+    Min {
+        RefPinVoltage = Expr { String = "refPin_v_param"; }
+        RefPinCurrent = Expr { String = "refPin_i_param"; }
+    }
+}
+PinType HiVoltPins {
+    Comment = "Only used for FX-HV digital pins";
+    Type = HighVolt;
+    Direction = Input;
+    Mode = NoTerm;
+    Mux = False;
+    Min {
+        PinCurrent = Expr { String = "pin_i_param"; }
+        Vih = Expr { String = "vih_param"; }
+        Voh = Expr { String = "voh_param"; }
+        Ioh = Expr { String = "ioh_param"; }
+        ClampLo = Expr { String = "clampLo_param"; }
+    }
+    Max {
+        PinVoltage = Expr { String = "pin_v_param"; }
+        Vil = Expr { String = "vil_param"; }
+        Vol = Expr { String = "vol_param"; }
+        Iol = Expr { String = "iol_param"; }
+        Vref = Expr { String = "vref_param"; }
+        ClampHi = Expr { String = "clampHi_param"; }
+    }
+}
+PinType DCPins {
+    Comment = "Program with Levels block";
+    Type = DCPwr;
+    Min {
+        IccMax = Expr { String = "iccMax_param.Min"; }
+        PowerSupply = Expr { String = "powerSupply_param.Min"; }
+        LoadComp = Expr { String = "loadComp_param.Min"; }
+    }
+    Max {
+        IccMax = Expr { String = "iccMax_param.Max"; }
+        PowerSupply = Expr { String = "powerSupply_param.Max"; }
+        LoadComp = Expr { String = "loadComp_param.Max"; }
+    }
+    evSupplyType = Expr { String = "PowerType:HCOVI"; }
+}
+PinType PowerPin1V {
+    Type = Res;
+}
+PinType PowerPinVDDIO {
+    Type = Res;
+}
+PinType PowerPinVDD33 {
+    Type = Res;
+    Max {
+        PinVoltage = Expr { String = "3.5V"; }
+        ClampHi = Expr { String = "4.5V"; }
+    }
+}
+PinType AnalogPinsHiV {
+    Type = Res;
+    Min {
+        ClampLo = Expr { String = "clampLo_param"; }
+    }
+    Max {
+        PinVoltage = Expr { String = "5.5V"; }
+        Vil = Expr { String = "vil_param"; }
+        ClampHi = Expr { String = "6.5V"; }
+    }
+}
+PinType AnalogPinsLoV {
+    Type = Res;
+    Min {
+        ClampLo = Expr { String = "clampLo_param"; }
+    }
+    Max {
+        PinVoltage = Expr { String = "2.0V"; }
+        Vil = Expr { String = "vil_param"; }
+        ClampHi = Expr { String = "3V"; }
+    }
+}
+PinType AnalogPins1V {
+    Type = Res;
+    Min {
+        ClampLo = Expr { String = "clampLo_param"; }
+    }
+    Max {
+        PinVoltage = Expr { String = "1.15V"; }
+        Vil = Expr { String = "vil_param"; }
+        ClampHi = Expr { String = "2V"; }
+    }
+}
+ETest SMA_and_DVM_Init {
+    Result = Expr { String = "#"; Mode = Output; }
+    Mask[0] = Globals_Mask;
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = GTB_init;
+        EnableExpr = Expr { String = "Connected_to_tester()"; }
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_gtoFrontEndCtrl.mod.GTB_init";
+        }
+    }
+    evBlock[1] = {
+        Title = InitAuxClk;
+        EnableExpr = Expr { String = "Meter_GPIB8"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_clkCtrl.mod.InitAuxiliaryClk";
+        }
+    }
+    evBlock[2] = {
+        Title = InitSampClk;
+        EnableExpr = Expr { String = "Meter_GPIB9"; }
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_clkCtrl.mod.InitSampleClk";
+        }
+    }
+    evBlock[3] = {
+        Title = DVM_Init;
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "DVM_tests.mod.Connect_DVM_to_DUT_Site";
+            num_wire = Expr { String = "'2WIRE'"; }
+            meas_type = Expr { String = "'V'"; }
+        }
+    }
+    evBlock[4] = {
+        Title = DVM_Display;
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "DVM_tests.mod.Set_DVM_Display_State";
+            addr = Expr { String = "HP_METER"; }
+            display_state = Expr { String = "0"; }
+        }
+    }
+    evBlock[5] = {
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "hw_check.mod.HWCHK_VerifyCable_HP3458";
+        }
+    }
+}
+ETest OnFault_Message {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = ".Result = tm_rslt:NO_TEST"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_common.mod.Print_banner_message";
+            line1 = Expr { String = "'An Abnormal Exit Has Been Detected'"; }
+            line2 = Expr { String = "'Please review previous messages carefully'"; }
+            line3 = Expr { String = "'and correct the problem'"; }
+        }
+    }
+}
+ETest Start_Timer {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_common.mod.Start_timer";
+            display_time_ena = Expr { String = "FALSE"; }
+        }
+    }
+}
+ETest Powerdown_Disconnect_All {
+    Result = Expr { String = "#"; Mode = Output; }
+    Mask[0] = Globals_Mask;
+    PortExpr[0] = Expr { String = "Tester_Femcon AND NOT(Tester_GTO)"; }
+    PortExpr[1] = Expr { String = "Tester_GTO"; }
+    PortExpr[2] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_instrument_common.mod.Powerdown_and_disconnect_all";
+        }
+    }
+}
+ETest DVM_Init {
+    Result = Expr { String = "#"; Mode = Output; }
+    Mask[0] = Globals_Mask;
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = DVM_Init;
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "DVM_tests.mod.Connect_DVM_to_DUT_Site";
+            num_wire = Expr { String = "'2WIRE'"; }
+            meas_type = Expr { String = "'V'"; }
+        }
+    }
+    evBlock[1] = {
+        Title = DVM_Display;
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "DVM_tests.mod.Set_DVM_Display_State";
+            addr = Expr { String = "HP_METER"; }
+            display_state = Expr { String = "0"; }
+        }
+    }
+    evBlock[2] = {
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "hw_check.mod.HWCHK_VerifyCable_HP3458";
+        }
+    }
+}
+ETest GTO_Init {
+    Result = Expr { String = "#"; Mode = Output; }
+    Mask[0] = Globals_Mask;
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = SampDigHSInit;
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_SamplerDighs.mod.SampDighsInit";
+            LaminateEq = Expr { String = "1"; }
+        }
+    }
+    evBlock[1] = {
+        Title = GTOHSB_Init;
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_GTO_AWGHSB.mod.GtoAwghsbInit";
+        }
+    }
+    evBlock[2] = {
+        Title = InitAuxClk;
+        EnableExpr = Expr { String = "Meter_GPIB8"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_clkCtrl.mod.InitAuxiliaryClk";
+        }
+    }
+    evBlock[3] = {
+        Title = GTB_init;
+        EnableExpr = Expr { String = "Connected_to_tester()"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_gtoFrontEndCtrl.mod.GTB_init";
+        }
+    }
+    evBlock[4] = {
+        Title = CalSpectrum;
+        EnableExpr = Expr { String = "FALSE"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_GTO_AWGHSB.mod.CalibrateSpectrum";
+            GTO_S_Chans = Expr { String = "SerData1"; }
+            SampDighsPins = Expr { String = "SDI_diff"; }
+            DataPatName = Expr { String = "'HalfRate'"; }
+            BitsPerWaveform = Expr { String = "2"; }
+            DataRate = Expr { String = "10.0GHz"; }
+            MeasLevelMax = Expr { String = "JitCalMeasLevel"; }
+            MeasurementScale = Expr { String = "JitCalMeasScale"; }
+            SamplerConnection = Expr { String = "SdiToSamp"; }
+        }
+    }
+}
+ETest Common_Tester_Init {
+    Result = Expr { String = "#"; Mode = Output; }
+    Mask[0] = Globals_Mask;
+    Entry[0] = hs87_PatSetup;
+    PortExpr[0] = Expr { String = "NOT(Tester_Femcon) AND NOT (Tester_GTO)"; }
+    PortExpr[1] = Expr { String = "Tester_Femcon AND NOT (Tester_GTO)"; }
+    PortExpr[2] = Expr { String = "Tester_GTO"; }
+    evBlock[0] = {
+        Title = Tester_Inv;
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_instrument_common.mod.Inventory_sys_hdw";
+        }
+    }
+    evBlock[1] = {
+        Title = Tester_Init;
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_instrument_common.mod.Initialize_all_instruments";
+        }
+    }
+}
+ETest YieldMonitor {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Value = Expr { String = "#"; Mode = Output; }
+        Result = Expr { String = "..Value"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "Maxim_Yield_Monitor.tmod";
+            Display_running_routines = Expr { String = "FALSE"; }
+            Debug = Expr { String = "FALSE"; }
+        }
+    }
+}
+ETest Check_Testhead_PowerOn {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = ".ChkThPwr.Value"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = ChkThPwr;
+        Value = Expr { String = "#"; Mode = Output; }
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_common.mod.Check_testhead_power";
+        }
+    }
+}
+ETest Device_Name {
+    Result = Expr { String = "#"; Mode = Output; }
+    Entry[0] = Set_Device_Name;
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+}
+ETest Operator_Prompt {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = UserPrompt;
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        evExitExpr[0] = Expr { String = "TRUE->TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_operator_prompt.mod.User_Prompt";
+            FlagsOut = Expr { String = "#"; Mode = Output; }
+        }
+    }
+}
+ETest OnPowerdown_Disconnect {
+    Result = Expr { String = "#"; Mode = Output; }
+    Mask[0] = DC_Mask;
+    Mask[1] = Pin_Param_Mask;
+    Mask[2] = Globals_Mask;
+    Entry[0] = Set_Voltage_Levels;
+    Entry[1] = Func_PatSetup;
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "sys_and_levels.mod.DutPowerDownDisconnect";
+        }
+    }
+}
+ETest Global_SW_Init {
+    Result = Expr { String = "#"; Mode = Output; }
+    Mask[0] = Globals_Mask;
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    PortAction[0] = Expr { String = "TRUE->FCAL_FirstRun"; }
+    evBlock[0] = {
+        Title = SWInit;
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "HS87.tp.Global_Init";
+        }
+    }
+    evBlock[1] = {
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "SERDES_Pins.mod.GetPins";
+        }
+    }
+    evBlock[2] = {
+        EnableExpr = Expr { String = "FALSE"; }
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "sys_and_levels.mod.OnLoadDnutInitialize";
+        }
+    }
+    evBlock[3] = {
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "rlms.mod.PopulateDeviceTable";
+        }
+    }
+}
+ETest Define_Capture_WF {
+    Result = Expr { String = "#"; Mode = Output; }
+    Entry[0] = hs87_PatSetup;
+    PortExpr[0] = Expr { String = "NOT OpVar_FlowEnableOverride AND (NOT OpVar_FlowEnable OR OpVar_Force_HW_Check)"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = Def_Captures;
+        EnableExpr = Expr { String = "TRUE"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "user_digital.mod.Define_captures";
+        }
+    }
+}
+ETest TestFixture_Init {
+    Result = Expr { String = "#"; Mode = Output; }
+    Entry[0] = Func_PatSetup;
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        EnableExpr = Expr { String = "TRUE"; }
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "HS87.tp.TestFixture_init";
+        }
+    }
+    evBlock[1] = {
+        EnableExpr = Expr { String = "NOT FCAL_FirstRun OR NOT OpVar_RunUsrCal_Flow"; }
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "sys_and_levels.mod.OnLoadDnutInitialize";
+        }
+    }
+}
+
+ETest OnInit_Connect {
+    Result = Expr { String = "#"; Mode = Output; }
+    Mask[0] = DC_Mask;
+    Mask[1] = Pin_Param_Mask;
+    Mask[2] = Globals_Mask;
+    Entry[0] = Func_PatSetup;
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "sys_and_levels.mod.InitializeStaticVariables";
+        }
+    }
+    evBlock[1] = {
+        EnableExpr = Expr { String = "NOT FCAL_FirstRun OR NOT OpVar_RunUsrCal_Flow"; }
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "sys_and_levels.mod.OnLoadDnutInitialize";
+        }
+    }
+    evBlock[2] = {
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "sys_and_levels.mod.OnInitConnectPins";
+            OviPins = Expr { String = "dut_ovi_pins"; }
+            HcoviPins = Expr { String = "dut_hcovi_pins"; }
+            QfviPins = Expr { String = "dut_qfvi_pins"; }
+        }
+    }
+    evBlock[3] = {
+        EnableExpr = Expr { String = "NOT FCAL_FirstRun OR NOT OpVar_RunUsrCal_Flow"; }
+        Value = Expr { String = "#"; Mode = Output; }
+        Result = Expr { String = "..Value"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "FPGA.mod.Check_FPGA";
+            force_load = Expr { String = "FALSE"; }
+            PatLoadOK_Test = evParametricTest {
+                Number = Expr { String = "0000001"; }
+                Result = Expr { String = "#"; Mode = Output; }
+                evTestText = Expr { String = "'VIDEO_Pattern_Check'"; }
+                evLowLimit = Expr { String = "1"; }
+                evHighLimit = Expr { String = "1"; }
+                evSimulateValue = Expr { String = "1"; }
+            }
+        }
+    }
+}
+ETest Eval_First_Run {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "user_globals.mod.Multisite_first_run_Control_Stop";
+        }
+    }
+}
+MicroFlow PopErrorTool_mf {
+    Event[0] {
+        Value = Expr { String = "#"; Mode = Output; }
+        Index = Expr { String = "1"; }
+        Expr = Expr { String = "Warning_message(Error_Message)"; }
+    }
+}
+MicroFlow Set_Device_Name {
+    Event[0] {
+        Value = Expr { String = "#"; Mode = Output; }
+        Index = Expr { String = "1"; }
+        Method {
+                MicroFlowMid = "lib_common.mod.Set_Device_Name";
+        }
+    }
+}
+MicroFlow Set_Voltage_Levels {
+    Event[0] {
+        Value = Expr { String = "#"; Mode = Output; }
+        Index = Expr { String = "1"; }
+        Enable = Expr { String = "TRUE"; }
+        Method {
+                MicroFlowMid = "HS87.tp.Set_Voltage_Levels";
+        }
+    }
+}
+SubFlow OnAfterBin_0 {
+    Node[0] =     FlowNode_  {
+        XCoord = (194,119);
+        Port[0] {
+            To = 1;
+            UIFPort = 94;
+        }
+        UIFInfo = 270;
+        TestId = "8000000";
+        Exec = GTL_End;
+    }
+    Node[1] =     FlowNode_  {
+        XCoord = (385,132);
+        UIFInfo = 272;
+        TestId = "";
+        PortSelect = "0";
+        PortNumber = 0;
+    }
+    StartState = 0;
+    Background {
+        String = "If DPAT/SPAT active, end";
+        Data = (0,0,182,60,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "GTL job for current DUT.";
+        Data = (0,0,184,81,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+}
+SubFlow OnEndLot_0 {
+    Node[0] =     FlowNode_  {
+        XCoord = (183,102);
+        Port[0] {
+            To = 1;
+            UIFPort = 92;
+        }
+        UIFInfo = 271;
+        TestId = "9000000";
+        Exec = EndLot;
+    }
+    Node[1] =     FlowNode_  {
+        XCoord = (355,111);
+        UIFInfo = 267;
+        TestId = "";
+        PortSelect = "0";
+        PortNumber = 0;
+    }
+    StartState = 0;
+    Background {
+        String = "Close lot on GTM.";
+        Data = (0,0,184,53,0,0,25,0,0,6,0,0,1,0,0,0);
+    }
+}
+ETest GTL_Open {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "mxl_dpat_galaxy_support.mod.mxl_GTL_Open";
+        }
+    }
+}
+ETest GTL_Begin {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "mxl_dpat_galaxy_support.mod.mxl_gtl_beginjob";
+        }
+    }
+}
+ETest PAT_BinCheck {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "if(.PatCheck.PAT_Result=1,TRUE,FALSE)"; }
+    PortExpr[1] = Expr { String = "if(.PatCheck.PAT_Result=10,TRUE,FALSE)"; }
+    PortExpr[2] = Expr { String = "if(.PatCheck.PAT_Result=11,TRUE,FALSE)"; }
+    PortExpr[3] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = PatCheck;
+        Value = Expr { String = "#"; Mode = Output; }
+        Result = Expr { String = "..Value"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "mxl_dpat_galaxy_support.mod.mxl_DPAT_Bin";
+            PAT_Result = Expr { String = "#"; Mode = Output; }
+            GalaxyBinResult = evParametricTest {
+                Number = Expr { String = "9999999"; }
+                Result = Expr { String = "#"; Mode = Output; }
+                evTestText = Expr { String = "'PAT_BIN'"; }
+                evLowLimit = Expr { String = "0"; }
+                evHighLimit = Expr { String = "5"; }
+            }
+        }
+    }
+}
+ETest GTL_End {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "mxl_dpat_galaxy_support.mod.mxl_gtl_end_job";
+        }
+    }
+}
+ETest GTL_Close {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "mxl_dpat_galaxy_support.mod.mxl_UnloadGTLGTM";
+        }
+    }
+}
+ETest EndLot {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "mxl_dpat_galaxy_support.mod.mxl_EndLot";
+        }
+    }
+}
+ExtInterface curi {
+    	Name[0] = curiMethod;
+}

@@ -1,0 +1,714 @@
+enVision:"bl8:R15.7.2:S4.5";
+BinMap Bins_Nominal {
+    Bin PASS = 1;
+    Bin Opens = 8;
+    Bin Supply_Current_Active = 8;
+    Bin Leakage_Current = 8;
+    Bin evRunTimeErrorBin = 8;
+    Bin Shorts = 8;
+    Bin Standby_Current = 8;
+    Bin Binning_Error = 8;
+    Bin SPAT_fail = 8;
+    Bin DPAT_fail = 7;
+    Bin evResetBin = 0;
+    Bin POR_fail = 8;
+    Bin ICC = 8;
+    Bin LOCK = 8;
+    Bin AtpgFail = 8;
+    Bin DigVilFail = 8;
+    Bin DigVihFail = 8;
+    Bin DigVolFail = 8;
+    Bin DigVohFail = 8;
+    Bin TxVolFail = 8;
+    Bin TxVohFail = 8;
+    Bin SioVodFail = 8;
+    Bin SioVosFail = 8;
+    Bin SioVodDeltaFail = 8;
+    Bin SioVosDeltaFail = 8;
+    Bin OpenSocketFail = 8;
+    Bin OscCommAlarm = 8;
+    Bin DutCommunicationFail = 8;
+    Bin DevIdFail = 8;
+    Bin MBistFail = 8;
+    Bin SioIosFail = 8;
+    Bin SioIosDFail = 8;
+    Bin GmslPrbsFail = 8;
+    Bin TestTempFail = 8;
+    Bin GmslOutputResFail = 8;
+    Bin IddSleepFail = 8;
+    Bin IddPwdnFail = 8;
+    Bin LMN_IihIil = 8;
+    Bin I2C_TIMING_TEST = 8;
+    Bin CmuCapVltgFail = 8;
+    Bin I2cClkFreqFail = 8;
+    Bin XresVltgFail = 8;
+    Bin SioPwrdnVltgFail = 8;
+    Bin HDMITermFail = 8;
+    Bin IddPRBSFail = 8;
+    Bin PullupPullDownFail = 8;
+    Bin IddqFail = 8;
+    Bin PatternError = 8;
+    Bin AtSpeedVideoFail = 8;
+    Bin IddHDMIFail = 8;
+    Bin SpeedLimitFail = 8;
+    Bin OTPTrimFail = 8;
+    Bin RgmiiFail = 8;
+    Bin SioVdisFail = 8;
+    Bin LMN_V = 8;
+    Bin AtSpeedAudioFail = 8;
+    Bin LMN_lkg = 8;
+    Bin AbusFail = 8;
+    Bin BlankTestFail = 8;
+    Bin LockTimeFail = 8;
+    Bin UartI2CFail = 8;
+    Bin LockTiming = 8;
+    Bin TxRxRiseFallFail = 8;
+    Bin SPITiming = 8;
+    Bin SPIFunctional = 8;
+    Bin SpiTimingFail = 8;
+    Bin GPIO_Func = 8;
+    Bin fail_bin = 8;
+    Bin GrossFunctional = 8;
+    Bin HardwareIssue = 8;
+    Bin HdmiPLL = 7;
+    Bin LineFaultNew = 8;
+    Bin LimitConfig = 8;
+    Bin HDCP_GMSL = 8;
+    Bin Stuck_Device = 8;
+    Bin GmslLink = 8;
+    Bin TDiodeVltgFail = 8;
+    Bin GmslLockErrorFailPhyA = 8;
+    Bin GmslLockErrorFailPhyB = 8;
+    Bin OsnOffsetFailPhyA = 7;
+    Bin OsnOffsetLinkPhyA = 7;
+    Bin OsnOffsetConvergencePhyA = 7;
+    Bin OsnOffsetEsVltgPhyA = 7;
+    Bin OsnOffsetHazyPhyA = 7;
+    Bin OsnOffsetInitPhyA = 7;
+    Bin OsnOffsetSamplePhyA = 7;
+    Bin OsnOffsetVgaPhyA = 7;
+    Bin OsnGainPhyA = 7;
+    Bin OsnReplicaGainPhyB = 7;
+    Bin OsnOffsetFailPhyB = 7;
+    Bin OsnOffsetLinkPhyB = 7;
+    Bin OsnOffsetConvergencePhyB = 7;
+    Bin OsnOffsetEsVltgPhyB = 7;
+    Bin OsnOffsetHazyPhyB = 7;
+    Bin OsnOffsetInitPhyB = 7;
+    Bin OsnOffsetSamplePhyB = 7;
+    Bin OsnOffsetVgaPhyB = 7;
+    Bin OsnGainPhyB = 7;
+    Bin OsnReplicaGainPhyA = 7;
+    Bin OTP_Pgm_Fail = 8;
+    Bin WrongDeviceOrientation = 8;
+}
+Bin_ evResetBin {
+    Result = False;
+    CheckOverFlow = True;
+    Color = 8;
+}
+Bin_ fail_bin {
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ PASS {
+    Comment = "Exact text required by 75-0020";
+    Number = 1;
+    Result = True;
+    CheckOverFlow = True;
+    Color = 0;
+}
+Bin_ Opens {
+    Comment = "Exact text required by 75-0020";
+    Number = 5;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ Shorts {
+    Comment = "Exact text required by 75-0020";
+    Number = 6;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ Supply_Current_Active {
+    Comment = "Exact text required by 75-0020";
+    Number = 7;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ Standby_Current {
+    Comment = "Exact text required by 75-0020";
+    Number = 8;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ Leakage_Current {
+    Comment = "Exact text required by 75-0020";
+    Number = 9;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ evRunTimeErrorBin {
+    Result = False;
+    CheckOverFlow = True;
+    Color = 8;
+}
+Bin_ DPAT_fail {
+    Comment = "Exact text required by 75-0020";
+    Number = 10;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SPAT_fail {
+    Number = 11;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ RgmiiFail {
+    Number = 25;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ LMN_lkg {
+    Number = 26;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ LMN_IihIil {
+    Number = 27;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ LMN_V {
+    Number = 28;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ I2C_TIMING_TEST {
+    Number = 29;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ GrossFunctional {
+    Number = 30;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ Binning_Error {
+    Number = 31;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 8;
+}
+Bin_ PatternError {
+    Number = 32;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OTPTrimFail {
+    Number = 34;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ POR_fail {
+    Number = 35;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ ICC {
+    Number = 36;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ LOCK {
+    Number = 37;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ AtpgFail {
+    Number = 38;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ DigVilFail {
+    Number = 39;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ DigVihFail {
+    Number = 40;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ DigVolFail {
+    Number = 41;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ DigVohFail {
+    Number = 42;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ TxVolFail {
+    Number = 43;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ TxVohFail {
+    Number = 44;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SioVodFail {
+    Number = 45;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SioVosFail {
+    Number = 46;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SioVodDeltaFail {
+    Number = 47;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SioVosDeltaFail {
+    Number = 48;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SioVdisFail {
+    Number = 49;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ AbusFail {
+    Number = 52;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OpenSocketFail {
+    Number = 55;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ IddSleepFail {
+    Number = 56;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ IddPwdnFail {
+    Number = 57;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OscCommAlarm {
+    Number = 58;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ DutCommunicationFail {
+    Number = 59;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ DevIdFail {
+    Number = 60;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ MBistFail {
+    Number = 61;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SioIosFail {
+    Number = 62;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SioIosDFail {
+    Number = 63;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ TDiodeVltgFail {
+    Number = 64;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ GmslPrbsFail {
+    Number = 66;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ TestTempFail {
+    Number = 68;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ GmslOutputResFail {
+    Number = 69;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ CmuCapVltgFail {
+    Number = 70;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ I2cClkFreqFail {
+    Number = 71;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ XresVltgFail {
+    Number = 72;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SioPwrdnVltgFail {
+    Number = 73;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ PullupPullDownFail {
+    Number = 75;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ LockTiming {
+    Number = 76;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ LockTimeFail {
+    Number = 77;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SPITiming {
+    Number = 78;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SPIFunctional {
+    Number = 79;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ AtSpeedVideoFail {
+    Number = 80;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ AtSpeedAudioFail {
+    Number = 81;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SpeedLimitFail {
+    Number = 82;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ BlankTestFail {
+    Number = 83;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ SpiTimingFail {
+    Number = 84;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ HDMITermFail {
+    Number = 90;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ IddPRBSFail {
+    Number = 91;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ IddHDMIFail {
+    Number = 92;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ IddqFail {
+    Number = 97;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ UartI2CFail {
+    Number = 98;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ TxRxRiseFallFail {
+    Number = 99;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ GPIO_Func {
+    Number = 100;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ LimitConfig {
+    Number = 105;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ HardwareIssue {
+    Number = 110;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ HdmiPLL {
+    Number = 120;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ LineFaultNew {
+    Number = 130;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ HDCP_GMSL {
+    Number = 140;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ Stuck_Device {
+    Number = 143;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ GmslLink {
+    Number = 150;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ GmslLockErrorFailPhyA {
+    Number = 152;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ GmslLockErrorFailPhyB {
+    Number = 153;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnOffsetFailPhyA {
+    Number = 154;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnOffsetFailPhyB {
+    Number = 155;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnOffsetLinkPhyA {
+    Number = 156;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnOffsetLinkPhyB {
+    Number = 157;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnOffsetConvergencePhyA {
+    Number = 158;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnOffsetConvergencePhyB {
+    Number = 159;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnOffsetEsVltgPhyA {
+    Number = 160;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnOffsetEsVltgPhyB {
+    Number = 161;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnOffsetHazyPhyA {
+    Number = 162;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnOffsetHazyPhyB {
+    Number = 163;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnOffsetInitPhyA {
+    Number = 164;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnOffsetInitPhyB {
+    Number = 165;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnOffsetSamplePhyA {
+    Number = 166;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnOffsetSamplePhyB {
+    Number = 167;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnOffsetVgaPhyA {
+    Number = 168;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnOffsetVgaPhyB {
+    Number = 169;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnGainPhyA {
+    Number = 170;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnGainPhyB {
+    Number = 171;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnReplicaGainPhyA {
+    Number = 172;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OsnReplicaGainPhyB {
+    Number = 173;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ OTP_Pgm_Fail {
+    Number = 174;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 2;
+}
+Bin_ WrongDeviceOrientation {
+    Number = 67;
+    Result = False;
+    CheckOverFlow = True;
+    Color = 8;
+}

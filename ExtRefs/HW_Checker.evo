@@ -1,0 +1,729 @@
+enVision:"bl8:R15.7.2:S4.5";
+
+SubFlow HW_Check {
+    Node[0] =     FlowNode_  {
+        XCoord = (321,226);
+        Port[0] {
+            To = 3;
+            UIFPort = 91;
+        }
+        Port[1] {
+            To = 6;
+            UIFPort = 180;
+        }
+        UIFInfo = 270;
+        TestId = "4.4e+07";
+        Exec = TestFixture_Checker;
+    }
+    Node[2] =     FlowNode_  {
+        XCoord = (856,49);
+        Port[0] {
+            UIFPort = 90;
+        }
+        UIFInfo = 271;
+        TestId = "";
+        PortSelect = "0";
+        PortNumber = 0;
+    }
+    Node[3] =     FlowNode_  {
+        XCoord = (452,225);
+        Port[0] {
+            To = 9;
+            UIFPort = 87;
+        }
+        UIFInfo = 271;
+        TestId = "4.6e+07";
+        Exec = TestFixture_Init;
+    }
+    Node[4] =     FlowNode_  {
+        XCoord = (153,324);
+        Port[0] {
+            To = 0;
+            UIFPort = 85;
+        }
+        Port[1] {
+            To = 5;
+            UIFPort = 180;
+        }
+        UIFInfo = 275;
+        TestId = "4.2e+07";
+        Exec = Empty_Socket_Check;
+    }
+    Node[5] =     FlowNode_  {
+        XCoord = (153,477);
+        Port[0] {
+            To = 13;
+            UIFPort = 178;
+        }
+        UIFInfo = 0;
+        TestId = "4.3e+07";
+        Exec = Empty_Socket_Check_Msg;
+    }
+    Node[6] =     FlowNode_  {
+        XCoord = (321,444);
+        Port[0] {
+            To = 13;
+            UIFPort = 170;
+        }
+        UIFInfo = 0;
+        TestId = "4.5e+07";
+        Exec = HW_Check_Failed_Msg;
+    }
+    Node[8] =     FlowNode_  {
+        XCoord = (15,224);
+        Port[0] {
+            To = 0;
+            UIFPort = 94;
+        }
+        UIFInfo = 1;
+        TestId = "4.1e+07";
+        Exec = Set_DLog_On;
+    }
+    Node[9] =     FlowNode_  {
+        XCoord = (584,222);
+        Port[0] {
+            To = 11;
+            UIFPort = 94;
+        }
+        UIFInfo = 268;
+        TestId = "4.7e+07";
+        Exec = Set_DLog_Off;
+    }
+    Node[10] =     FlowNode_  {
+        XCoord = (30,27);
+        Port[0] {
+            To = 2;
+            UIFPort = 49;
+        }
+        Port[1] {
+            To = 8;
+            UIFPort = 180;
+        }
+        Port[2] {
+            To = 2;
+            UIFPort = 91;
+        }
+        Port[3] {
+            To = 8;
+            UIFPort = 208;
+        }
+        UIFInfo = 0;
+        TestId = "4e+07";
+        Exec = Set_Checker_Flow;
+    }
+    Node[11] =     FlowNode_  {
+        XCoord = (727,223);
+        Port[0] {
+            To = 2;
+            UIFPort = 65;
+        }
+        Port[1] {
+            To = 13;
+            UIFPort = 180;
+        }
+        UIFInfo = 271;
+        TestId = "4.8e+07";
+        Exec = Checker_Results;
+    }
+    Node[12] =     FlowNode_  {
+        XCoord = (842,415);
+        Port[0] {
+            UIFPort = 160;
+        }
+        UIFInfo = 266;
+        TestId = "";
+        PortSelect = "0";
+        PortNumber = 1;
+    }
+    Node[13] =     FlowNode_  {
+        XCoord = (732,407);
+        Port[0] {
+            To = 12;
+            UIFPort = 94;
+        }
+        UIFInfo = 268;
+        SpecPairs {
+            DC_Spec = Expr { }
+            Globals_Spec = Expr { }
+            Limits_Spec = Expr { }
+            Pin_Param_Spec = Expr { }
+            Timing_Spec = Expr { }
+        }
+        TestId = "1000000";
+        Exec = Set_DLog_Off;
+    }
+    StartState = 10;
+    Background {
+        String = "Port 3: OpVar_FlowEnable = FALSE";
+        Data = (0,0,71,154,0,0,23,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Port 1: OpVar_Force_HW_Check = TRUE";
+        Data = (0,0,75,127,0,0,23,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Board Check OK.";
+        Data = (0,0,784,17,0,0,23,0,0,7,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Socket not empty";
+        Data = (0,0,196,569,0,0,22,0,0,7,0,0,1,0,0,0);
+    }
+    Background {
+        String = "HW check failed";
+        Data = (0,0,810,371,0,0,22,0,0,7,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Do not add Bins to HW check tests";
+        Data = (0,0,228,194,0,0,26,0,0,7,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Port 0: OpVar_FlowEnableOverride= TRUE";
+        Data = (0,0,123,24,0,0,23,0,0,6,0,0,1,0,0,0);
+    }
+    Background {
+        String = "Port 2: OpVar_FlowEnable = TRUE";
+        Data = (0,0,211,79,0,0,23,0,0,6,0,0,1,0,0,0);
+    }
+}
+ETest HW_Check_Failed_Msg {
+    FinderFilter = "";
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "lib_common.mod.Print_banner_message";
+            line1 = Expr { String = "'Hardware Check Failed'"; }
+            line2 = Expr { String = "'Testing cannot continue until HW check passes'"; }
+        }
+    }
+}
+ETest Board_HW_Name_Check {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = ".Name_Check.Value"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = Name_Check;
+        Value = Expr { String = "#"; Mode = Output; }
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "hw_check.mod.Board_HW_name_check";
+            bypass = Expr { String = "FALSE"; }
+        }
+    }
+}
+ETest Empty_Socket_Check {
+    Result = Expr { String = "#"; Mode = Output; }
+    Mask[0] = Globals_Mask;
+    PortExpr[0] = Expr { String = ".Check.Value"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = Check;
+        Value = Expr { String = "#"; Mode = Output; }
+        evContinueOnFail = Expr { String = "TRUE"; }
+        TestMethod {
+            Name = "hw_check.mod.Empty_socket_check";
+            IRange_Ana = Expr { String = "5mA"; }
+            Dig_pin = Expr { String = "DUT_ERRB_LFLTB_INTOUTB"; }
+            IForce_Dig = Expr { String = "100uA"; }
+            VClamp_Dig = Expr { String = "2.0V"; }
+            Meas_Average = Expr { String = "10"; }
+            ExitState_Dig = Expr { String = "'DISCONN'"; }
+            EmptySocket_Icc_limits = {
+                Row[0] = evParametricTest {
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_ERRB_LFLTB_INTOUTB"; }
+                    evTestText = Expr { String = "'Empty Socket Check'"; }
+                    evLowLimit = Expr { String = "1.2V"; }
+                    evHighLimit = Expr { String = "3.0V"; }
+                    evSimulateValue = Expr { String = "2.2V"; }
+                }
+            }
+        }
+    }
+}
+ETest Empty_Socket_Check_Msg {
+    Result = Expr { String = "#"; Mode = Output; }
+    Exit[0] = Set_DLog_Mode_Off;
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Result = Expr { String = "tm_rslt:NO_TEST"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "hw_check.mod.Empty_socket_check_msg";
+        }
+    }
+}
+ETest TestFixture_Checker {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = ".Result = tm_rslt:PASS"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    PortAction[1] = Expr { String = "TRUE->OpVar_CheckerSite_Fail"; }
+    evBlock[0] = {
+        Title = Checker1;
+        Value = Expr { String = "#"; Mode = Output; }
+        evContinueOnFail = Expr { String = "TRUE"; }
+        TestMethod {
+            Name = "HS87.tp.TestFixture_Checker";
+            Checker_Vcc_limits = {
+                Row[0] = evParametricTest {
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evTestText = Expr { String = "'Voltage_meas'"; }
+                    evLowLimit = Expr { String = "3.2V"; }
+                    evHighLimit = Expr { String = "3.3V"; }
+                }
+            }
+        }
+    }
+    evBlock[1] = {
+        EnableExpr = Expr { String = "TRUE"; }
+        Value = Expr { String = "#"; Mode = Output; }
+        Result = Expr { String = "..Value"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "hw_check.mod.HWCHK_Cal_PPMU_fi_with_DVM";
+            ppmu_plist = Expr { String = "dut_lmn_pins"; }
+            iForce = Expr { String = "-6uA"; }
+            meterRange = Expr { String = "20uA"; }
+            RawLim = {
+                Row[0] = evParametricTest {
+                    Number = Expr { String = "7001"; }
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN0A"; }
+                    evTestText = Expr { String = "'CAL_PPMU_m6_uA_RAW_LMN0A'"; }
+                    evLowLimit = Expr { String = "-6.18uA"; }
+                    evHighLimit = Expr { String = "-5.82uA"; }
+                    evUnits = Expr { String = "'uA'"; }
+                }
+                Row[1] = evParametricTest {
+                    Number = Expr { String = "7002"; }
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN0B"; }
+                    evTestText = Expr { String = "'CAL_PPMU_m6_uA_RAW_LMN0B'"; }
+                    evLowLimit = Expr { String = "-6.18uA"; }
+                    evHighLimit = Expr { String = "-5.82uA"; }
+                    evUnits = Expr { String = "'uA'"; }
+                }
+                Row[2] = evParametricTest {
+                    Number = Expr { String = "7003"; }
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN1A"; }
+                    evTestText = Expr { String = "'CAL_PPMU_m6_uA_RAW_LMN1A'"; }
+                    evLowLimit = Expr { String = "-6.18uA"; }
+                    evHighLimit = Expr { String = "-5.82uA"; }
+                    evUnits = Expr { String = "'uA'"; }
+                }
+                Row[3] = evParametricTest {
+                    Number = Expr { String = "7004"; }
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN1B"; }
+                    evTestText = Expr { String = "'CAL_PPMU_m6_uA_RAW_LMN1B'"; }
+                    evLowLimit = Expr { String = "-6.18uA"; }
+                    evHighLimit = Expr { String = "-5.82uA"; }
+                    evUnits = Expr { String = "'uA'"; }
+                }
+            }
+            CalLim = {
+                Row[0] = evParametricTest {
+                    Number = Expr { String = "7011"; }
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN0A"; }
+                    evTestText = Expr { String = "'CAL_PPMU_m6_uA_ERROR_LMN0A'"; }
+                    evLowLimit = Expr { String = "-200nA"; }
+                    evHighLimit = Expr { String = "200nA"; }
+                    evUnits = Expr { String = "'nA'"; }
+                }
+                Row[1] = evParametricTest {
+                    Number = Expr { String = "7012"; }
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN0B"; }
+                    evTestText = Expr { String = "'CAL_PPMU_m6_uA_ERROR_LMN0B'"; }
+                    evLowLimit = Expr { String = "-200nA"; }
+                    evHighLimit = Expr { String = "200nA"; }
+                    evUnits = Expr { String = "'nA'"; }
+                }
+                Row[2] = evParametricTest {
+                    Number = Expr { String = "7013"; }
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN1A"; }
+                    evTestText = Expr { String = "'CAL_PPMU_m6_uA_ERROR_LMN1A'"; }
+                    evLowLimit = Expr { String = "-200nA"; }
+                    evHighLimit = Expr { String = "200nA"; }
+                    evUnits = Expr { String = "'nA'"; }
+                }
+                Row[3] = evParametricTest {
+                    Number = Expr { String = "7014"; }
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN1B"; }
+                    evTestText = Expr { String = "'CAL_PPMU_m6_uA_ERROR_LMN1B'"; }
+                    evLowLimit = Expr { String = "-200nA"; }
+                    evHighLimit = Expr { String = "200nA"; }
+                    evUnits = Expr { String = "'nA'"; }
+                }
+            }
+        }
+    }
+    evBlock[2] = {
+        EnableExpr = Expr { String = "TRUE"; }
+        Value = Expr { String = "#"; Mode = Output; }
+        Result = Expr { String = "..Value"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "hw_check.mod.HWCHK_Cal_PPMU_fi_with_DVM";
+            ppmu_plist = Expr { String = "dut_lmn_pins"; }
+            iForce = Expr { String = "-20uA"; }
+            meterRange = Expr { String = "200uA"; }
+            RawLim = {
+                Row[0] = evParametricTest {
+                    Number = Expr { String = "7001"; }
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN0A"; }
+                    evTestText = Expr { String = "'CAL_PPMU_m20_uA_RAW_LMN0A'"; }
+                    evLowLimit = Expr { String = "-21.1uA"; }
+                    evHighLimit = Expr { String = "-18.90uA"; }
+                    evUnits = Expr { String = "'uA'"; }
+                }
+                Row[1] = evParametricTest {
+                    Number = Expr { String = "7002"; }
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN0B"; }
+                    evTestText = Expr { String = "'CAL_PPMU_m20_uA_RAW_LMN0B'"; }
+                    evLowLimit = Expr { String = "-21.1uA"; }
+                    evHighLimit = Expr { String = "-18.90uA"; }
+                    evUnits = Expr { String = "'uA'"; }
+                }
+                Row[2] = evParametricTest {
+                    Number = Expr { String = "7003"; }
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN1A"; }
+                    evTestText = Expr { String = "'CAL_PPMU_m20_uA_RAW_LMN1A'"; }
+                    evLowLimit = Expr { String = "-21.1uA"; }
+                    evHighLimit = Expr { String = "-18.90uA"; }
+                    evUnits = Expr { String = "'uA'"; }
+                }
+                Row[3] = evParametricTest {
+                    Number = Expr { String = "7004"; }
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN1B"; }
+                    evTestText = Expr { String = "'CAL_PPMU_m20_uA_RAW_LMN1B'"; }
+                    evLowLimit = Expr { String = "-21.1uA"; }
+                    evHighLimit = Expr { String = "-18.90uA"; }
+                    evUnits = Expr { String = "'uA'"; }
+                }
+            }
+            CalLim = {
+                Row[0] = evParametricTest {
+                    Number = Expr { String = "7011"; }
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN0A"; }
+                    evTestText = Expr { String = "'CAL_PPMU_m6_uA_ERROR_LMN0A'"; }
+                    evLowLimit = Expr { String = "-1.1uA"; }
+                    evHighLimit = Expr { String = "1.1uA"; }
+                    evUnits = Expr { String = "'nA'"; }
+                }
+                Row[1] = evParametricTest {
+                    Number = Expr { String = "7012"; }
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN0B"; }
+                    evTestText = Expr { String = "'CAL_PPMU_m6_uA_ERROR_LMN0B'"; }
+                    evLowLimit = Expr { String = "-1.1uA"; }
+                    evHighLimit = Expr { String = "1.1uA"; }
+                    evUnits = Expr { String = "'nA'"; }
+                }
+                Row[2] = evParametricTest {
+                    Number = Expr { String = "7013"; }
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN1A"; }
+                    evTestText = Expr { String = "'CAL_PPMU_m6_uA_ERROR_LMN1A'"; }
+                    evLowLimit = Expr { String = "-1.1uA"; }
+                    evHighLimit = Expr { String = "1.1uA"; }
+                    evUnits = Expr { String = "'nA'"; }
+                }
+                Row[3] = evParametricTest {
+                    Number = Expr { String = "7014"; }
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN1B"; }
+                    evTestText = Expr { String = "'CAL_PPMU_m6_uA_ERROR_LMN1B'"; }
+                    evLowLimit = Expr { String = "-1.1uA"; }
+                    evHighLimit = Expr { String = "1.1uA"; }
+                    evUnits = Expr { String = "'nA'"; }
+                }
+            }
+        }
+    }
+    evBlock[3] = {
+        EnableExpr = Expr { String = "TRUE"; }
+        Value = Expr { String = "#"; Mode = Output; }
+        Result = Expr { String = "..Value"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "hw_check.mod.HWCHK_Cal_HVVI_fi_with_HP3458A";
+            hvvi_plist = Expr { String = "DUT_LMN01A_HVVI+DUT_LMN01B_HVVI"; }
+            iForce = Expr { String = "-15.0uA"; }
+            RawLim = {
+                Row[0] = evParametricTest {
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN01A_HVVI"; }
+                    evTestText = Expr { String = "'CAL_HVVI_m15_uA_RAW_LMN0A'"; }
+                    evLowLimit = Expr { String = "-20.0uA"; }
+                    evHighLimit = Expr { String = "0uA"; }
+                    evUnits = Expr { String = "'=uA'"; }
+                }
+                Row[1] = evParametricTest {
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN01B_HVVI"; }
+                    evTestText = Expr { String = "'CAL_HVVI_m15_uA_RAW_LMN0B'"; }
+                    evLowLimit = Expr { String = "-20.0uA"; }
+                    evHighLimit = Expr { String = "0uA"; }
+                    evUnits = Expr { String = "'=uA'"; }
+                }
+            }
+            MeasLim = {
+                Row[0] = evParametricTest {
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN01A_HVVI"; }
+                    evTestText = Expr { String = "'CAL_HVVI_m15_uA_iMETER_LMN0A'"; }
+                    evLowLimit = Expr { String = "-20.0uA"; }
+                    evHighLimit = Expr { String = "0uA"; }
+                    evUnits = Expr { String = "'=uA'"; }
+                }
+                Row[1] = evParametricTest {
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN01B_HVVI"; }
+                    evTestText = Expr { String = "'CAL_HVVI_m15_uA_iMETER_LMN0B'"; }
+                    evLowLimit = Expr { String = "-20.0uA"; }
+                    evHighLimit = Expr { String = "0uA"; }
+                    evUnits = Expr { String = "'=uA'"; }
+                }
+            }
+            CalLim = {
+                Row[0] = evParametricTest {
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN01A_HVVI"; }
+                    evTestText = Expr { String = "'CAL_HVVI_m15_uA_ERROR_LMN0A'"; }
+                    evLowLimit = Expr { String = "-250nA"; }
+                    evHighLimit = Expr { String = "250nA"; }
+                    evUnits = Expr { String = "'=nA'"; }
+                }
+                Row[1] = evParametricTest {
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN01B_HVVI"; }
+                    evTestText = Expr { String = "'CAL_HVVI_m15_uA_ERROR_LMN0B'"; }
+                    evLowLimit = Expr { String = "-250nA"; }
+                    evHighLimit = Expr { String = "250nA"; }
+                    evUnits = Expr { String = "'=nA'"; }
+                }
+            }
+            CalMEASLim = {
+                Row[0] = evParametricTest {
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN01A_HVVI"; }
+                    evTestText = Expr { String = "'CAL_HVVI_m15_uA_METER_ERROR_LMN0A'"; }
+                    evLowLimit = Expr { String = "-250nA"; }
+                    evHighLimit = Expr { String = "250nA"; }
+                    evUnits = Expr { String = "'=nA'"; }
+                }
+                Row[1] = evParametricTest {
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN01B_HVVI"; }
+                    evTestText = Expr { String = "'CAL_HVVI_m15_uA_METER_ERROR_LMN0B'"; }
+                    evLowLimit = Expr { String = "-250nA"; }
+                    evHighLimit = Expr { String = "250nA"; }
+                    evUnits = Expr { String = "'=nA'"; }
+                }
+            }
+        }
+    }
+    evBlock[4] = {
+        EnableExpr = Expr { String = "FALSE"; }
+        Value = Expr { String = "#"; Mode = Output; }
+        Result = Expr { String = "..Value"; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "hw_check.mod.HWCHK_Cal_HVVI_fi_with_HP3458A";
+            hvvi_plist = Expr { String = "DUT_LMN01A_HVVI+DUT_LMN01B_HVVI"; }
+            iForce = Expr { String = "-5.6uA"; }
+            RawLim = {
+                Row[0] = evParametricTest {
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN01A_HVVI"; }
+                    evTestText = Expr { String = "'CAL_HVVI_m5p6_uA_RAW_LMN0A'"; }
+                    evLowLimit = Expr { String = "-6.0uA"; }
+                    evHighLimit = Expr { String = "-5.0uA"; }
+                    evUnits = Expr { String = "'=uA'"; }
+                }
+                Row[1] = evParametricTest {
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN01B_HVVI"; }
+                    evTestText = Expr { String = "'CAL_HVVI_m5p6_uA_RAW_LMN0B'"; }
+                    evLowLimit = Expr { String = "-6.0uA"; }
+                    evHighLimit = Expr { String = "-5.0uA"; }
+                    evUnits = Expr { String = "'=uA'"; }
+                }
+            }
+            MeasLim = {
+                Row[0] = evParametricTest {
+                    Result = Expr { String = "#"; Mode = Output; }
+                }
+            }
+            CalLim = {
+                Row[0] = evParametricTest {
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN01A_HVVI"; }
+                    evTestText = Expr { String = "'CAL_HVVI_m5p6_uA_ERROR_LMN0A'"; }
+                    evLowLimit = Expr { String = "-200nA"; }
+                    evHighLimit = Expr { String = "200nA"; }
+                    evUnits = Expr { String = "'=nA'"; }
+                }
+                Row[1] = evParametricTest {
+                    Result = Expr { String = "#"; Mode = Output; }
+                    evPins = Expr { String = "DUT_LMN01B_HVVI"; }
+                    evTestText = Expr { String = "'CAL_HVVI_m5p6_uA_ERROR_LMN0B'"; }
+                    evLowLimit = Expr { String = "-200nA"; }
+                    evHighLimit = Expr { String = "200nA"; }
+                    evUnits = Expr { String = "'=nA'"; }
+                }
+            }
+            CalMEASLim = {
+                Row[0] = evParametricTest {
+                    Result = Expr { String = "#"; Mode = Output; }
+                }
+            }
+        }
+    }
+}
+ETest Check_HWName_Result {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "Check_HWName_Result.HWCheck.Value"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = HWCheck;
+        Value = Expr { String = "#"; Mode = Output; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "hw_check.mod.Determine_HWNameCheckResult";
+        }
+    }
+}
+ETest Halt_OnLoad {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = Halt1;
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "hw_check.mod.Halt_OnLoad_Flow";
+        }
+    }
+}
+ETest Run_UsrCal_Flow {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = "Run_UsrCal_Flow.FCal1.Value"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = FCal1;
+        Value = Expr { String = "#"; Mode = Output; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "FlowControl.mod.UsrCal_FlowEnable";
+        }
+    }
+}
+ETest Set_Checker_Flow {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = ".Read_FEO.Value"; }
+    PortExpr[1] = Expr { String = "OpVar_Force_HW_Check"; }
+    PortExpr[2] = Expr { String = "OpVar_FlowEnable"; }
+    PortExpr[3] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = Read_FEO;
+        Value = Expr { String = "#"; Mode = Output; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "FlowControl.mod.Get_FlowEnableOverride";
+        }
+    }
+}
+ETest Checker_Results {
+    Result = Expr { String = "#"; Mode = Output; }
+    PortExpr[0] = Expr { String = ".Chk_Results.Value"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+    evBlock[0] = {
+        Title = Chk_Results;
+        EnableExpr = Expr { String = "TRUE"; }
+        Value = Expr { String = "#"; Mode = Output; }
+        evContinueOnFail = Expr { String = "NOT TestProgData.evFastBinning"; }
+        TestMethod {
+            Name = "hw_check.mod.Determine_Checker_Result";
+        }
+    }
+}
+
+ETest Set_DLog_On {
+    Result = Expr { String = "#"; Mode = Output; }
+    Entry[0] = Set_DLog_Mode_On;
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+}
+ETest Set_DLog_Off {
+    Result = Expr { String = "#"; Mode = Output; }
+    Entry[0] = Set_DLog_Mode_Off;
+    PortExpr[0] = Expr { String = "TRUE"; }
+    PortExpr[1] = Expr { String = "TRUE"; }
+}
+OperatorVariable OpVar_HardwareName {
+    Comment = "Must match HW name in the EEPROM";
+    Expr = Expr { String = "#"; Mode = Output; }
+    Direction = Output;
+    Value = "'HS87/BL QUAD SITE'";
+    UserMode = Engineering;
+}
+OperatorVariable OpVar_Force_HW_Check {
+    Comment = "Conditional boolean - if TRUE then HW Checker is run - Set to TRUE during OnLoad flow in Global_SW_Init";
+    Expr = Expr { String = "#"; Mode = Output; }
+    Direction = Output;
+    Value = "FALSE";
+    UserMode = Production;
+}
+OperatorVariable OpVar_HWNameCheckResult {
+    Comment = "Conditional boolean stores result of HW Name Check during OnLoad flow";
+    Expr = Expr { String = "#"; Mode = Output; }
+    Direction = Output;
+    Value = "FALSE";
+    UserMode = Engineering;
+}
+OperatorVariable OpVar_CheckerSite_Fail {
+    Comment = "Set to TRUE in Checker Flow if one or more sites fail";
+    Expr = Expr { String = "#"; Mode = Output; }
+    Direction = Output;
+    Value = "FALSE";
+    UserMode = Engineering;
+}
+OperatorVariable OpVar_RunUsrCal_Flow {
+    Comment = "Used in UsrCal flow to enable running of UsrCal flow (Focus Calibration)";
+    Expr = Expr { String = "#"; Mode = Output; }
+    Direction = Output;
+    Value = "TRUE";
+    UserMode = Engineering;
+}
+MicroFlow Set_DLog_Mode_On {
+    Event[0] {
+        Value = Expr { String = "#"; Mode = Output; }
+        Index = Expr { String = "1"; }
+        Enable = Expr { String = "TRUE"; }
+        Expr = Expr { String = "SetDatalogMode(true, Checker_DLog_Num, Dlog:FilterOn)"; }
+    }
+}
+MicroFlow Set_DLog_Mode_Off {
+    Event[0] {
+        Value = Expr { String = "#"; Mode = Output; }
+        Index = Expr { String = "1"; }
+        Expr = Expr { String = "SetDatalogMode(true, Checker_DLog_Num, Dlog:FilterOff)"; }
+    }
+}

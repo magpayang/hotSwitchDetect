@@ -18,23 +18,14 @@ mrDebug = myLibraries.debug()		##mrDebug.debugFunc(enDebug, additionalWords). re
 									## the second argument must be a string. use this to confirm if output is the same as expected
 
 
-aa.list(enDebug = 0)                            ##test
-CadenceDir = aa.find(enDebug, "Cadence")     	##find and returns full Cadence directory
-mrDebug.debugFunc(enDebug, CadenceDir)		    ##debug
+ExtRefsDir = ee.find(enDebug, 'ExtRefs')		##full directory of ExtRefs
+CadenceDir = aa.find(enDebug, "Cadence")     	##finds and returns full Cadence directory
 
-CadenceList = aa.listUsingInputString(enDebug, CadenceDir, '.mod') ## List the contents of Cadence folder. returns an array self.file_list
-## beware of additional folders inside Cadence
+ee.searchUsingDirThenDelete(1, ExtRefsDir, '.map')	##deletes '.map' files
+##aa.searchUsingDirThenDelete(1, CadenceDir, 'synthetic.mod') ##deletes synthetic.mod file
 
-##comment for the moment synthetic.mod creation and level 1 and level 2 edits
-createThisFile = CadenceDir + '/' + 'synthetic.mod' 	##fullpath with filename of synthetic.mod
-cc.create(enDebug, createThisFile)						##create synthetic.mod
-
-##now time to edit synthetic.mod
-aa.edit(enDebug, createThisFile, 'self.file_list', 1) 	##type1 edit. write all detected .mod and .tp as imports 
-aa.edit(enDebug, createThisFile, '', 3) 				##types the majority of synthetic.mod									
-
-ExtRefsDir = ee.find(enDebug, 'ExtRefs')									##full directory of ExtRefs
-ExtRefsList = ee.listUsingInputString(enDebug, ExtRefsDir, '.evo')			##list the contents of ExtRefs folder. returns an array
+ExtRefsList = ee.listUsingInputDir(enDebug, ExtRefsDir, '.evo')			##list the contents of ExtRefs folder. returns an array
+CadenceList = aa.listUsingInputDir(enDebug, CadenceDir, '.mod') 			## List the contents of Cadence folder. returns an array self.file_list
 
 packageTypesFound = ee.refineArrayFunc(enDebug, ExtRefsList, '.evo', '')	##removes '.evo' extension for prosperity
 
@@ -47,5 +38,20 @@ mrDebug.debugFunc(enDebug, packageTypeSelectedDir)
 adapterSelected = ee.listFoundAdapterEVO(enDebug, packageTypeSelectedDir) 	##ask user to pick the correct adapter type
 mrDebug.debugFunc(1, adapterSelected)
 
-	##def pinNameFinder(self, debug, targetWord, targetString, targetLength, targetEndKey, targetFile, outputFile)
-ee.pinNameFinder(enDebug, adapterSelected, 'CbitPins', 14, 'MaxSite', packageTypeSelectedDir, packageTypeSelectedDir+'.map') ##extract and catalogue all CbitPins
+cbitPinMapDir = packageTypeSelectedDir+'.map'
+ee.pinNameFinder(enDebug, adapterSelected, 'CbitPins', 14, 'MaxSite', packageTypeSelectedDir, cbitPinMapDir) ##extract and catalogue all CbitPins
+
+mrDebug.debugFunc(enDebug, CadenceDir)		    ##debug
+
+## beware of additional folders inside Cadence
+
+##comment for the moment synthetic.mod creation and level 1 and level 2 edits
+createThisFile = CadenceDir + '/' + 'synthetic.mod' 	##fullpath with filename of synthetic.mod
+cc.create(enDebug, createThisFile)						##create synthetic.mod
+
+##now time to edit synthetic.mod
+aa.edit(enDebug, createThisFile, 'self.file_list', 1) 	##type1 edit. write all detected .mod and .tp as imports 
+aa.edit(enDebug, createThisFile, '', 3) 				##types the majority of synthetic.mod			
+##aa.edit(enDebug, createThisFile, packageTypeSelectedDir+'.map', 4)	##adds maping using synthetic.mod ## maybe we can use findthenreplace instead of this
+allCbits = aa.pinArranger(enDebug, cbitPinMapDir)	##opens HS87_TQFN_packages.evo.map then rearanges pins so that results in only one phrase separated by plus		
+

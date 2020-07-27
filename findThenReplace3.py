@@ -1,6 +1,9 @@
 #! /usr/bin/python3
 
 class mySuperFile:
+	
+	mySuperFileGlobalVariable1 = '' ## class variable shared by all instances
+
 	def __init__(self):
 		self.indexWordArray = []
 		self.indexWordArrayFindWordAfterIndex = []
@@ -32,7 +35,7 @@ class mySuperFile:
 			else:
 				tempoString = tempoString + entry
 	
-	## function that scans the inputWord and updates the global variable indexWordArray
+	## function that scans the inputWord and updates the self variable indexWordArray
 	def findWord(self, inputWord, targetFile, outputFile):
 		f = open(targetFile, 'r')
 		ff = f.read()

@@ -15,12 +15,13 @@ use module"./oLDI.mod"
 use module"./reg_access.mod"
 use module"./rlms.mod"
 use module"./SERDES_Pins.mod"
-use module"./synthetic.mod"
 use module"./tester_cbits.mod"
 use module"./user_cbit_ctrl.mod"
 use module"./user_digital.mod"
 use module"./user_globals.mod"
 use module"./utility_functions.mod"
+-- this is important, do not delete
+--all legends: --hex1marker for read cbit --hex2marker for read digital pin levels --hex0marker for toggle to vref levels
 
 procedure getPreviousCbitStatus
 local
@@ -31,7 +32,9 @@ body
 	csites = getactivesites()
 
 	for idx = 1 to activesites():
-		read cbit all_cbits into previousCbitStatus
+		--0x1MARKER
+		--read cbit all_cbits into previousCbitStatus
+		--0x1ENDMARKER
 	end_for	
 end_body
 
@@ -43,7 +46,9 @@ body
 	csites = getactivesites()
 	
 	for idx = 1 to activesites():
+		--0x1MARKER
 		read cbit all_cbits into previousCbitStatus
+		--0x1ENDMARKER
 	end_for	
 end_body
 
@@ -64,8 +69,9 @@ body
 		end_for		
 	end_for	
 	
-
+	--0x2MARKER
 	read cbit all_digital levels vref into digitalVrefStatus --get digital pin vref status
+	--0x2ENDMARKER
 	
 	for idx = 1 to activesites()then		-- process the info. reduce to boolean
 		csite = activesite[idx]

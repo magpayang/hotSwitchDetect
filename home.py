@@ -49,5 +49,3 @@ mrDebug.debugFunc(1, adapterSelected)
 
 	##def pinNameFinder(self, debug, targetWord, targetString, targetLength, targetEndKey, targetFile, outputFile)
 ee.pinNameFinder(enDebug, adapterSelected, 'CbitPins', 14, 'MaxSite', packageTypeSelectedDir, packageTypeSelectedDir+'.map') ##extract and catalogue all CbitPins
-
-

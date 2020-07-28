@@ -24,11 +24,17 @@ class smartfinder():
 		debug.debugFunc(self, enDebug, 'found: '+toBeDeleted+' , DELETED!')
 				
 	def pinNameFinder(self, enDebug, targetWord, targetString, targetLength, targetEndKey, targetFile, outputFile):
+		"""
+			from the list of pins with attributes of the file ExtRefs/HS87_TQFN_package.evo (targetFile), this pin will extract the
+			desired pin name (output file), by searching for the adaptertype (target word), then searching for the
+			keyword (targetString), counting from start to first letter of pin name (targetLength), then stopping at 
+			Maxsites (targetEndKey)
+		"""
 		#f = open('ExtRefs/HS87_TQFN_package.evo', 'r')
 		f = open(targetFile, 'r')
 		ff = f.read()
 		#g = open('ExtRefs/HS87_TQFN_package.evo.map', 'w')
-		g = open(outputFile, 'w')
+		g = open(outputFile, 'a')
 		#targetWord = 'hs87_56tqfnB'
 		targerWord = targetWord ##targetAdapterName
 		#targetString = 'CbitPins'
@@ -325,6 +331,71 @@ class inputOutput():
 		userInput = input()			
 		return inputArray[int(userInput)-1]		
 		
+class true_map():
+	def __init__(self):
+		self.digital_pin_array = []
+		self.digital_pin_array_string = ''
+		
+	def create_cbit_to_dp_map(self, enable_debug, cbit_reference_file,	dp_reference_file, output_file):
+		f = open(cbit_reference_file, 'r')
+		ff = f.read()
+		h = open(dp_reference_file, 'r')
+		hh = h.read()
+		
+		g = open(output_file, 'w') ##true cbit to dp map ## can be recycled
+		
+		tempo_string = ''
+		digital_pin_array = []
+		digital_pin_array_string = ''
+		
+		debug.debugFunc(self, enable_debug, '')
+		
+		for entry in hh:	##read .DPmap and produre a one line string no space consist of all dp pins
+			if entry == '\n':
+				debug.debugFunc(self, enable_debug, tempo_string + '\n')
+				digital_pin_array.append(tempo_string)
+				digital_pin_array_string = digital_pin_array_string +'+'+ tempo_string
+				tempo_string = ''
+			else:
+				tempo_string = tempo_string + entry
+		
+		digital_pin_array_string = digital_pin_array_string[1:] ##remove the + at the start of this string
+		
+		self.digital_pin_array_string = digital_pin_array_string ##update class variable self.digital_pin_array_string
+		self.digital_pin_array = digital_pin_array ##update class variable self.digital_pin_array
+		
+		i = 0
+		hit = 0
+		tempo_string = ''
+		
+		for entry in ff:
+			if entry == '\n':
+				while i == 0:
+					prompt_message = '\n enter the digital pin associated with ' + str(tempo_string + '\n')
+					user_input = input(prompt_message)
+					if user_input == '/':	##user skips this digital pin
+						tempo_string = ''
+						break
+					else:
+						if user_input in digital_pin_array: ## user input matches or is found in the list of catalogued dp pins
+							g.write(tempo_string + ' ' + user_input + '\n')	##format: <cbit name><space><digital pin name>
+							hit = 1 ## alert the while loop that
+							
+							prompt_message = ' do you want to add more digital pin? yes or no '
+							user_input = input(prompt_message)
+							user_input = user_input.lower()
+							if (user_input == 'y') or (user_input == 'ye') or (user_input == 'yes'):
+								i = 0	##this if else statement here is confusing
+							else:
+								i = 0
+								break
+						else:
+							print('\n invalid input, please try again \n')
+							i = 0
+				tempo_string = '' ##clear tempo_string 
+			else:
+				tempo_string = tempo_string + entry						
+									
 class debug():
 	def __init__(self):
 		pass

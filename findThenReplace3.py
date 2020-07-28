@@ -1,4 +1,5 @@
 #! /usr/bin/python3
+from myLibraries import debug
 
 class mySuperFile:
 	
@@ -17,7 +18,7 @@ class mySuperFile:
 		ff = f.read()
 		for entry in ff:
 			print(entry)
-		f.close()
+		f.close()	
 
 	def tempoStringPrinter(self, targetFile):
 		f = open(targetFile, 'r')
@@ -35,8 +36,37 @@ class mySuperFile:
 			else:
 				tempoString = tempoString + entry
 	
-	## function that scans the inputWord and updates the self variable indexWordArray
-	def findWord(self, inputWord, targetFile, outputFile):
+	def mapFileIndexWordSearch(self, enDebug, targetFile):
+		"""
+			rearranges contents of .map file such that format if now 'item1+item2+item3+...'
+		"""
+		##f = open('ExtRefs/HS87_TQFN_package.evo.map','r')
+		f = open(targetFile,'r')
+		ff = f.read()
+
+		tempoString = ''
+		tempoPhrase = ''
+
+		for entry in ff:
+			if entry == '\n':
+				tempoPhrase = tempoPhrase + '+' + tempoString
+				tempoString = ''
+			else:
+				tempoString = tempoString + entry
+
+		tempoPhrase = tempoPhrase[1:] ## this is the list of all detected cbits that are in one string and separated by +
+		## !!! please consider making this into a global varialbe and see if it will still work		
+		debug.debugFunc(self, enDebug, tempoPhrase)		
+		return tempoPhrase				
+	
+	def findWord(self, enDebug, inputWord, targetFile, outputFile):
+		"""
+			a function that scans the targetFile 
+			for the inputWord and updates and 
+			returns the self variable indexWordArray
+			indexWordArray would be line number 
+			locations of inputWord within targetFile
+		"""
 		f = open(targetFile, 'r')
 		ff = f.read()
 		indexWord = inputWord
@@ -45,7 +75,9 @@ class mySuperFile:
 		spaceCounter = 0
 		tabCounter = 0
 		indexWordArray = []
-		print('--findWord----------------------------------------------------------------------')
+		
+		debug.debugFunc(self, enDebug, '--findWord----------------------------------------------------------------------')
+		
 		for entry in ff:	# find targetWord then index
 			if entry == '\n':
 				if tempoString[spaceCounter:] == indexWord:
@@ -79,15 +111,26 @@ class mySuperFile:
 					tempoString = tempoString + entry
 					tabCounter = tabCounter + 1
 			else:
-				tempoString = tempoString + entry		
-		print(indexWord+' found in line ')
-		for i in range(len(indexWordArray)):
-			print(indexWordArray[i])
+				tempoString = tempoString + entry
+		if enDebug == 1:				
+			print(indexWord+' found in line ')
+			for i in range(len(indexWordArray)):
+				print(indexWordArray[i])
+		
 		self.indexWordArray = indexWordArray
 		f.close()	
 			
 	def findString2(self, findThis2, targetFile, outputFile):	
-		## find 'open cbit' this string[100] : procedure_name, function_name --reeglysononly accepts two worded string
+		"""
+			a function that scans the targetFile 
+			for the inputWord and updates and 
+			returns the self variable indexWordArray
+			indexWordArray would be line number 
+			locations of inputWord within targetFile
+			
+			the inputWord should compose of two strings
+			separated by space
+		"""	
 		f = open(targetFile,'r')
 		ff = f.read()		
 		indexWordArray = []
@@ -203,11 +246,15 @@ class mySuperFile:
 			newLineCounter = 0	
 			offset = offset + 1
 	
-	## write before the index on indexWordArray	
-	def writeAfterIndexWordArray(targetFile, outputFile, inputString):
-		## write getPreviousCbitStatus
-		## must be written before the indexWordArray[i]
-		global indexWordArray
+	def writeAfterIndexWordArray(self, enDebug, targetFile, outputFile, inputString):
+		"""
+			writes inputString after the index listed on self.indexWordArray
+			output is an overwrite of outputFile
+		"""
+		indexWordArray = self.indexWordArray
+		
+		if enDebug == 1:
+			print(indexWordArray)
 		
 		tempoString = ''
 		newLineCounter = 0
@@ -223,7 +270,7 @@ class mySuperFile:
 				if entry == '\n':
 					newLineCounter = newLineCounter + 1
 					if (i + offset) == newLineCounter: ## before the index
-						#print('hit')
+						debug.debugFunc(self, enDebug, tempoString)
 						g.write('\n')
 						g.write(additionalInput)
 					g.write(tempoString)				
@@ -239,42 +286,14 @@ class mySuperFile:
 			newLineCounter = 0	
 			offset = offset + 1
 	
-	## writes getCurrentCbitStatus and hotSwitchDetect
-	#def writeAfterIndexWordArray(targetFile, outputFile, inputString):
-	#
-	#	global indexWordArray
-	#	
-	#	tempoString = ''
-	#	newLineCounter = 0
-	#	additionalEntry = inputString
-	#	additionalEntry = additionalEntry + '\n'
-	#	offset = 0
-	#
-	#	for i in indexWordArray:
-	#		f = open(targetFile,'r')
-	#		ff = f.read()
-	#		g = open(outputFile,'w')
-	#		for entry in ff:
-	#			if entry == '\n':
-	#				newLineCounter = newLineCounter + 1
-	#				tempoString = tempoString + entry
-	#				g.write(tempoString)
-	#				tempoString = ''
-	#				if newLineCounter == (i + offset): #after the open cbit if newLineCounter == i
-	#					print(newLineCounter)
-	#					g.write(additionalEntry)
-	#			elif entry == ' ':
-	#				tempoString = tempoString + entry
-	#			else:
-	#				tempoString = tempoString + entry
-	#		g.write(tempoString)
-	#		tempoString = ''
-	#		newLineCounter = 0
-	#		offset = offset + 1		inputArray = self.indexWordArray
-			
-							
-	# index the appearances of index word as dictated by an array it is also based on 
-	def findWordAfterIndex(self, targetWord, targetFile, referenceArray): 
+	def findWordAfterIndex(self, enDebug, targetWord, targetFile, referenceArray): 
+		"""
+			indexes the line locations of 'body'
+			targetWord = 'body'
+			targetFile
+			referenceArray is the index line locations of 'procedure' or 'function' e.i. indexWordArray
+			this method updates the self.indexWordArrayFindWordAfterIndex with the line locations of body
+		"""
 		f = open(targetFile,'r')
 		ff = f.read()	
 		
@@ -283,7 +302,7 @@ class mySuperFile:
 		newLineCounter = 0
 		indexWordStartFind = 0
 		tempoString = ''
-		print('--findWordAfterIndex----------------------------------------------------------------------')	
+		debug.debugFunc(self, enDebug, '--findWordAfterIndex----------------------------------------------------------------------')	
 		indexWordArrayFindWordAfterIndex = [] #clear of all contents
 		for i in range(len(referenceArray)):
 			print('finding in line: '+str(referenceArray[i]))
@@ -365,7 +384,15 @@ class mySuperFile:
 		self.stringInEachIndex = StringInEachIndex
 	
 	# loop through first argument, then write items on second argument		
-	def writeAfterIndex(self, inputArray, inputString, inputName, targetFile, outputFile):
+	def writeAfterIndex(self, enDebug, inputArray, inputString, inputName, targetFile, outputFile):
+		"""
+			used for writing procedure_name = <procedure name> and function_name = <function name>
+			inputArray must be an array of all line locations of word 'body' e.i. self.indexWordArrayFindWordAfterIndex
+			inputString is either the procedure names or the function names refined (no more arguments)
+			inputName is either 'procedure' or 'function'
+			targetFile
+			outputFile
+		"""
 		f = open(targetFile, 'r')
 		ff = f.read()
 		g = open(outputFile, 'w')
@@ -377,7 +404,9 @@ class mySuperFile:
 		newLineCounter = 0
 		tempoPhrase = ''
 		startCount = 0
-		print('--writeAfterIndex----------------------------------------------------------------------')
+		
+		debug.debugFunc(enDebug, '--writeAfterIndex----------------------------------------------------------------------')
+		
 		for entry in ff:
 			if entry == '\n':
 				newLineCounter = newLineCounter + 1

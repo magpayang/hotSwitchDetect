@@ -14,8 +14,10 @@ ee = myLibraries.smartfinder()		##ee finds ExtRefs full dir, list contents in Ex
 									##ee ask for the adapter type. for HS87 we have hs87tqfn, hs87tqfnB and hs87tqfnC
 									##ee extracts all cbitpins from HS87_TQFN_package.evo and creates a file  HS87_TQFN_package.evo.map
 hh = myLibraries.inputOutput()		##hh. for hs87, allows user to select between HS87_TQFN and HS87_MRQ. needs user input
+ii = findThenReplace3.mySuperFile()
 mrDebug = myLibraries.debug()		##mrDebug.debugFunc(enDebug, additionalWords). replace enDebug with integer 1 to enable this function
 									## the second argument must be a string. use this to confirm if output is the same as expected
+									
 
 
 ExtRefsDir = ee.find(enDebug, 'ExtRefs')		##full directory of ExtRefs
@@ -53,5 +55,26 @@ cc.create(enDebug, createThisFile)						##create synthetic.mod
 aa.edit(enDebug, createThisFile, 'self.file_list', 1) 	##type1 edit. write all detected .mod and .tp as imports 
 aa.edit(enDebug, createThisFile, '', 3) 				##types the majority of synthetic.mod			
 ##aa.edit(enDebug, createThisFile, packageTypeSelectedDir+'.map', 4)	##adds maping using synthetic.mod ## maybe we can use findthenreplace instead of this
-allCbits = aa.pinArranger(enDebug, cbitPinMapDir)	##opens HS87_TQFN_packages.evo.map then rearanges pins so that results in only one phrase separated by plus		
+allCbits = ii.mapFileIndexWordSearch(enDebug, cbitPinMapDir)		##opens HS87_TQFN_packages.evo.map then rearanges pins so that results in only one phrase separated by plus		
+
+firstSyntheticModMarker = '--0x1MARKER'
+firstSyntheticModEndMarker = '--0x1ENDMARKER'
+secondSyntheticModMarker = '--0x2MARKER'
+secondSyntheticModEndMarker = '--0x2ENDMARKER'
+zerothSyntheticModMarker = '--0xMARKER'
+zerothSyntheticModEndMarker = '--0xENDMARKER'
+
+targetFile = 'Cadence/synthetic.mod'
+
+firstMarkerInsertPhrase = 'read cbit' + allCbits + ' into previousCbitStatus'
+ii.findWord(enDebug, firstSyntheticModMarker, targetFile, '') 	##finds 0x1MARKER. stores indeces at aa.indexWordArray
+ii.writeAfterIndexWordArray(1, targetFile, targetFile, firstMarkerInsertPhrase) ##writes necessary phrase after 0x1MARKER
+
+##secondMarkerInsertPhrase = 'read '+<digital pins>+' levels vref indo into digitalVrefStatus' ##need ko pa ng <digitalpins>
+#ii.findWord(enDebug, secondSyntheticModMarker, targetFile, '') ##finds 0x2MARKER. stores indeces at aa.indexWordArray
+#ii.writeAfterIndexWordArray(enDebug, targetFile, targetFile, secondMarkerInsertPhrase)		
+
+#zerothMarkerInsertPhrase = 'read cbit' + tempoPhrase + ' into previousCbitStatus
+#ii.findWord(enDebug, firstSyntheticModMarker, targetFile, '') ##finds 0x1MARKER. stores indeces at aa.indexWordArray
+#ii.writeAfterIndexWordArray(enDebug, targetFile, targetFile, firstMarkerInsertPhrase)
 

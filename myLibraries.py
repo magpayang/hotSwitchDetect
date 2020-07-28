@@ -22,27 +22,7 @@ class smartfinder():
 				toBeDeleted = targetDir+'/'+entry
 				os.system('rm -rf '+targetDir+'/'+entry)
 		debug.debugFunc(self, enDebug, 'found: '+toBeDeleted+' , DELETED!')
-			
-	def pinArranger(self, enDebug, targetFile):
-		##f = open('ExtRefs/HS87_TQFN_package.evo.map','r')
-		f = open(targetFile,'r')
-		ff = f.read()
-		##g = open('synthetic_mod_template','w')
-
-		tempoString = ''
-		tempoPhrase = ''
-
-		for entry in ff:
-			if entry == '\n':
-				tempoPhrase = tempoPhrase + '+' + tempoString
-				tempoString = ''
-			else:
-				tempoString = tempoString + entry
-
-		tempoPhrase = tempoPhrase[1:] ## this is the list of all detected cbits that are in one string and separated by +
-		debug.debugFunc(self, enDebug, tempoPhrase)		
-		return tempoPhrase	
-	
+				
 	def pinNameFinder(self, enDebug, targetWord, targetString, targetLength, targetEndKey, targetFile, outputFile):
 		#f = open('ExtRefs/HS87_TQFN_package.evo', 'r')
 		f = open(targetFile, 'r')
